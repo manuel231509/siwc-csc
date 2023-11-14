@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="session_student" directorySegmentName="seg_0" id="E1D22C1B-5021-A9BE-AA6E-40F978654A77">
+<createdBy>manue</createdBy>
+<createdTime>2022-09-13 21:26:44 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="B1C88FAE-AFF0-678B-E8DC-A0D06D9C3698" value="true"/>
+</engineerTo>
+<sourcePk>BBFDC8B4-8883-FAFB-59FE-4AD54A7E34A2</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C623BE5E-F873-D507-E5A4-62004BF11211</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>41091EAB-8844-5233-39A0-98D762A809EA</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

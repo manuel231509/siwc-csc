@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="84AE38ED-E842-BAA4-64CD-84678135BE60" name="degree">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-10 05:14:03 UTC</createdTime>
+<generatorID>02FC7B6D-C45A-0A2C-CC4E-33ACBEEBEECE</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_degree" id="99934BE8-9E04-0ABF-6677-2CD58B172D31">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-10 05:14:03 UTC</createdTime>
+<generatorID>30A2FF27-268B-0F9E-97CC-FA872C23276F</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name_degree" id="9193EBFC-5350-E3DA-7A46-F5466A718CA6">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-10 05:14:03 UTC</createdTime>
+<generatorID>F416F145-511C-5B20-18D3-E9889542A238</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5AACD31B-5755-DA49-EDBA-DF1A5EF18141" name="degree_PK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-10 05:14:03 UTC</createdTime>
+<generatorID>B81186D1-AC99-75A0-3E54-55E98FA4B9AD</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="99934BE8-9E04-0ABF-6677-2CD58B172D31"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AA02DC78-C4F4-EA21-DBB1-4C68AD216C42" name="degree_name_degree_UN">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-10 05:14:03 UTC</createdTime>
+<generatorID>8A65786D-8045-DD50-20F4-F5221EDEE430</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9193EBFC-5350-E3DA-7A46-F5466A718CA6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EAA98683-CCDE-FC1A-815A-982D52D41A02" containerWithKeyObject="DB505E8D-46DF-EC13-ECA7-837F840FAA32" localFKIndex="20289DD0-992A-828F-56DA-96F3348486CA" name="period_FK">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-13 18:46:52 UTC</createdTime>
+<generatorID>7273CE14-59AE-1235-4AC1-7E3B3E5F0680</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<referredTableLongName>period</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>A6185928-8C99-2A54-21F2-4A8475A38802</referredTableID>
+<keyObject>BAAD6399-105F-70AD-CAB8-34806E44301F</keyObject>
+<referredKeyID>BAAD6399-105F-70AD-CAB8-34806E44301F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_period</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

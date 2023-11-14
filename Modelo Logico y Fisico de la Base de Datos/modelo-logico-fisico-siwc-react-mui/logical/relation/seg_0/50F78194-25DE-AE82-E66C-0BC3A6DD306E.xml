@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="task_file" directorySegmentName="seg_0" id="50F78194-25DE-AE82-E66C-0BC3A6DD306E">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 07:28:47 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+</engineerTo>
+<sourcePk>4BC2DB93-BE5D-212C-489D-9376027A8E55</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>8EEF8953-865B-5229-0DC0-5AE28787C738</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>B072E694-03E3-C1B3-547E-FD4B83D010A0</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,133 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CAE7E121-5F32-4FDB-E41A-72F9EB4FB57D" name="degree_subject">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 07:09:14 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_deg_subj" id="2B9AD338-BDD1-1B87-F1E9-5502B71EE858">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 07:09:30 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_degree" id="7B4D1FD3-8BA0-2DAA-8325-E7F16C26B4C6">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 07:11:24 UTC</createdTime>
+<generatorID>5B71EA53-E4EB-DCC5-F65A-1A6EF5296291</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+</engineerTo>
+<referedAttribute>30A2FF27-268B-0F9E-97CC-FA872C23276F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_subject" id="A49040F1-065C-CB46-FF26-3D7682B7BFF4">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 07:15:30 UTC</createdTime>
+<generatorID>A817DD90-C026-D35E-8879-475EC51DFA7D</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+</engineerTo>
+<referedAttribute>CBF3F9B7-8F3B-F5ED-B035-FEA29065BB6A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B338056F-8BEE-439E-BA3F-9CF6E02BC235" name="degree_subject PK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 07:10:35 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>2B9AD338-BDD1-1B87-F1E9-5502B71EE858</newElementsIDs>
+<usedAttributes>
+<attributeRef>2B9AD338-BDD1-1B87-F1E9-5502B71EE858</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="7ECFDF31-3D55-34EC-CDBE-C0759A7425DC" name="id_degree_subject_UK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 07:21:34 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+</engineerTo>
+<newElementsIDs>7B4D1FD3-8BA0-2DAA-8325-E7F16C26B4C6,A49040F1-065C-CB46-FF26-3D7682B7BFF4</newElementsIDs>
+<usedAttributes>
+<attributeRef>7B4D1FD3-8BA0-2DAA-8325-E7F16C26B4C6</attributeRef>
+<attributeRef>A49040F1-065C-CB46-FF26-3D7682B7BFF4</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

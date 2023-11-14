@@ -1,0 +1,173 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E750E46D-5646-30E0-5590-71EBCF19ECB0" name="raiting">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>E041204B-9059-FF86-FB36-901F5C13FE0D</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_raiting" id="B89A4B4C-69B9-ACAC-A795-5EDD070860B8">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>2402ABF2-D47E-B955-213A-E4A0172182C2</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="period_note" id="548EA9F2-3E7B-7848-3FDA-7BB9E4FEDE0C">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>B81EBCF9-53FF-88EA-55AE-562A820AC3BA</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="activities_note" id="62F842FB-A559-D350-CB34-DCB37F0F26C1">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-06-04 18:08:48 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bimonthly_note" id="7734B1CD-983C-809E-5DD0-A9B10EC8C594">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-06-04 18:15:10 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="number_activities" id="A391D3A5-36C5-DEED-2ACF-E2D6B293C917">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-06-04 18:14:10 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_deg_subj" id="69949FEC-C06B-740C-4D14-AD2DC1BE316E">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>F45C91C1-F9B8-9893-171F-DC5DFEF4368B</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C4F88345-5B1F-199C-8989-D7484EB32A1C" referredColumn="9BA8E1A9-C309-A307-F1C1-3EAA5A3D8D36"/>
+</associations>
+</Column>
+<Column name="id_number_student" id="E9BD2FAD-269D-9FDC-718B-1BF9B6287FDB">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>EDED33E3-A680-E9E2-64E2-986F2BEA9BCD</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="873586A1-F366-16BB-5EF4-E137A7581CBB" referredColumn="E1365DD5-7C6F-A7EB-8FA3-B335377D766F"/>
+</associations>
+</Column>
+<Column name="id_period" id="F2C2A910-5319-FBE5-7EB6-312DAA1143C7">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>D1F50202-6B3D-FD73-20A9-9D9EBDF2BB95</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CD02514E-BD79-8568-3DF1-4B34A4A9FB96" referredColumn="60C36EAA-D559-5815-9CA4-414F379C4958"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E6A0D4FA-EE7F-9ED8-31F2-9B3B2DC3F1FB" name="raiting_PK">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>BF3D0347-0C91-E530-8A47-451AA8BFB3F7</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B89A4B4C-69B9-ACAC-A795-5EDD070860B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5A6F3289-33B2-6D38-8A02-E6FC5199E490" name="raiting__UN">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>0210B561-0DF0-A353-EA30-EB21645DEE70</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="69949FEC-C06B-740C-4D14-AD2DC1BE316E"/>
+<colUsage columnID="E9BD2FAD-269D-9FDC-718B-1BF9B6287FDB"/>
+<colUsage columnID="F2C2A910-5319-FBE5-7EB6-312DAA1143C7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="66AEE93A-5BA7-8B8B-D6CF-7B943BA0EEB6" name="raiting_degree_subject_FK">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:12 UTC</createdTime>
+<generatorID>92EEFA09-5209-511B-D720-24191A3806E5</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="69949FEC-C06B-740C-4D14-AD2DC1BE316E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3520F9C9-6B21-6A09-F2BA-140D9A08CE12" name="raiting_period_FK">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:12 UTC</createdTime>
+<generatorID>7273CE14-59AE-1235-4AC1-7E3B3E5F0680</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F2C2A910-5319-FBE5-7EB6-312DAA1143C7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D8315439-DA07-E265-FBF8-771079949226" name="raiting_student_FK">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:12 UTC</createdTime>
+<generatorID>F898225A-1E55-9EB9-03C9-CEB23924124B</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E9BD2FAD-269D-9FDC-718B-1BF9B6287FDB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="32817E23-AE6B-07DA-5BFE-EB564B8CAB8D" name="subject">
+<createdBy>manue</createdBy>
+<createdTime>2022-09-14 03:59:14 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_subject" id="CBF3F9B7-8F3B-F5ED-B035-FEA29065BB6A">
+<createdBy>manue</createdBy>
+<createdTime>2022-09-14 03:59:57 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name_subject" id="0F56FA72-B442-A3C1-8755-DC508E8238BE">
+<createdBy>manue</createdBy>
+<createdTime>2022-09-14 04:01:22 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_number_teacher" id="66F81B0E-2982-127F-DB65-B0B5EBE37BCD">
+<createdBy>manue</createdBy>
+<createdTime>2022-09-19 21:49:32 UTC</createdTime>
+<generatorID>0633B328-A7BD-AF54-482E-6F2FB4B367F4</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+</engineerTo>
+<referedAttribute>7D7F5955-22A6-A75C-4653-C75C80B5003E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D076CE88-BDBF-0BA5-A314-4F05E311C1F7" name="subject PK">
+<createdBy>manue</createdBy>
+<createdTime>2022-09-14 04:01:14 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="false"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CBF3F9B7-8F3B-F5ED-B035-FEA29065BB6A</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="57E00458-8AEC-9477-7B8D-39FE0AE6D188" name="NameSubject UK">
+<createdBy>manue</createdBy>
+<createdTime>2022-09-14 04:01:56 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+</engineerTo>
+<newElementsIDs>0F56FA72-B442-A3C1-8755-DC508E8238BE</newElementsIDs>
+<usedAttributes>
+<attributeRef>0F56FA72-B442-A3C1-8755-DC508E8238BE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

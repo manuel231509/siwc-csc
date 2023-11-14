@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F69199CB-BC4F-0547-EAD3-2BC75C6CC2B9" containerWithKeyObject="16FC7F4D-23F3-E618-2C18-538508C3F4DA" localFKIndex="8C5D12D3-5795-4C31-CB04-A6CCA044C4C3" name="recommend_main_achievement_FK">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 21:09:53 UTC</createdTime>
+<generatorID>D019AEB7-498B-93E7-2EAC-78A9FA04861C</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<referredTableLongName>main_achievement</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0E706B78-86CE-662D-15D7-B9BD23ADB455</referredTableID>
+<keyObject>CE52BEA3-49F6-451A-BB0A-1414734576CC</keyObject>
+<referredKeyID>CE52BEA3-49F6-451A-BB0A-1414734576CC</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_period,id_subject,id_main_achievement</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

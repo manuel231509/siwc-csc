@@ -1,0 +1,171 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F8A57620-E529-C78A-49D4-5597416506E4" name="administrator">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>DE83B832-AAD2-DDBA-E9E9-B727DF365456</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_number_admin" id="4776A3E7-A27E-D1FA-BDBE-E739D92DD1CC">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>56E1042E-19C1-D631-E8DC-C9CDD127A9C5</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="document_type_admin" id="290F3C4B-1B7B-57F9-91DE-6CE7A4CB8C8F">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>66E80E41-CF8A-151F-ABDF-CB4FA84B15EA</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email_address_admin" id="DD59082A-854E-BAC3-EFA0-66FDD4E8B36A">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>AE02F2B3-52F1-505C-70CD-EC1575BD350A</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="full_names_admin" id="D09E5683-1BAC-1E5F-7504-9DA333DE3473">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>12941DF3-B0E4-9513-27B4-CF0C62D81AFA</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="full_surnames_admin" id="2F542C56-6C14-B697-3097-39A354022DC2">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>B642B508-E10B-548B-3320-F19779AFB4A1</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_number_session" id="77BC77DD-B9FF-6E69-0AC3-9B1AE124DF10">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>48179218-9FC0-5C6D-E634-70D603AFB02A</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7111FD90-24C4-1605-ADC3-62D145AEEA56" referredColumn="19009503-0583-7C3D-5865-352823F40FAB"/>
+</associations>
+</Column>
+<Column name="image_path_admin" id="A8DCBC8C-4239-F42C-0044-42A023943935">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>D029EDA9-F13D-BA29-E04F-C1BC841E289F</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone_number_admin" id="A73F1D9D-B4FA-8A2E-58BE-6D0A4BDA0985">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>BD231041-7745-EF43-A9DF-BAF546BCAEA5</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1681C499-E443-5B44-E6AA-44A889765116" name="administrator_PK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>5CF158F4-7DE3-7140-2542-6C768A40A2CD</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4776A3E7-A27E-D1FA-BDBE-E739D92DD1CC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FA2C1FD5-A5BF-9AD3-6ABF-C32015938C2D" name="email_address_admin_UK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>D312BDD4-AF89-0204-76EB-B2BC02E58A2B</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DD59082A-854E-BAC3-EFA0-66FDD4E8B36A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2ACB866B-9005-D5DA-B89F-E76172217352" name="phone_number_admin_UK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>576F88C4-DEDA-9720-9F12-F495977E3B0E</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A73F1D9D-B4FA-8A2E-58BE-6D0A4BDA0985"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="912D5410-B257-C4C8-480B-5069FC1DDC4B" name="admin_id_number_session_UK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>CEFAD096-DA52-43AD-AE01-439D466389C6</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="77BC77DD-B9FF-6E69-0AC3-9B1AE124DF10"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F7283BB9-0CE2-AFF7-93A0-DAC526F40C2E" name="administrator_ssession_FK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>BCC81000-3E42-84C8-DB9D-5DCCA2DE95D3</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="77BC77DD-B9FF-6E69-0AC3-9B1AE124DF10"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

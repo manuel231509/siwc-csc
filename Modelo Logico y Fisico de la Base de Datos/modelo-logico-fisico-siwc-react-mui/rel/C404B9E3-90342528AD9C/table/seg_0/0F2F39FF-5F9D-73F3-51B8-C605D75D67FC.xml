@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0F2F39FF-5F9D-73F3-51B8-C605D75D67FC" name="session_roles">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-02 18:38:14 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_number_session" id="94F214A7-F9E8-DFA8-2D0A-420D07CED337">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-02 18:38:14 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A6EFF810-61FE-0B7D-BF10-80D010327337" referredColumn="3A20CD10-6C65-6874-CA73-C6C8C66CDC5D"/>
+</associations>
+</Column>
+<Column name="id_rol" id="F8EE3DAE-0EEE-1151-B3CF-881BD43F9A81">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-12 03:54:03 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB69D620-1B9F-8992-6B66-38D560E46FBB" referredColumn="F0C7FDAF-8B41-F3BD-7CEE-D6D092CCF51F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FC608233-ED37-ADB7-0FA3-8AC499296C1B" name="session_roles_PK">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-02 18:38:14 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94F214A7-F9E8-DFA8-2D0A-420D07CED337"/>
+<colUsage columnID="F8EE3DAE-0EEE-1151-B3CF-881BD43F9A81"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0ED612F1-6A73-826C-0BDE-FCA19E93702E" name="ssession_FK">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-02 18:38:14 UTC</createdTime>
+<generatorID>749F9EF0-9DF9-502E-E0AC-DFA009161226</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94F214A7-F9E8-DFA8-2D0A-420D07CED337"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B85FE51E-A682-4EBE-92C8-82A64ED069CD" name="rols_FK">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-12 03:54:02 UTC</createdTime>
+<generatorID>566C4DD1-1756-D23B-9BA1-F71F1289AB97</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F8EE3DAE-0EEE-1151-B3CF-881BD43F9A81"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

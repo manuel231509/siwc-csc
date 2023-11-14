@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F892988D-018D-38D4-8A24-18E46D203915" name="period">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>E6560609-E8D8-EA71-4D25-AAF3158C9480</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_period" id="60C36EAA-D559-5815-9CA4-414F379C4958">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>20D1403F-E1ED-261F-6F38-1C3E5586ACFB</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="period_name" id="CC8A50C6-0A27-8840-BCA9-5F565D90A667">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>08807674-2159-3A38-C9BF-CD50BBA38E74</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="value_percentage_activites" id="C8E6CCB3-A34B-014E-E2A0-57B0C7D88CD8">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-06-04 18:23:17 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="value_percentage_bimonthly" id="3B06B375-E1C0-129D-C3ED-CA16ECE550F9">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-06-04 18:23:52 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="initial_date" id="F03710D3-11C2-3489-5051-5C79DB93BB85">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>6735B9EA-3CCC-6D99-1073-65303407E911</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="final_date" id="B171B0A3-16D1-FF90-53ED-426E3A773768">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>AEF89145-A84F-728E-37E6-EB77C80CB626</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="16C83B29-C573-A705-6C1D-D2904A454396" name="period_PK">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>4B07B1F1-C757-7D23-DB21-A28D16E515A8</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="60C36EAA-D559-5815-9CA4-414F379C4958"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

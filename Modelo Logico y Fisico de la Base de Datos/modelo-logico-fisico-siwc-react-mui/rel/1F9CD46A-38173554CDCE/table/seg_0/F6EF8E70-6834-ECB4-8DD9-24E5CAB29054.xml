@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F6EF8E70-6834-ECB4-8DD9-24E5CAB29054" name="period">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>E6560609-E8D8-EA71-4D25-AAF3158C9480</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_period" id="90EBE0D9-0A98-F77D-458F-3CA9706CEB52">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>20D1403F-E1ED-261F-6F38-1C3E5586ACFB</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="period_name" id="3B4E75B6-BD24-6694-ED02-14A19C63D4FA">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>08807674-2159-3A38-C9BF-CD50BBA38E74</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="initial_date" id="480FCC96-751C-E0CA-B888-1A1794FE6674">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>6735B9EA-3CCC-6D99-1073-65303407E911</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="final_date" id="E7E98F26-91F5-65AE-3969-4A2CCB192175">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>AEF89145-A84F-728E-37E6-EB77C80CB626</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7AF0B1E3-E6C3-BB73-A30D-B7C9A59E10FA" name="period_PK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>4B07B1F1-C757-7D23-DB21-A28D16E515A8</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="90EBE0D9-0A98-F77D-458F-3CA9706CEB52"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

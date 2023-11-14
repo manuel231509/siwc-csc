@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B2D5CADD-EEFA-CBC5-9A5C-D994B4726096" name="ssession">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>C623BE5E-F873-D507-E5A4-62004BF11211</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_number_session" id="19009503-0583-7C3D-5865-352823F40FAB">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>C90CB39B-ADEB-2385-0072-2FD60DF79B90</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="user_name_session" id="DBF0CB35-67BB-C503-08A3-A1CA2326B5A3">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>29A65F86-00DC-8294-A3BC-09138A6A196C</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password_session" id="A773ABC5-1946-2EE7-6CE3-51322E33D0AC">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>68EECC48-4EAE-647A-B76F-597CBC3FBAFF</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="251523EC-CB6D-63BE-3E52-24EC60FF15F8" name="ssession_PK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>BBFDC8B4-8883-FAFB-59FE-4AD54A7E34A2</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="19009503-0583-7C3D-5865-352823F40FAB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FCFC9210-850E-A25D-C1DE-821D75B31482" name="user_name_session_UK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>D5888A3A-A0E6-C886-7456-37CD2D7DA38C</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DBF0CB35-67BB-C503-08A3-A1CA2326B5A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

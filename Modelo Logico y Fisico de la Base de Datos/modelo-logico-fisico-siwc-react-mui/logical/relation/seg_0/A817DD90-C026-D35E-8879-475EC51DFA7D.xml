@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="subject_deegre" directorySegmentName="seg_0" id="A817DD90-C026-D35E-8879-475EC51DFA7D">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 07:15:30 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="33686DD3-E43E-8E67-C1B5-83EA38CFA17C" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+</engineerTo>
+<sourcePk>D076CE88-BDBF-0BA5-A314-4F05E311C1F7</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>32817E23-AE6B-07DA-5BFE-EB564B8CAB8D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>CAE7E121-5F32-4FDB-E41A-72F9EB4FB57D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

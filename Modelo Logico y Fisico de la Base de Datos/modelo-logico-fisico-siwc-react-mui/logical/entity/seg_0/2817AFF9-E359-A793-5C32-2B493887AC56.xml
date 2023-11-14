@@ -1,0 +1,139 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2817AFF9-E359-A793-5C32-2B493887AC56" name="main_achievement">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 20:17:29 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="F6C76F05-8F85-4BB2-4C14-C88708CFDDFF" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_main_achievement" id="80CCA9C6-5C86-899C-BEA5-81B50690554B">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 21:40:53 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="F6C76F05-8F85-4BB2-4C14-C88708CFDDFF" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_period" id="2DD98639-285C-1EED-90C3-AB4E017E1267">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 20:23:34 UTC</createdTime>
+<generatorID>65A3CCF3-4E81-18F5-8AAB-77A2A5550849</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="F6C76F05-8F85-4BB2-4C14-C88708CFDDFF" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+</engineerTo>
+<referedAttribute>20D1403F-E1ED-261F-6F38-1C3E5586ACFB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_subject" id="4C991543-33AD-CA08-0332-9C498CC3C10F">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 20:24:50 UTC</createdTime>
+<generatorID>63ED0CE2-7428-A248-31ED-6F80780122FA</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="F6C76F05-8F85-4BB2-4C14-C88708CFDDFF" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+</engineerTo>
+<referedAttribute>CBF3F9B7-8F3B-F5ED-B035-FEA29065BB6A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="achievement_description" id="0020ABED-12F8-C4AE-4AE7-26FEF7505FAA">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 20:17:52 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="F6C76F05-8F85-4BB2-4C14-C88708CFDDFF" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="831AA523-7517-9E97-D6A3-2A7E4C93735F" name="main_ achievement PK">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 20:26:21 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="F6C76F05-8F85-4BB2-4C14-C88708CFDDFF" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>80CCA9C6-5C86-899C-BEA5-81B50690554B,2DD98639-285C-1EED-90C3-AB4E017E1267,4C991543-33AD-CA08-0332-9C498CC3C10F</newElementsIDs>
+<usedAttributes>
+<attributeRef>80CCA9C6-5C86-899C-BEA5-81B50690554B</attributeRef>
+<attributeRef>2DD98639-285C-1EED-90C3-AB4E017E1267</attributeRef>
+<attributeRef>4C991543-33AD-CA08-0332-9C498CC3C10F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

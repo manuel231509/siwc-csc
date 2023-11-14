@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="6A5EB2E4-F7EA-D05B-6D0B-AB211DD0BD25" mainViewID="B5286AFC-665A-787A-7DE8-5C8DB5C166A7">
+<createdBy>manue</createdBy>
+<createdTime>2022-04-05 21:45:01 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

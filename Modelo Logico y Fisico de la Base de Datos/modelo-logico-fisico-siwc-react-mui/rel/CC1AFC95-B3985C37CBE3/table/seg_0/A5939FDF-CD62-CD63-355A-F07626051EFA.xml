@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A5939FDF-CD62-CD63-355A-F07626051EFA" name="theme">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-13 18:46:52 UTC</createdTime>
+<generatorID>8EEF8953-865B-5229-0DC0-5AE28787C738</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_theme" id="054F0538-8BB4-81C6-FEEE-C1649F82D166">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-13 18:46:52 UTC</createdTime>
+<generatorID>DA647D85-BAC1-047F-7FED-6C3A25F9D45E</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="theme_name" id="D947B534-BE84-7BF7-2B94-B4CEE7FAC296">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-13 18:46:52 UTC</createdTime>
+<generatorID>363CFB6D-65B6-ACB3-B872-FE90F5CE4150</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="theme_note" id="4BF311E7-BFBE-1E7F-5A12-33F4E11E1C34">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-13 18:46:52 UTC</createdTime>
+<generatorID>552B9E0F-696E-919B-7B93-84584A39FAFF</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_period_plan" id="F92D01A3-2204-3159-ECC4-F4067996D1B8">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-13 18:46:52 UTC</createdTime>
+<generatorID>B7D3C82C-67A1-58B4-CA6C-A29BFF033C4C</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D4F66762-5D57-26D1-4B75-C5D8D71AFC76" referredColumn="EDDA69E2-5389-B60C-1866-F6F212967A56"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="83A51BAC-E055-C0C6-1466-96C48F79B267" name="theme_PK">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-13 18:46:52 UTC</createdTime>
+<generatorID>4BC2DB93-BE5D-212C-489D-9376027A8E55</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="054F0538-8BB4-81C6-FEEE-C1649F82D166"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="60A5A6B9-5EFD-FADF-F534-A9E0A2784255" name="period_plan_FK">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-13 18:46:52 UTC</createdTime>
+<generatorID>FB558BB1-8BB7-2576-F90D-B1368D1C7029</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F92D01A3-2204-3159-ECC4-F4067996D1B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

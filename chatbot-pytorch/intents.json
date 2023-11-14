@@ -1,0 +1,209 @@
+{
+  "intents": [
+    {
+      "tag": "Saludo",
+      "patterns": [
+        "Hola",
+        "Hey",
+        "¿Como estas?",
+        "¿Se encuentra alguien?",
+        "Buenas",
+        "Buenos dias",
+        "Buenas tardes",
+        "Buenas noches",
+        "Mi nombre es",
+        "Soy"
+      ],
+      "responses": [
+        "Hey :)",
+        "Hola, gracias por visitarnos",
+        "Hola, ¿que puedo hacer por usted?",
+        "Hola,  ¿como puedo ayudarte?",
+        "Hola, ¿en que te puedo colaborar?"
+      ]
+    },
+    {
+      "tag": "Despedida",
+      "patterns": ["Chao", "Hasta luego", "Adios", "Bye", "Nos vemos"],
+      "responses": [
+        "Hasta luego, gracias por visitarnos",
+        "Que tengas un lindo dia",
+        "¡Adios!, vuelve pronto",
+        "Un gusto atenderte"
+      ]
+    },
+    {
+      "tag": "Agradecimiento",
+      "patterns": [
+        "Gracias",
+        "Te agradezco por la ayuda",
+        "Te agradezco",
+        "Muchas gracias",
+        "Gracias por la ayuda",
+        "Gracias por el aporte",
+        "Me sirvio mucho",
+        "Eres util"
+      ],
+      "responses": [
+        "Feliz de ayudarte",
+        "Un placer ayudarte",
+        "De nada, estoy para servirle",
+        "De nada :)"
+      ]
+    },
+    {
+      "tag": "Horario",
+      "patterns": [
+        "¿A que horas son las clases?",
+        "Hora de entrada",
+        "Hora de salida",
+        "Horario de ingreso",
+        "Horario de salida",
+        "Dias de clases",
+        "diaa de clase",
+        "Horario entrada"
+      ],
+      "responses": [
+        "Las clases son de lunes a viernes desde las 06:30am hasta las 12:30pm. Sabados, domingos y festivos no hay."
+      ]
+    },
+    {
+      "tag": "Tareas",
+      "patterns": [
+        "Tengo duda sobre la tarea de",
+        "la tarea de    se debe realizar en el cuaderno",
+        "cuando es la entrega de la tarea",
+        "Tarea",
+        "Taller",
+        "Trabajo",
+        "Actividad"
+      ],
+      "responses": [
+        "La tarea se debe entregar en el plazo establecido por el docente en la plataforma",
+        "Por favor sigue las indicaciones dadas por el docente en clase y establecidas en la plataforma",
+        "Las indicaciones de la tarea y su fecha estimada se encuenta establecida en la plataforma",
+        "Si desea contactar a su docente lo puede realizar por medio del correo institucional, por favor escribe: contacto docente"
+      ]
+    },
+    {
+      "tag": "contacto docente",
+      "patterns": [
+        "contacto docente",
+        "docente",
+        "Numero docente",
+        "correo docente",
+        "numero profesor",
+        "correo profesor",
+        "contactar profesor",
+        "contactar docente",
+        "puedo hablar con el profesor"
+      ],
+      "responses": [
+        "Solamente te puedes contactar con el docente por medio del correo institucional, a continuacion los correos de los docentes: sebastian.colsace@gmail.com, jbadillo.colsace@gmail.com, jarena.colsace@gmail.com, nelly.colsace@gmail.com"
+      ]
+    },
+    {
+      "tag": "Mensualidad",
+      "patterns": [
+        "Pagar mensualidad",
+        "datos mensualidad",
+        "numero de pago mensualidad",
+        "contacto para pagar",
+        "pension",
+        "mensualidad",
+        "costo mensualidad"
+      ],
+      "responses": [
+        "El pago de la mensualidad se debe realizar personalmente con la rectora de la institucion o a traves de plataformas virtuales, como Nequi: 3164942098"
+      ]
+    },
+    {
+      "tag": "Excusas",
+      "patterns": [
+        "excusas",
+        "excusa",
+        "permiso",
+        "permiso academico",
+        "formato excusa",
+        "formato permiso"
+      ],
+      "responses": [
+        "El formato excusa o de permiso se encuentra en la pagina web informativa del Colegio Santa Cecilia: colsaceweb.wixsite.com/colsaceweb, en la seccion de documentos"
+      ]
+    },
+    {
+      "tag": "Pacto de convivencia escolar",
+      "patterns": [
+        "manual de convivencia",
+        "pacto de convivencia",
+        "convivencia escolar",
+        "pacto de convivencia escolar",
+        "manual de convivencia escolar",
+        "situaciones de convivencia"
+      ],
+      "responses": [
+        "El pacto de convivencia escolar se encuentra en la pagina web informativa del Colegio Santa Cecilia: colsaceweb.wixsite.com/colsaceweb, en la seccion de documentos"
+      ]
+    },
+
+    {
+      "tag": "Pagina web",
+      "patterns": [
+        "pagina web",
+        "web",
+        "pagina informativa",
+        "pagina del colegio",
+        "pagina web del colegio",
+        "web del colegio"
+      ],
+      "responses": [
+        "La pagina web informativa del Colegio Santa Cecilia es: colsaceweb.wixsite.com/colsaceweb"
+      ]
+    },
+    {
+      "tag": "Contacto colegio",
+      "patterns": [
+        "contacto colegio",
+        "telefono colegio",
+        "datos contacto",
+        "datos contacto colegio",
+        "celular colegio",
+        "correo colegio",
+        "correo institucion",
+        "correo institucional",
+        "correo del colegio"
+      ],
+      "responses": [
+        "Los siguientes son los datos de contacto del Colegio Santa Cecilia = Telefono: (607) 594 4004 | Celular: (+57) 316 4942098 | Email: colsace.santacecilia@gmail.com"
+      ]
+    },
+    {
+      "tag": "Direccion colegio",
+      "patterns": [
+        "direccion colegio",
+        "direccion",
+        "direccion institucion",
+        "direccion institucional",
+        "direccion del colegio"
+      ],
+      "responses": [
+        "La direccion del Colegio Santa Cecilia es Calle 17 #14A-45 Barrio Circunvalacion de la ciudad de Cucuta, Colombia"
+      ]
+    },
+    {
+      "tag": "Redes sociales",
+      "patterns": [
+        "facebook",
+        "instagram",
+        "youtube",
+        "redes sociales",
+        "redes sociales colegio",
+        "redes sociales institucionales",
+        "redes colegio"
+      ],
+      "responses": [
+        "Las redes sociales del Colegio Santa Cecilia son = Facebook: Colegio Santa Cecilia (Facebook.com/colsaceweb) | Instagram: Colegio Santa Cecilia (Instagram.com/colsaceweb) | Youtube: Colegio Santa Cecilia (Youtube.com/@ColegioSantaCecilia/videos)"
+      ]
+    }
+  ]
+}

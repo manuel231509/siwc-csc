@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C734C016-D7E4-B6EE-E0CE-4995DE1295FD" name="period_plan">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-02 18:38:14 UTC</createdTime>
+<generatorID>C9F60C01-6B6E-ED64-C449-CE29A69114B5</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_period_plan" id="BC606C75-4A5E-9EE1-9194-56781710D05B">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-02 18:38:14 UTC</createdTime>
+<generatorID>0D622143-3BE7-3763-5F04-B263C68A2991</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_period" id="52603FBD-7CB6-5B81-F80E-71829D8A9604">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-02 18:38:14 UTC</createdTime>
+<generatorID>32313F85-4C9D-15FB-9C95-AB51678611A1</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="60B54682-A584-7B08-6C1B-81DEDDDC9BE6" referredColumn="16781D73-3C57-9FF9-F4A6-865045974D8E"/>
+</associations>
+</Column>
+<Column name="name_plan" id="3CB87D37-B7D5-11C4-850F-03024C07DE1E">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-02 18:38:14 UTC</createdTime>
+<generatorID>93B6E7C3-C12B-F3F1-42F8-2B0B8BF6E5B4</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C32FB026-8BCD-295A-E1FC-8470EC7A7355" name="period_plan_PK">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-02 18:38:14 UTC</createdTime>
+<generatorID>35189D5C-FDB0-B575-AC50-4DE8F23C111C</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC606C75-4A5E-9EE1-9194-56781710D05B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="796DE33B-E286-DA00-879B-AE660EF4609C" name="id_period_plan_UK">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-02 18:38:14 UTC</createdTime>
+<generatorID>0E6A94CA-D5E0-F979-1F86-4D73498D5010</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="52603FBD-7CB6-5B81-F80E-71829D8A9604"/>
+<colUsage columnID="3CB87D37-B7D5-11C4-850F-03024C07DE1E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E35D308A-C059-C73A-8BCB-E73BB3515A68" name="period_FK">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-02 18:38:14 UTC</createdTime>
+<generatorID>42B43238-768B-B128-895C-8C4C78B21338</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="52603FBD-7CB6-5B81-F80E-71829D8A9604"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

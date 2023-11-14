@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="02FC7B6D-C45A-0A2C-CC4E-33ACBEEBEECE" name="degree">
+<createdBy>manue</createdBy>
+<createdTime>2022-09-14 03:50:41 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_degree" id="30A2FF27-268B-0F9E-97CC-FA872C23276F">
+<createdBy>manue</createdBy>
+<createdTime>2022-09-14 03:50:58 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name_degree" id="F416F145-511C-5B20-18D3-E9889542A238">
+<createdBy>manue</createdBy>
+<createdTime>2022-09-14 03:51:18 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B81186D1-AC99-75A0-3E54-55E98FA4B9AD" name="degree PK">
+<createdBy>manue</createdBy>
+<createdTime>2022-09-14 03:51:10 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>30A2FF27-268B-0F9E-97CC-FA872C23276F</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="8A65786D-8045-DD50-20F4-F5221EDEE430" name="NameDegree UK">
+<createdBy>manue</createdBy>
+<createdTime>2022-09-14 03:53:22 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+<item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+</engineerTo>
+<newElementsIDs>F416F145-511C-5B20-18D3-E9889542A238</newElementsIDs>
+<usedAttributes>
+<attributeRef>F416F145-511C-5B20-18D3-E9889542A238</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

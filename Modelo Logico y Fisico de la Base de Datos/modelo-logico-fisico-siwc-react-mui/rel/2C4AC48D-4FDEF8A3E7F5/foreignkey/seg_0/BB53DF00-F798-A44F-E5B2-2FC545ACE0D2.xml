@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="BB53DF00-F798-A44F-E5B2-2FC545ACE0D2" containerWithKeyObject="8F19238A-5C1E-ED7E-B0B3-C99CCB30A897" localFKIndex="E43896CA-1009-B1D3-4DCB-94BB264C720C" name="raiting_degree_subject_FK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:48:14 UTC</createdTime>
+<generatorID>92EEFA09-5209-511B-D720-24191A3806E5</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<referredTableLongName>degree_subject</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>209A2BCB-F370-AC2A-67D7-C7E21F9DFF7B</referredTableID>
+<keyObject>61B08C8B-BE9C-CFE7-3366-8CE984D3CE23</keyObject>
+<referredKeyID>61B08C8B-BE9C-CFE7-3366-8CE984D3CE23</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_deg_subj</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

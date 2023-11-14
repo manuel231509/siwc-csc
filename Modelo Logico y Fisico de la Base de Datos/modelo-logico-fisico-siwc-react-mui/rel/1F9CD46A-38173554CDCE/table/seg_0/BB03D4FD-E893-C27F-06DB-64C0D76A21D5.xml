@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BB03D4FD-E893-C27F-06DB-64C0D76A21D5" name="period_plan">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>C9F60C01-6B6E-ED64-C449-CE29A69114B5</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_period_plan" id="0285BE22-B296-BC68-CB07-BF16C6FF64DE">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>0D622143-3BE7-3763-5F04-B263C68A2991</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_period" id="15BF0EA5-5CD9-FD2A-7037-691CB386649D">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>32313F85-4C9D-15FB-9C95-AB51678611A1</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0A5AD615-EF9F-7FA3-0C2D-254176294388" referredColumn="90EBE0D9-0A98-F77D-458F-3CA9706CEB52"/>
+</associations>
+</Column>
+<Column name="plan_name" id="AEF277C9-8398-075E-74E1-5538210F5912">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>D5022CF8-8F05-B685-3F59-069289D78B8C</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_subject" id="707E968E-7989-74FF-412B-4D383244692D">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>5733A2D9-5159-CCF5-0D9E-3B8CB6ED68AF</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="99EFADB7-9038-90C9-CAC7-2FECF2203DE5" referredColumn="165AB8ED-64FC-A73F-D20A-ECEB063982A2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E16F8D2B-E03E-7A21-1127-328DB8C0046B" name="period_plan_PK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>35189D5C-FDB0-B575-AC50-4DE8F23C111C</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0285BE22-B296-BC68-CB07-BF16C6FF64DE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E4BE0609-C258-B06A-4E34-FD7D77F09547" name="id_period_plan_name_UN">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>0E6A94CA-D5E0-F979-1F86-4D73498D5010</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15BF0EA5-5CD9-FD2A-7037-691CB386649D"/>
+<colUsage columnID="AEF277C9-8398-075E-74E1-5538210F5912"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9FB7B0C3-E873-238B-5523-3A2E5CFDA482" name="period_period_plan_FK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>42B43238-768B-B128-895C-8C4C78B21338</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15BF0EA5-5CD9-FD2A-7037-691CB386649D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F2D0116B-1622-349B-ABEF-699D43038C35" name="subject_period_plan_FK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>795C1A8B-B0C2-CB37-CF4D-F63C3E69A21B</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="707E968E-7989-74FF-412B-4D383244692D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

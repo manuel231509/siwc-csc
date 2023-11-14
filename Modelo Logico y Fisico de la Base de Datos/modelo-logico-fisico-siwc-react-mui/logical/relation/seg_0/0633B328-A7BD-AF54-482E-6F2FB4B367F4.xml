@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="teacher_subject" directorySegmentName="seg_0" id="0633B328-A7BD-AF54-482E-6F2FB4B367F4">
+<createdBy>manue</createdBy>
+<createdTime>2022-09-19 21:49:32 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="01586CD1-27F2-9ECC-EEC4-C71953EBBB1C" value="true"/>
+</engineerTo>
+<sourcePk>DB28E5BA-2020-CDF9-DF44-6B1BBB3D67B6</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C77D05E3-E6EE-C2F1-4768-6179E75FD4DE</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>32817E23-AE6B-07DA-5BFE-EB564B8CAB8D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

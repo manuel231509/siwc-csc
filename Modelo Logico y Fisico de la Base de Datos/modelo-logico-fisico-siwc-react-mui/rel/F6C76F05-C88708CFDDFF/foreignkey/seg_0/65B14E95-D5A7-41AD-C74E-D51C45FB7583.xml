@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="65B14E95-D5A7-41AD-C74E-D51C45FB7583" containerWithKeyObject="66747D78-66B5-71AA-3337-128338551F56" localFKIndex="CC5E9857-B933-0295-0246-AF0E54C2C431" name="degree_subject_subject_FK">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 21:09:53 UTC</createdTime>
+<generatorID>A817DD90-C026-D35E-8879-475EC51DFA7D</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<referredTableLongName>subject</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DBCC1E8C-C48F-DEA9-E1F3-7936D2DC62EE</referredTableID>
+<keyObject>6C106C22-A698-9DE0-AACD-E1F0C6675170</keyObject>
+<referredKeyID>6C106C22-A698-9DE0-AACD-E1F0C6675170</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_subject</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

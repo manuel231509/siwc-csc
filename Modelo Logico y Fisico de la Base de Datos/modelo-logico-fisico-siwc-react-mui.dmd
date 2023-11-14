@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modelo-logico-fisico-siwc-react-mui" id="95529134-8739-D2DB-B062-5C30879FD4D1" version="3.5">
+<createdBy>manue</createdBy>
+<createdTime>2022-04-05 21:45:01 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>95529134-8739-D2DB-B062-5C30879FD4D1</designId>
+</OSDM_Design>

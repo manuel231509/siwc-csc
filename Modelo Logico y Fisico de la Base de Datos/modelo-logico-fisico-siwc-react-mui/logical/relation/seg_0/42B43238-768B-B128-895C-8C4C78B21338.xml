@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="period_plan" directorySegmentName="seg_0" id="42B43238-768B-B128-895C-8C4C78B21338">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-02 17:23:37 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<engineerTo>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
+</engineerTo>
+<sourcePk>4B07B1F1-C757-7D23-DB21-A28D16E515A8</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E6560609-E8D8-EA71-4D25-AAF3158C9480</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C9F60C01-6B6E-ED64-C449-CE29A69114B5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5559AFCE-29FE-55AA-5478-5D2EAAA97E56" containerWithKeyObject="E44E74DA-8846-E7C5-BBCC-B329EAF84FFD" localFKIndex="89D409D5-1E10-F788-6BDB-732FE40DF69D" name="raiting_deegre_subject_FK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 08:04:04 UTC</createdTime>
+<generatorID>01ED285A-C2CA-8B1D-1984-EE6BDAD32E67</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<referredTableLongName>deegre_subject</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BAC223D7-6901-B5E8-655F-1C3F1BF4C39F</referredTableID>
+<keyObject>64AD652A-58EF-4720-21D4-05C20E545108</keyObject>
+<referredKeyID>64AD652A-58EF-4720-21D4-05C20E545108</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_deeg_subj</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

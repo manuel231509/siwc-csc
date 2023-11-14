@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CDA0D2C6-0C0A-AEE2-6BD4-8D746F713B7B" containerWithKeyObject="57D65545-9FD4-AA1B-CEB4-8EA9E039D52E" localFKIndex="E6C3DC9D-0D75-7355-1EA2-1C7F598FCD5E" name="period_plan_degree_subject_FK">
+<createdBy>steffanny</createdBy>
+<createdTime>2023-05-14 20:13:11 UTC</createdTime>
+<generatorID>BAB1A340-F31C-A1B7-1580-53E8AAF9C779</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<referredTableLongName>degree_subject</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>052F328E-EBB1-C488-954C-1A0D3E88E724</referredTableID>
+<keyObject>CCE51525-CB40-C0A9-448F-FD1859D7786E</keyObject>
+<referredKeyID>CCE51525-CB40-C0A9-448F-FD1859D7786E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_deg_subj</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

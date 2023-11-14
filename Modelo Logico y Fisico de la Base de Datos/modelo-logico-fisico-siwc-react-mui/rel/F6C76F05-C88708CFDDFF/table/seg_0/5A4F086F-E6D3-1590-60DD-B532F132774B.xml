@@ -1,0 +1,130 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5A4F086F-E6D3-1590-60DD-B532F132774B" name="achievement_hinder">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 21:09:53 UTC</createdTime>
+<generatorID>EF5F9A70-ED43-E137-D390-F9D550E563F0</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_ach_hinder" id="7DD84F7F-F348-FAEA-E3B7-4F98BD7C1865">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 21:09:53 UTC</createdTime>
+<generatorID>C50719C0-A1AF-0EDD-7F5C-A991C3A6CC57</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description_hinder" id="AED4917B-88BC-B312-6FB7-2F19DCB19CC4">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 21:09:53 UTC</createdTime>
+<generatorID>D3474442-7B96-9ADB-F77D-FEFFCA37D3E2</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="initial_note" id="62FB52A5-01A8-0C58-8419-0173F720BE60">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 21:09:53 UTC</createdTime>
+<generatorID>9CD85AE8-16F2-E249-F95E-A08DEAD477E3</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="final_note" id="E83DD2B9-33D2-CAC5-8DD5-79D85AA517E2">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 21:09:53 UTC</createdTime>
+<generatorID>C18864AB-FC0B-A257-03B1-0C9B1460754D</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_main_achievement" id="7C6DD55D-CC9F-167B-2B8F-1DC07D3FDC08">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 21:39:36 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A985DF46-4B72-FB81-912C-4A73D453F830" referredColumn="5CE06D6B-4E29-297F-DD08-50E3A401730B"/>
+</associations>
+</Column>
+<Column name="id_period" id="6623DAA6-7FD0-09A7-C1C6-0712ED5F7653">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 21:09:53 UTC</createdTime>
+<generatorID>CC44FA0E-B675-160D-31C8-0410E6B842ED</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A985DF46-4B72-FB81-912C-4A73D453F830" referredColumn="70BA420E-CD70-E42D-55AE-384259D94ED6"/>
+</associations>
+</Column>
+<Column name="id_subject" id="55D0923D-A8CD-D3EF-C7ED-98D6A6D3EB62">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 21:09:53 UTC</createdTime>
+<generatorID>920220B4-4634-CE87-4A49-3486A8BF08E6</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A985DF46-4B72-FB81-912C-4A73D453F830" referredColumn="F46899E4-C86D-80F4-EFE3-C98A7AAB8697"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4E078DBA-DC5A-E3A3-EA15-DB2AC5C90C55" name="achievement_hinder_PK">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 21:09:53 UTC</createdTime>
+<generatorID>905C81C5-0DC2-BAB4-DBD6-13FBA82AE787</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7DD84F7F-F348-FAEA-E3B7-4F98BD7C1865"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F4416F7A-07B6-052A-2BE4-D3D74A78611F" name="hinder_main_achievement_FK">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 21:09:53 UTC</createdTime>
+<generatorID>57618D19-4A2C-7156-75D9-734980E0C25D</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6623DAA6-7FD0-09A7-C1C6-0712ED5F7653"/>
+<colUsage columnID="55D0923D-A8CD-D3EF-C7ED-98D6A6D3EB62"/>
+<colUsage columnID="7C6DD55D-CC9F-167B-2B8F-1DC07D3FDC08"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="05B36848-F9FE-C70C-92AF-04A0F0219313" name="degree_subject">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_degree" id="0A603152-426D-6650-7851-ADAB87D3CF52">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="92F4633C-20C7-D292-0B7E-AEF04621F0C6" referredColumn="AC34D4F8-E7D1-0B59-D7F6-484BF0B2A473"/>
+</associations>
+</Column>
+<Column name="id_subject" id="D235EFCA-B852-2550-36F9-240CF6E6726D">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A27823C7-286C-1CB3-A31A-0EC4FAC1945E" referredColumn="165AB8ED-64FC-A73F-D20A-ECEB063982A2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9A1671A4-D416-FA38-E189-E2B3595CA15B" name="degree_subject_PK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0A603152-426D-6650-7851-ADAB87D3CF52"/>
+<colUsage columnID="D235EFCA-B852-2550-36F9-240CF6E6726D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DD7C3C68-6EDD-A0C6-E065-8ECE74ADB95A" name="degree_subject_FK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>367D2764-1713-70D2-7E3A-C880AAA98E1F</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0A603152-426D-6650-7851-ADAB87D3CF52"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7550432D-FF69-CDB2-DA91-0CB17B32192F" name="subject_degree_FK">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-08 05:22:33 UTC</createdTime>
+<generatorID>367D2764-1713-70D2-7E3A-C880AAA98E1F</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D235EFCA-B852-2550-36F9-240CF6E6726D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

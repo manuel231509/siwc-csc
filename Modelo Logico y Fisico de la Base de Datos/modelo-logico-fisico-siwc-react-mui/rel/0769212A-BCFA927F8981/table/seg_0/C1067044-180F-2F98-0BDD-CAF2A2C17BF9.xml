@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C1067044-180F-2F98-0BDD-CAF2A2C17BF9" name="degree_subject">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 17:29:40 UTC</createdTime>
+<generatorID>CAE7E121-5F32-4FDB-E41A-72F9EB4FB57D</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_deg_subj" id="2E96A34C-D071-BA6D-4DE8-7A9709E3C69E">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 17:29:40 UTC</createdTime>
+<generatorID>2B9AD338-BDD1-1B87-F1E9-5502B71EE858</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_degree" id="73864EC7-FA40-C33E-2F8E-A2FA095ABA19">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 17:29:40 UTC</createdTime>
+<generatorID>7B4D1FD3-8BA0-2DAA-8325-E7F16C26B4C6</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D3E09797-F761-1B4B-561B-7A254C8F6713" referredColumn="65A0C6FA-2838-104E-4C6D-3FC5D38A26CB"/>
+</associations>
+</Column>
+<Column name="id_subject" id="91E855AA-3E4F-E11F-7151-4CBC510AA6CC">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 17:29:40 UTC</createdTime>
+<generatorID>A49040F1-065C-CB46-FF26-3D7682B7BFF4</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="70E145C2-EDC9-3B59-2250-23FAB4767507" referredColumn="2594B7B5-F6F5-01F5-402F-CD0B9F54E61B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7158EF2A-637C-7D9B-983E-BBC5EA2CBBC7" name="degree_subject_PK">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 17:29:40 UTC</createdTime>
+<generatorID>B338056F-8BEE-439E-BA3F-9CF6E02BC235</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E96A34C-D071-BA6D-4DE8-7A9709E3C69E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BE738309-BF20-4231-D59A-AE7B7BCFE7EF" name="id_degree_id_subject_UN">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 17:29:40 UTC</createdTime>
+<generatorID>7ECFDF31-3D55-34EC-CDBE-C0759A7425DC</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="73864EC7-FA40-C33E-2F8E-A2FA095ABA19"/>
+<colUsage columnID="91E855AA-3E4F-E11F-7151-4CBC510AA6CC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E60CE62A-5C04-ABE5-B3E3-FF92ADCF52B6" name="degree_subject_degree_FK">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 17:29:40 UTC</createdTime>
+<generatorID>5B71EA53-E4EB-DCC5-F65A-1A6EF5296291</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="73864EC7-FA40-C33E-2F8E-A2FA095ABA19"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6030829C-FE98-713A-A333-D875F273B0F1" name="degree_subject_subject_FK">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-06 17:29:40 UTC</createdTime>
+<generatorID>A817DD90-C026-D35E-8879-475EC51DFA7D</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="91E855AA-3E4F-E11F-7151-4CBC510AA6CC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_6" id="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" mainViewID="513037DB-445E-7157-3C95-5EEF7589741D">
+<createdBy>manue</createdBy>
+<createdTime>2022-11-17 20:47:56 UTC</createdTime>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+<selectedRDBMSSite>32076570-2523-435C-2E92-BF29817DFF70</selectedRDBMSSite>
+</relationalModel>

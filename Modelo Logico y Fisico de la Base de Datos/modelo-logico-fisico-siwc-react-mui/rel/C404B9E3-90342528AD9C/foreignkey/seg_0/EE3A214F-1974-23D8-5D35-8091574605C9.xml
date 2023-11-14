@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EE3A214F-1974-23D8-5D35-8091574605C9" containerWithKeyObject="7D913A9E-D8C6-0982-8BA8-FA02BA00ECDF" localFKIndex="A4D7E076-C3C9-3453-E090-015D524759B4" name="student_FK">
+<createdBy>manue</createdBy>
+<createdTime>2022-10-02 18:38:14 UTC</createdTime>
+<generatorID>5415F506-EF96-3550-7384-1B31BAE0C042</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<referredTableLongName>student</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E7ED1711-AE17-EC47-9959-DECE96383490</referredTableID>
+<keyObject>93130E73-8350-1C6E-292F-19013D590639</keyObject>
+<referredKeyID>93130E73-8350-1C6E-292F-19013D590639</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_number_student</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
