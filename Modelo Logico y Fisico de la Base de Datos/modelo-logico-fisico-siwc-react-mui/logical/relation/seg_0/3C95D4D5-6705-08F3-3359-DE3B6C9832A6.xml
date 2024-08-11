@@ -1,24 +1,26 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="period_main_achievement" directorySegmentName="seg_0" id="65A3CCF3-4E81-18F5-8AAB-77A2A5550849">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="deg_sub_main_achiev" directorySegmentName="seg_0" id="3C95D4D5-6705-08F3-3359-DE3B6C9832A6">
 <createdBy>ASUS</createdBy>
-<createdTime>2023-11-06 20:23:34 UTC</createdTime>
+<createdTime>2023-11-14 03:25:51 UTC</createdTime>
 <ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
 <engineerTo>
-<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
-<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
-<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
-<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
-<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
-<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
 <item key="E86D3B88-5E8A-974E-E906-8D52E41869F8" value="true"/>
+<item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
+<item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
+<item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="E233A09C-0766-4D61-39C1-1D09E253CAC4" value="true"/>
+<item key="F6C76F05-8F85-4BB2-4C14-C88708CFDDFF" value="true"/>
+<item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
 <item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>
+<item key="E1AC540C-0F51-C77C-0B74-62A5A8776AE3" value="true"/>
+<item key="C404B9E3-A396-E61B-8F1F-90342528AD9C" value="true"/>
 </engineerTo>
-<sourcePk>4B07B1F1-C757-7D23-DB21-A28D16E515A8</sourcePk>
+<sourcePk>B338056F-8BEE-439E-BA3F-9CF6E02BC235</sourcePk>
 <identifying>false</identifying>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
-<sourceEntity>E6560609-E8D8-EA71-4D25-AAF3158C9480</sourceEntity>
+<sourceEntity>CAE7E121-5F32-4FDB-E41A-72F9EB4FB57D</sourceEntity>
 <targetCardinalityString>*</targetCardinalityString>
 <targetEntity>2817AFF9-E359-A793-5C32-2B493887AC56</targetEntity>
 <transferable>true</transferable>

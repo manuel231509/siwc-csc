@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3DF46247-1686-CED6-AB95-DE8ADEF36DB6" containerWithKeyObject="0DF366C6-C08D-13A3-2C30-DA5E6087D6EA" localFKIndex="4865A03D-6AB7-916D-60E0-C8A6FB7EDEC3" name="rols_FK">
+<createdBy>ASUS</createdBy>
+<createdTime>2023-11-14 03:37:31 UTC</createdTime>
+<generatorID>749F9EF0-9DF9-502E-E0AC-DFA009161226</generatorID>
+<ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
+<referredTableLongName>rols</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>2D88AECF-6FF8-3D6E-30D9-73AE4997B69B</referredTableID>
+<keyObject>5EE4FDEF-AFF7-DAD6-F53E-B87C447D1100</keyObject>
+<referredKeyID>5EE4FDEF-AFF7-DAD6-F53E-B87C447D1100</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_rol</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

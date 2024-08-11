@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="main_achievement_hinder" directorySegmentName="seg_0" id="57618D19-4A2C-7156-75D9-734980E0C25D">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="main_achievement_difficulties" directorySegmentName="seg_0" id="57618D19-4A2C-7156-75D9-734980E0C25D">
 <createdBy>ASUS</createdBy>
 <createdTime>2023-11-06 21:05:53 UTC</createdTime>
 <ownerDesignName>modelo-logico-fisico-siwc-react-mui</ownerDesignName>
@@ -8,6 +8,7 @@
 <item key="CC1AFC95-93B3-A1C0-A73F-B3985C37CBE3" value="true"/>
 <item key="0769212A-DD69-3043-D123-BCFA927F8981" value="true"/>
 <item key="2C4AC48D-B8A3-941E-B095-4FDEF8A3E7F5" value="true"/>
+<item key="E233A09C-0766-4D61-39C1-1D09E253CAC4" value="true"/>
 <item key="F6C76F05-8F85-4BB2-4C14-C88708CFDDFF" value="true"/>
 <item key="E9D5EB89-3505-873A-98A0-BBAFCC080DF7" value="true"/>
 <item key="1F9CD46A-F7D2-30AD-B5F8-38173554CDCE" value="true"/>

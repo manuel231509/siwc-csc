@@ -399,6 +399,14 @@
 			<naming_option class_name="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" max_name_length="30" case_type="2" valid_characters="" all_valid="true" />
 			<naming_option class_name="oracle.dbtools.crest.model.design.relational.Index" max_name_length="30" case_type="2" valid_characters="null" all_valid="true" />
 		</model_options>
+		<model_options objectid="E233A09C-0766-4D61-39C1-1D09E253CAC4">
+			<naming_option class_name="oracle.dbtools.crest.model.design.relational.Table" max_name_length="30" case_type="2" valid_characters="" all_valid="true" />
+			<naming_option class_name="oracle.dbtools.crest.model.design.relational.Column" max_name_length="30" case_type="2" valid_characters="" all_valid="true" />
+			<naming_option class_name="oracle.dbtools.crest.model.design.relational.TableView" max_name_length="30" case_type="2" valid_characters="" all_valid="true" />
+			<naming_option class_name="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint" max_name_length="30" case_type="2" valid_characters="" all_valid="true" />
+			<naming_option class_name="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" max_name_length="30" case_type="2" valid_characters="" all_valid="true" />
+			<naming_option class_name="oracle.dbtools.crest.model.design.relational.Index" max_name_length="30" case_type="2" valid_characters="" all_valid="true" />
+		</model_options>
 		<model_options objectid="C404B9E3-A396-E61B-8F1F-90342528AD9C">
 			<naming_option class_name="oracle.dbtools.crest.model.design.relational.Table" max_name_length="30" case_type="2" valid_characters="null" all_valid="true" />
 			<naming_option class_name="oracle.dbtools.crest.model.design.relational.Column" max_name_length="30" case_type="2" valid_characters="null" all_valid="true" />
@@ -496,7 +504,7 @@
 				<arcs value="70"/>
 			</relational_model_0_estimates>
 			<relational_model_1_estimates>
-				<relational_model_name value="Relational_2"/>
+				<relational_model_name value="Relational_10"/>
 				<tables value="70"/>
 				<views value="70"/>
 				<foreign_keys value="70"/>
@@ -505,7 +513,7 @@
 				<arcs value="70"/>
 			</relational_model_1_estimates>
 			<relational_model_2_estimates>
-				<relational_model_name value="Relational_3"/>
+				<relational_model_name value="Relational_2"/>
 				<tables value="70"/>
 				<views value="70"/>
 				<foreign_keys value="70"/>
@@ -514,7 +522,7 @@
 				<arcs value="70"/>
 			</relational_model_2_estimates>
 			<relational_model_3_estimates>
-				<relational_model_name value="Relational_4"/>
+				<relational_model_name value="Relational_3"/>
 				<tables value="70"/>
 				<views value="70"/>
 				<foreign_keys value="70"/>
@@ -523,7 +531,7 @@
 				<arcs value="70"/>
 			</relational_model_3_estimates>
 			<relational_model_4_estimates>
-				<relational_model_name value="Relational_5"/>
+				<relational_model_name value="Relational_4"/>
 				<tables value="70"/>
 				<views value="70"/>
 				<foreign_keys value="70"/>
@@ -532,7 +540,7 @@
 				<arcs value="70"/>
 			</relational_model_4_estimates>
 			<relational_model_5_estimates>
-				<relational_model_name value="Relational_6"/>
+				<relational_model_name value="Relational_5"/>
 				<tables value="70"/>
 				<views value="70"/>
 				<foreign_keys value="70"/>
@@ -541,7 +549,7 @@
 				<arcs value="70"/>
 			</relational_model_5_estimates>
 			<relational_model_6_estimates>
-				<relational_model_name value="Relational_7"/>
+				<relational_model_name value="Relational_6"/>
 				<tables value="70"/>
 				<views value="70"/>
 				<foreign_keys value="70"/>
@@ -550,7 +558,7 @@
 				<arcs value="70"/>
 			</relational_model_6_estimates>
 			<relational_model_7_estimates>
-				<relational_model_name value="Relational_8"/>
+				<relational_model_name value="Relational_7"/>
 				<tables value="70"/>
 				<views value="70"/>
 				<foreign_keys value="70"/>
@@ -559,7 +567,7 @@
 				<arcs value="70"/>
 			</relational_model_7_estimates>
 			<relational_model_8_estimates>
-				<relational_model_name value="Relational_9"/>
+				<relational_model_name value="Relational_8"/>
 				<tables value="70"/>
 				<views value="70"/>
 				<foreign_keys value="70"/>
@@ -567,6 +575,15 @@
 				<subviews value="70"/>
 				<arcs value="70"/>
 			</relational_model_8_estimates>
+			<relational_model_9_estimates>
+				<relational_model_name value="Relational_9"/>
+				<tables value="70"/>
+				<views value="70"/>
+				<foreign_keys value="70"/>
+				<schemas value="70"/>
+				<subviews value="70"/>
+				<arcs value="70"/>
+			</relational_model_9_estimates>
 		</relational_model_estimates>
 	</design_estimates>
 </settings>
