@@ -9,8 +9,11 @@ import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import javax.persistence.*;
+import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 /**
  *
@@ -40,6 +43,7 @@ public class DegreeEntity implements Serializable {
     @OneToMany(mappedBy = "degreeEntity",
             cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @Fetch(value = FetchMode.SUBSELECT)
+    @BatchSize(size = 10)
     private List<DegreeSubjectEntity> degreeSubjectEntitys
             = new LinkedList<>();
 

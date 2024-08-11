@@ -4,6 +4,7 @@ import com.colegiosantacecilia.siwcspringjava.entities.degreeSubject.DegreeSubje
 import com.colegiosantacecilia.siwcspringjava.entities.period.PeriodEntity;
 import com.colegiosantacecilia.siwcspringjava.entities.task.TaskEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
@@ -41,7 +42,6 @@ public class PeriodPlanEntity implements Serializable {
     @Column(name = "id_period", nullable = false, length = 200)
     private String idPeriod;
 
-    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL,
             fetch = FetchType.LAZY,
             optional = false)
@@ -55,9 +55,8 @@ public class PeriodPlanEntity implements Serializable {
     @Column(name = "id_deg_subj", nullable = false, length = 255)
     private String idDegSubj;
 
-    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
+            fetch = FetchType.EAGER,
             optional = false)
     @MapsId("idDegSubj")
     @JoinColumn(name = "id_deg_subj",

@@ -20,6 +20,7 @@ import com.colegiosantacecilia.siwcspringjava.services.period.PeriodService;
 import com.colegiosantacecilia.siwcspringjava.services.raiting.RaitingService;
 import com.colegiosantacecilia.siwcspringjava.services.rol.RolService;
 import com.colegiosantacecilia.siwcspringjava.services.session.SessionService;
+import io.jsonwebtoken.ExpiredJwtException;
 import java.util.List;
 import java.util.Optional;
 import javax.validation.Valid;
@@ -84,10 +85,15 @@ public class AuthController {
             if (request.getJwt().equals("")) {
                 jwt = jwtUtil.generateToken(authentication);
             } else {
-                if (!jwtUtil.validateToken(request.getJwt(), userDetails)) {
-                    jwt = jwtUtil.generateToken(authentication);
-                } else {
-                    jwt = request.getJwt();
+                try {
+                    if (!jwtUtil.validateToken(request.getJwt(), userDetails)) {
+                        jwt = jwtUtil.generateToken(authentication);
+                    } else {
+                        jwt = request.getJwt();
+                    }
+                } catch (ExpiredJwtException ej) {
+                    return new ResponseEntity("{\"message\":\"" + ej.getMessage() + "\"}", HttpStatus.FORBIDDEN
+                    );
                 }
             }
             Optional<SessionEntity> seOptional = sessionService.getUserNameSession(userDetails.getUsername());

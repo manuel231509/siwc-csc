@@ -1,11 +1,16 @@
 package com.colegiosantacecilia.siwcspringjava.entities.degreeSubject;
 
 import com.colegiosantacecilia.siwcspringjava.entities.degree.DegreeEntity;
+import com.colegiosantacecilia.siwcspringjava.entities.mainAchievement.MainAchievementEntity;
 import com.colegiosantacecilia.siwcspringjava.entities.subject.SubjectEntity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
+import java.util.LinkedList;
+import java.util.List;
 import javax.persistence.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 /**
  *
@@ -16,7 +21,7 @@ import javax.persistence.*;
         uniqueConstraints = @UniqueConstraint(name = "id_degree_subject_UK",
                 columnNames = {"id_degree", "id_subject"}))
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "degreeEntity"})
 public class DegreeSubjectEntity implements Serializable {
 
     private static final long serialVersionUID = -9069060843698080433L;
@@ -62,6 +67,13 @@ public class DegreeSubjectEntity implements Serializable {
 //    @Fetch(value = FetchMode.SUBSELECT)
 //    private List<PeriodPlanEntity> periodPlanEntitys
 //            = new LinkedList<>();
+    
+    @OneToMany(mappedBy = "degreeSubjectEntity",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER)
+   @Fetch(value = FetchMode.SUBSELECT)
+    private List<MainAchievementEntity> mainAchievementEntitys
+            = new LinkedList<>();
 
     public DegreeSubjectEntity() {
     }
@@ -135,6 +147,18 @@ public class DegreeSubjectEntity implements Serializable {
 //        this.periodPlanEntitys.add(ppe);
 //    }
 
+    public List<MainAchievementEntity> getMainAchievementEntitys() {
+        return mainAchievementEntitys;
+    }
+
+    public void setMainAchievementEntitys(List<MainAchievementEntity> mainAchievementEntitys) {
+        this.mainAchievementEntitys = mainAchievementEntitys;
+    }
+    
+    public void addListMainAchievementEntitys(MainAchievementEntity mae){
+        this.mainAchievementEntitys.add(mae);
+    }
+
     @Override
     public String toString() {
         return "DegreeSubjectEnity{"
@@ -143,6 +167,7 @@ public class DegreeSubjectEntity implements Serializable {
                 + ", \nidSubject=" + idSubject
                 + ", \ndegreeEntity=" + degreeEntity
                 + ", \nsubjectEntity=" + subjectEntity
+                + ", \nmainAchievementEntitys=" + mainAchievementEntitys
                 //+ ", \nraitingEntity=" + raitingEntitys
                 + "\n" + '}';
     }

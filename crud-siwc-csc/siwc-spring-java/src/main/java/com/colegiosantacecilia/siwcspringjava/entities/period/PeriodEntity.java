@@ -1,5 +1,6 @@
 package com.colegiosantacecilia.siwcspringjava.entities.period;
 
+import com.colegiosantacecilia.siwcspringjava.entities.mainAchievement.MainAchievementEntity;
 import com.colegiosantacecilia.siwcspringjava.entities.periodPlan.PeriodPlanEntity;
 import com.colegiosantacecilia.siwcspringjava.entities.raiting.RaitingEntity;
 import java.io.Serializable;
@@ -11,6 +12,8 @@ import java.util.Objects;
 import javax.persistence.*;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 /**
  *
@@ -49,14 +52,24 @@ public class PeriodEntity implements Serializable {
     @OneToMany(mappedBy = "periodEntity", cascade = CascadeType.ALL,
             fetch = FetchType.EAGER)
     @Fetch(FetchMode.SUBSELECT)
+    @LazyCollection(LazyCollectionOption.TRUE)
     private List<RaitingEntity> raitingEntitys
             = new LinkedList<>();
 
     @OneToMany(mappedBy = "periodEntity",
             cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @Fetch(FetchMode.SUBSELECT)
+    @LazyCollection(LazyCollectionOption.TRUE)
     private List<PeriodPlanEntity> periodPlanEntitys
             = new LinkedList<>();
 
+    @OneToMany(mappedBy = "periodEntity",
+            cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @Fetch(FetchMode.SUBSELECT)
+    @LazyCollection(LazyCollectionOption.TRUE)
+    private List<MainAchievementEntity> mainAchievementEntitys
+            = new LinkedList<>();
+    
     public PeriodEntity() {
     }
 
@@ -214,6 +227,18 @@ public class PeriodEntity implements Serializable {
         this.periodPlanEntitys.add(ppe);
     }
 
+    public List<MainAchievementEntity> getMainAchievementEntitys() {
+        return mainAchievementEntitys;
+    }
+
+    public void setMainAchievementEntitys(List<MainAchievementEntity> mainAchievementEntitys) {
+        this.mainAchievementEntitys = mainAchievementEntitys;
+    }
+
+    public void addListMainAchievementEntitys(MainAchievementEntity mae) {
+        this.mainAchievementEntitys.add(mae);
+    }
+
     @Override
     public String toString() {
         return "PeriodEntity{"
@@ -225,6 +250,7 @@ public class PeriodEntity implements Serializable {
                 + ", \ninitialDate=" + initialDate
                 + ", \nfinalDate=" + finalDate
                 + ", \nraitingEntitys=" + raitingEntitys
-                + ", \nperiodPlanEntitys=" + periodPlanEntitys + "\n" + '}';
+                + ", \nperiodPlanEntitys=" + periodPlanEntitys
+                + ", \nmainAchievementEntitys=" + mainAchievementEntitys + "\n" + '}';
     }
 }

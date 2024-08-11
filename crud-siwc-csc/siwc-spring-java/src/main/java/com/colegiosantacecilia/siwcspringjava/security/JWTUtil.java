@@ -3,6 +3,7 @@ package com.colegiosantacecilia.siwcspringjava.security;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,7 +21,7 @@ public class JWTUtil {
 
     public String generateToken(Authentication authentication) {
         return Jwts.builder().setSubject(authentication.getName()).setIssuedAt(new Date())
-        .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24))
                 .signWith(SignatureAlgorithm.HS256, KEY).compact();
     }
 
