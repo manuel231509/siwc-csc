@@ -1,25 +1,26 @@
-import { Delete, Edit, MoreVert as MoreVertIcon } from "@mui/icons-material";
+import { Delete, Edit } from "@mui/icons-material";
 import {
   Card,
   CardContent,
   CardHeader,
   Divider,
   Grid,
-  IconButton,
-  ListItemIcon,
-  ListItemText,
-  Menu,
-  MenuItem,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
+import { lazy, useState } from "react";
+import { useTasksAssignedContext } from "../../../../../context/Tasks/TasksProvider";
 import { useTeacherContext } from "../../../../../context/Teacher/TeacherProvider";
 import useWindowSize from "../../../../../hooks/useWindowSize";
-import TaskDetailsAccordion from "./Task Details/TaskDetailsAccordion";
+import { SuspenseProgress } from "../../../../SuspenseProgress/SusProg";
+
+const TaskDetailsAccordion = lazy(() =>
+  import("./Task Details/TaskDetailsAccordion")
+);
 
 const cardMuiStyle = () => {
   const windowSize = useWindowSize();
   const { open } = useTeacherContext();
+  const { expandedAccordionTaskDetails } = useTasksAssignedContext();
   return {
     width:
       windowSize.width >= "0" && windowSize.width <= "899"
@@ -91,11 +92,10 @@ const cardMuiStyle = () => {
         : !open
         ? "28rem"
         : "23.5rem",
-    bgcolor: "grey",
+    // ...(expandedAccordionTaskDetails === false && { height: "100%" }),
+    height: "100%",
   };
 };
-
-const ITEM_HEIGHT = 50;
 
 const menuOptions = [
   { itemText: "EDIT", itemIcon: <Edit /> },
@@ -127,7 +127,10 @@ const TaskCard = ({ periodPlan }) => {
     >
       <Card elevation={18} square sx={cardMuiStyle}>
         <CardHeader
-          style={{ textAlign: "left" }}
+          style={{
+            textAlign: "left",
+            paddingBottom: 0,
+          }}
           title={
             <>
               <Grid
@@ -150,10 +153,14 @@ const TaskCard = ({ periodPlan }) => {
             </>
           }
         />
-        <CardContent>
-          {periodPlan.taskEntitys.map((task) => (
-            <TaskDetailsAccordion key={task.idTask} task={task} />
-          ))}
+        <CardContent sx={{ pt: 0.9 }}>
+          <Grid container rowGap={1}>
+            <SuspenseProgress>
+              {periodPlan.taskEntitys.map((task) => (
+                <TaskDetailsAccordion key={task.idTask} task={task} />
+              ))}
+            </SuspenseProgress>
+          </Grid>
         </CardContent>
       </Card>
     </Grid>

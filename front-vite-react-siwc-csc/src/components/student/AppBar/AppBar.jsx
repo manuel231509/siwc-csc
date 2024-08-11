@@ -1,13 +1,6 @@
+import { Logout, Menu as MenuIcon, Settings } from "@mui/icons-material";
 import {
-  Logout,
-  Menu as MenuIcon,
-  Notifications as NotificationsIcon,
-  Settings,
-} from "@mui/icons-material";
-import {
-  AppBar as MuiAppBar,
   Avatar,
-  Badge,
   Box,
   Divider,
   Grid,
@@ -15,19 +8,21 @@ import {
   ListItemIcon,
   Menu,
   MenuItem,
+  AppBar as MuiAppBar,
   Toolbar,
   Tooltip,
   Typography,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Image from "mui-image";
-import React, { useEffect, useState } from "react";
+import React, { lazy, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import shield_csc_image_without_background from "../../../assets/images/shield_csc_image_without_background.png";
 import { useStudentContext } from "../../../context/Student/StudentProvider";
 import { resetSession } from "../../../redux/states/ssessionSlice";
-import Chatbot from "../../chatbot/Chatbot";
+
+const Chatbot = lazy(() => import("../../chatbot/Chatbot"));
 
 let drawerWidth = 0;
 const AppBarMui = styled(MuiAppBar, {
@@ -205,29 +200,31 @@ const AppBar = () => {
               open={openMenu}
               onClose={handleCloseMenu}
               onClick={handleCloseMenu}
-              PaperProps={{
-                elevation: 5,
-                sx: {
-                  overflow: "visible",
-                  filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-                  //mt: 1.5,
-                  "& .MuiAvatar-root": {
-                    width: 32,
-                    height: 32,
-                    ml: -0.5,
-                    mr: 1,
-                  },
-                  "&:before": {
-                    content: '""',
-                    display: "block",
-                    position: "absolute",
-                    top: 0,
-                    right: 14,
-                    width: 10,
-                    height: 10,
-                    backgroundColor: "background.paper",
-                    transform: "translateY(-50%) rotate(45deg)",
-                    zIndex: 0,
+              slotProps={{
+                paper: {
+                  elevation: 5,
+                  sx: {
+                    overflow: "visible",
+                    filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                    //mt: 1.5,
+                    "& .MuiAvatar-root": {
+                      width: 32,
+                      height: 32,
+                      ml: -0.5,
+                      mr: 1,
+                    },
+                    "&:before": {
+                      content: '""',
+                      display: "block",
+                      position: "absolute",
+                      top: 0,
+                      right: 14,
+                      width: 10,
+                      height: 10,
+                      backgroundColor: "background.paper",
+                      transform: "translateY(-50%) rotate(45deg)",
+                      zIndex: 0,
+                    },
                   },
                 },
               }}

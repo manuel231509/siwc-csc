@@ -1,5 +1,8 @@
 import { Grid } from "@mui/material";
-import AccordionsSubjects from "./tasks/Accordion Subjects/AccordionsSubjects";
+import { lazy } from "react";
+const AccordionsSubjects = lazy(() =>
+  import("./tasks/Accordion Subjects/AccordionsSubjects")
+);
 
 const TasksAssigned = () => {
   return (

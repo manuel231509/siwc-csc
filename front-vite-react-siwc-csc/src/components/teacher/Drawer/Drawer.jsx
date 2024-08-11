@@ -1,9 +1,10 @@
 import { Drawer as MuiDrawer, useMediaQuery } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
-import { useEffect } from "react";
+import { lazy, useEffect } from "react";
 import { useTeacherContext } from "../../../context/Teacher/TeacherProvider";
-import DrawerContent from "./DrawerContent";
-import DrawerHeader from "./DrawerHeader";
+
+const DrawerContent = lazy(() => import("./DrawerContent"));
+const DrawerHeader = lazy(() => import("./DrawerHeader"));
 
 let drawerWidth = 0;
 
@@ -77,8 +78,8 @@ const Drawer = () => {
         },
       }}
     >
-      <DrawerHeader />
-      <DrawerContent />
+      {open && <DrawerHeader />}
+      {open && <DrawerContent />}
     </MuiDrawer>
   ) : (
     <MiniDrawer

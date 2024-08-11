@@ -1,18 +1,28 @@
-import {
-  FormHelperText,
-  TextField,
-  OutlinedInput as MuiOutlinedInput,
-  FilledInput as MuiFilledInput,
-  FormControl,
-  InputLabel,
-} from "@mui/material";
 import { Error as ErrorIcon } from "@mui/icons-material";
-import { useStyles } from "./Styles/ControlStyles";
 import {
-  FormControlStyled,
-  FormHelperTextStyled,
-  TextFieldStyled,
-} from "./Styled/ControlStyled";
+  InputLabel,
+  FilledInput as MuiFilledInput,
+  OutlinedInput as MuiOutlinedInput,
+} from "@mui/material";
+import { lazy } from "react";
+
+const FormControlStyled = lazy(() =>
+  import("./Styled/ControlStyled").then((module) => ({
+    default: module.FormControlStyled,
+  }))
+);
+
+const FormHelperTextStyled = lazy(() =>
+  import("./Styled/ControlStyled").then((module) => ({
+    default: module.FormHelperTextStyled,
+  }))
+);
+
+const TextFieldStyled = lazy(() =>
+  import("./Styled/ControlStyled").then((module) => ({
+    default: module.TextFieldStyled,
+  }))
+);
 
 const Input = (props) => {
   const {
@@ -24,7 +34,7 @@ const Input = (props) => {
   return (
     <>
       <TextFieldStyled
-        {...(error && { error: true })}
+        {...(Boolean(error) && { error: true })}
         {...textFieldProps}
         textFieldStyledAttributes={textFieldStyledAttributes}
       />
@@ -124,4 +134,4 @@ const FilledInput = (props) => {
   );
 };
 
-export { Input, OutlinedInput, FilledInput };
+export { FilledInput, Input, OutlinedInput };

@@ -1,6 +1,10 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import { useTheme as theme } from "@mui/material/styles";
-import AccordionsStudent from "./AccordionStudent/AccordionsStudent";
+import { lazy } from "react";
+
+const AccordionsStudent = lazy(() =>
+  import("./AccordionStudent/AccordionsStudent")
+);
 
 const StudentList = () => {
   const tGreen50 = theme().palette.tertiary.tGreen50;

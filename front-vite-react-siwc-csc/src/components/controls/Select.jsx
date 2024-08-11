@@ -6,12 +6,20 @@ import {
   InputLabel,
   ListItemText,
   MenuItem,
-  Select as MuiSelect
+  Select as MuiSelect,
 } from "@mui/material";
-import {
-  FormControlStyled,
-  FormHelperTextStyled,
-} from "./Styled/ControlStyled";
+import { lazy } from "react";
+
+const FormControlStyled = lazy(() =>
+  import("./Styled/ControlStyled").then((module) => ({
+    default: module.FormControlStyled,
+  }))
+);
+const FormHelperTextStyled = lazy(() =>
+  import("./Styled/ControlStyled").then((module) => ({
+    default: module.FormHelperTextStyled,
+  }))
+);
 
 const Select = (props) => {
   const {
@@ -74,6 +82,15 @@ const SelectCheckMark = (props) => {
     formHelperTextProps,
     menuItemProps = null,
   } = props;
+  console.log(
+    "selectProps.value: ",
+    selectProps.value,
+    "selectProps.value.length === names.length: ",
+    selectProps.value.length === names.length,
+    "names: ",
+    names,
+    names.filter((name) => 5 === 5)
+  );
   return (
     <>
       <FormControlStyled {...(error && { error: true })} {...formControlProps}>
@@ -81,7 +98,14 @@ const SelectCheckMark = (props) => {
           {inputLabelProps.label}
         </InputLabel>
         <MuiSelect variant="filled" {...selectProps}>
-          <MenuItem {...menuItemProps}>
+          <MenuItem
+            key={"all_students"}
+            value={
+              selectProps.value.length === names.length
+                ? null
+                : { ...names.find(() => 5 === 5) }
+            }
+          >
             <Checkbox checked={selectProps.value.length === names.length} />
             <Grid container alignItems="center" columnGap={2}>
               <Avatar
@@ -91,21 +115,28 @@ const SelectCheckMark = (props) => {
               <ListItemText>ALL STUDENTS</ListItemText>
             </Grid>
           </MenuItem>
-          {names.map((name, index) => (
-            <MenuItem key={index} value={name} {...menuItemProps}>
-              <Checkbox checked={selectProps.value.indexOf(name) > -1} />
-              <Grid container alignItems="center" columnGap={2}>
-                <Avatar
-                  alt={name.fullNamesStudent}
-                  src="/static/images/avatar/1.jpg"
-                  sx={{ width: 35, height: 35, fontSize: 15 }}
+          {names.map((name, index) => {
+            console.log("name: ", name, selectProps.value.indexOf(name));
+            return (
+              <MenuItem key={index} value={name} /* {...menuItemProps} */>
+                <Checkbox
+                  checked={selectProps.value.some(
+                    (n) => name.idNumberStudent === n.idNumberStudent
+                  )}
                 />
-                <ListItemText>
-                  {name.fullNamesStudent} {name.fullSurNamesStudent}
-                </ListItemText>
-              </Grid>
-            </MenuItem>
-          ))}
+                <Grid container alignItems="center" columnGap={2}>
+                  <Avatar
+                    alt={name.fullNamesStudent}
+                    src="/static/images/avatar/1.jpg"
+                    sx={{ width: 35, height: 35, fontSize: 15 }}
+                  />
+                  <ListItemText>
+                    {name.fullNamesStudent} {name.fullSurNamesStudent}
+                  </ListItemText>
+                </Grid>
+              </MenuItem>
+            );
+          })}
         </MuiSelect>
       </FormControlStyled>
       {error && (
@@ -128,4 +159,3 @@ const SelectCheckMark = (props) => {
 };
 
 export { Select, SelectCheckMark };
-

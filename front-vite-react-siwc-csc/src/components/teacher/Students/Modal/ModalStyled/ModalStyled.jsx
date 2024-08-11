@@ -11,11 +11,13 @@ export const FadeStyled = styled(Fade)(({ theme }) => ({
   maxHeight: "96%",
 }));
 
-export const IconButtonStyled = styled(IconButton)(({ theme }) => ({
+export const IconButtonStyled = styled(
+  ({ shades = "light", ...otherProps }) => <IconButton {...otherProps} />
+)(({ theme, shades = "light" }) => ({
   position: "relative",
   transition: "0.5s ease",
   "&:hover": {
-    backgroundColor: theme.palette.primary["light"],
-    transform: "rotate(90deg)",
+    backgroundColor: theme.palette.primary[shades],
+    transform: "rotate(180deg)",
   },
 }));

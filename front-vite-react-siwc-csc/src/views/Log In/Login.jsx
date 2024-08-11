@@ -1,13 +1,20 @@
 import { Box, CssBaseline, Grid, Paper } from "@mui/material";
 import { useTheme as theme } from "@mui/material/styles";
-import CopyRight from "../../components/copy right/CopyRight";
-import LoginForm from "../../components/log in/LoginForm";
-import { useStyles } from "../../components/log in/Styles/loginStyle";
+import { lazy } from "react";
 import useWindowSize from "../../hooks/useWindowSize";
-import {
-  GridImageStyled,
-  GridRootStyled,
-} from "../../components/log in/Styled/LoginStyled";
+
+const GridImageStyled = lazy(() =>
+  import("../../components/log in/Styled/LoginStyled").then((module) => ({
+    default: module.GridImageStyled,
+  }))
+);
+const GridRootStyled = lazy(() =>
+  import("../../components/log in/Styled/LoginStyled").then((module) => ({
+    default: module.GridRootStyled,
+  }))
+);
+const LoginForm = lazy(() => import("../../components/log in/LoginForm"));
+const CopyRight = lazy(() => import("../../components/copy right/CopyRight"));
 
 const gridContainerRootSX = () => {
   const { width } = useWindowSize();

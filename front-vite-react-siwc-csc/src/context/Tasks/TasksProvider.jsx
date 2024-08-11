@@ -51,11 +51,9 @@ const TasksAssignedProvider = ({ children }) => {
     setSubjects(value);
   };
 
-  const [loading, setLoading] = useState({
-    subjects: {},
-  });
+  const [loading, setLoading] = useState({});
   const handleChangeLoading = (nameField, value) => {
-    setLoading({ ...loading, [nameField]: value });
+    setLoading((prev) => ({ ...prev, [nameField]: value }));
   };
   const handleChangeLoadingPrev = (nameField, value) => {
     setLoading((prevLoading) => ({ ...prevLoading, [nameField]: value }));

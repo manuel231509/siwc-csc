@@ -1,5 +1,6 @@
-import React from "react";
-import Controls from "../controls/Controls";
+import { lazy } from "react";
+
+const Controls = lazy(() => import("../controls/Controls"));
 
 const FieldFullNames = (props) => {
   const { fields, handleChangeFields, errors, otherTextFieldProps } = props;

@@ -15,7 +15,6 @@ import { ArrowRight as ArrowRightIcon } from "@mui/icons-material";
 import {
   AccordionDetails,
   Badge,
-  Button,
   Grid,
   IconButton,
   Typography,
@@ -23,8 +22,7 @@ import {
 import { styled, useTheme } from "@mui/material/styles";
 import { useState } from "react";
 import { useTasksAssignedContext } from "../../../../../../../context/Tasks/TasksProvider";
-import ModalDeliveredTask from "./Modal Delivered Task/ModalDeliveredTask";
-import { useTeacherContext } from "../../../../../../../context/Teacher/TeacherProvider";
+import { SuspenseProgress } from "../../../../../../SuspenseProgress/SusProg";
 
 const options = {
   weekday: "long",
@@ -61,7 +59,7 @@ const TaskDetailsAccordionDetails = ({ windowSize, task }) => {
   };
 
   return (
-    <AccordionDetails>
+    <>
       <Grid container justifyContent={"flex-start"} alignItems="center">
         <Typography
           variant="subtitle3"
@@ -324,7 +322,7 @@ const TaskDetailsAccordionDetails = ({ windowSize, task }) => {
           </Grid>
         </Grid>
       </Grid>
-    </AccordionDetails>
+    </>
   );
 };
 export default TaskDetailsAccordionDetails;

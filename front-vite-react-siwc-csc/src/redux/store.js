@@ -1,13 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import sessionSliceReducer from "./states/ssessionSlice";
 import { logger } from "./middlewares/middlewares";
-import thunk from "redux-thunk";
+import { thunk } from "redux-thunk";
 
 const StoreRedux = configureStore({
   reducer: {
     ssession: sessionSliceReducer,
   },
-  middleware: [thunk, logger],
+  middleware: [thunk],
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   devTools: process.env.NODE_ENV !== "production",
 });
 

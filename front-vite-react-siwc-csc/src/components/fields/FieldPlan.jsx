@@ -28,7 +28,12 @@ const FieldPlan = (props) => {
         },
         filterOptions: (options, params) => {
           const filtered = filter(options, params);
-          if (params.inputValue !== "" && filtered <= 0) {
+
+          const isExisting = options.some(
+            (option) => params.inputValue === option.planName
+          );
+
+          if (params.inputValue !== "" && filtered <= 0 && !isExisting) {
             filtered.push({
               inputValue: params.inputValue,
               planName: `Add "${params.inputValue}"`,
@@ -49,6 +54,8 @@ const FieldPlan = (props) => {
           }
           return option.planName;
         },
+        isOptionEqualToValue: (option, value) =>
+          option.planName === value.planName,
         selectOnFocus: true,
         clearOnBlur: true,
         handleHomeEndKeys: true,
@@ -56,7 +63,7 @@ const FieldPlan = (props) => {
           return (
             <MenuItem {...props}>
               <ListItemText>{option.planName}</ListItemText>
-              <ListItemIcon
+              {/* <ListItemIcon
                 onClick={(e) => {
                   e.preventDefault();
                   console.log("option.planName: ", option.planName);
@@ -69,7 +76,7 @@ const FieldPlan = (props) => {
                 }}
               >
                 <DeleteIcon />
-              </ListItemIcon>
+              </ListItemIcon> */}
             </MenuItem>
           );
         },

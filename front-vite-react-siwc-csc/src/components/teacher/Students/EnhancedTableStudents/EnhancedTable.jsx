@@ -12,14 +12,14 @@ import {
   TableSortLabel,
   Typography,
 } from "@mui/material";
-import { Box, Stack } from "@mui/system";
-import { useEffect, useState } from "react";
+import { Box } from "@mui/system";
+import { visuallyHidden } from "@mui/utils";
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useTeacherContext } from "../../../../context/Teacher/TeacherProvider";
 import useFetchAndLoad from "../../../../hooks/useFetchAndLoad";
 import { getStudentByIdDegree } from "../../../../services/student/StudentService";
-import { visuallyHidden } from "@mui/utils";
 
 const descendingComparator = (a, b, orderBy) => {
   if (b[orderBy] < a[orderBy]) {

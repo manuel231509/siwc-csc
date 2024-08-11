@@ -24,6 +24,10 @@ const FieldComment = lazy(() => import("./FieldComment"));
 const FieldQualificationNote = lazy(() => import("./FieldQualificationNote"));
 const FieldChatbot = lazy(() => import("./FieldChatbot"));
 const FieldAssignNoteTask = lazy(() => import("./FieldAssignNoteTask"));
+const FieldAchievements = lazy(() => import("./FieldAchievements"));
+const FieldAchievementDescription = lazy(() =>
+  import("./FieldAchievementDescription")
+);
 
 const FieldsControl = {
   FieldFullNames,
@@ -49,6 +53,8 @@ const FieldsControl = {
   FieldQualificationNote,
   FieldChatbot,
   FieldAssignNoteTask,
+  FieldAchievements,
+  FieldAchievementDescription,
 };
 
 export default FieldsControl;

@@ -9,6 +9,7 @@ export const CardHeaderStyled = styled(CardHeader)(({ theme }) => ({
 export const IconButtonCloseStyled = styled(IconButton)(({ theme }) => ({
   position: "relative",
   transition: "0.5s ease",
+  color: theme.palette.primary["contrastTextMain"],
   "&:hover": {
     backgroundColor: theme.palette.primary["light"],
     transform: "rotate(90deg)",

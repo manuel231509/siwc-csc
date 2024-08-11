@@ -8,15 +8,13 @@ import {
   Grid,
   Skeleton,
   Typography,
-  useMediaQuery,
 } from "@mui/material";
-import { useTheme as theme } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useTeacherContext } from "../../../../context/Teacher/TeacherProvider";
 import useFetchAndLoad from "../../../../hooks/useFetchAndLoad";
-import { getByIdDegree } from "../../../../services/degrees/DegreesService";
 import useWindowSize from "../../../../hooks/useWindowSize";
+import { getByIdDegree } from "../../../../services/degrees/DegreesService";
 
 const cardMuiStyle = () => {
   const windowSize = useWindowSize();
@@ -125,26 +123,6 @@ const Card = ({ degreeSubject }) => {
   }, [degreeSubject.idDegree, jwt, bearer]);
 
   return (
-    /* <Grid
-      item
-      sx={{
-        width: {
-          xs: "100%",
-          sm: "95%",
-          md: "auto",
-          lg: "auto",
-          xl: "auto",
-        },
-      }}
-    >
-      <Grid sx={cardMuiStyle} elevation={18} square bgcolor="white">
-        <Skeleton variant="rectangular" height={250} animation="wave" />
-        <Skeleton variant="rectangular" animation="wave" height={50} />
-        <Skeleton animation="wave" p={0} m={0} />
-      </Grid>
-    </Grid>
-  );
-  ) : */
     <Grid
       item
       sx={{
@@ -171,20 +149,26 @@ const Card = ({ degreeSubject }) => {
             <CardMedia
               component="img"
               height="250"
-              image="https://source.unsplash.com/random"
-              alt="green iguana"
+              image="https://picsum.photos/250"
+              alt={degree.nameDegree}
               sx={{ objectFit: "cover" }}
             />
           )}
-          <CardHeader
-            style={{
-              textAlign: "center",
-              padding: "10px",
-            }}
-            title={
-              loading ? (
-                <Skeleton variant="rectangular" animation="wave" />
-              ) : (
+          {loading ? (
+            <Skeleton
+              variant="rectangular"
+              sx={{ mt: 0.2, ...cardMuiStyle }}
+              height={40}
+              animation="wave"
+            />
+          ) : (
+            <CardHeader
+              style={{
+                textAlign: "center",
+                padding: "10px",
+              }}
+              sx={{ mt: 0.2, mb: 0.5, boxShadow: 4, bgcolor: "gray.300" }}
+              title={
                 <Typography
                   variant="subtitle4"
                   fontWeight={700}
@@ -192,27 +176,35 @@ const Card = ({ degreeSubject }) => {
                 >
                   {degree.nameDegree}
                 </Typography>
-              )
-            }
-          />
+              }
+            />
+          )}
         </CardActionArea>
         <CardActions
           style={{
             display: "flex",
             justifyContent: "center",
           }}
-          sx={{ boxShadow: 20 }}
         >
-          <Button
-            variant="contained"
-            size="medium"
-            onClick={() => {
-              handleChangeOpenModal();
-              handleChangeModalData("degree", degree);
-            }}
-          >
-            SHOW STUDENTS
-          </Button>
+          {loading ? (
+            <Skeleton
+              variant="rectangular"
+              width={200}
+              height={40}
+              animation="wave"
+            />
+          ) : (
+            <Button
+              variant="contained"
+              size="medium"
+              onClick={() => {
+                handleChangeOpenModal();
+                handleChangeModalData("degree", degree);
+              }}
+            >
+              SHOW STUDENTS
+            </Button>
+          )}
         </CardActions>
       </CardMui>
     </Grid>

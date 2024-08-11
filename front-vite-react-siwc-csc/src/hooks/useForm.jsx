@@ -1,18 +1,23 @@
 import { Box } from "@mui/material";
+import { useRef } from "react";
 import { useState } from "react";
 
 const useForm = (
   initialStateFields = null,
   validateOnChange = false,
-  validateFields = () => {}
+  validateFields = () => {},
+  initialFieldsRef = {}
 ) => {
   const [fields, setFields] = useState(initialStateFields);
+  const [fieldsRef, setFieldsRef] = useState(initialFieldsRef);
   const [errors, setErrors] = useState({});
+  const ref = useRef(null);
 
   const handleChangeFields = (nameField) => (event) => {
     const {
       target: { value },
     } = event;
+    console.log("namefield: ", nameField, value);
     if (value === "student") {
       const auxFields = { ...fields };
       auxFields.role = "student";
@@ -54,11 +59,12 @@ const useForm = (
 
     setFields(auxFields);
 
-    if (validateOnChange)
-      validateFields(
+    if (validateOnChange) {
+      !validateFields(
         { [nameField]: newValue ? newValue.$d : newValue },
         nameField
       );
+    }
   };
 
   const handleChangeFieldAutoComplete = (nameField, newValue) => {
@@ -70,6 +76,10 @@ const useForm = (
   const resetFields = () => {
     setFields(initialStateFields);
     setErrors({});
+  };
+
+  const handleChangeFieldsRef = (nameField, currentValue) => {
+    setFieldsRef((prev) => ({ ...prev, [nameField]: currentValue }));
   };
 
   return {
@@ -84,6 +94,8 @@ const useForm = (
     errors,
     setErrors,
     resetFields,
+    fieldsRef,
+    handleChangeFieldsRef,
   };
 };
 
@@ -96,4 +108,5 @@ const Form = (props) => {
   );
 };
 
+export default { useForm, Form };
 export { useForm, Form };

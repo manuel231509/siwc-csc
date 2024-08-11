@@ -1,9 +1,15 @@
-import React from "react";
-import { useTasksAssignedContext } from "../../../../../../../../../../context/Tasks/TasksProvider";
 import { useTheme } from "@emotion/react";
 import { Accordion } from "@mui/material";
-import DeliveredTaskAccordionSummary from "./Accordion Summary/DeliveredTaskAccordionSummary";
-import DeliveredTaskAccordionDetails from "./Accordion Details/DeliveredTaskAccordionDetails";
+import React, { lazy } from "react";
+import { useTasksAssignedContext } from "../../../../../../../../../../context/Tasks/TasksProvider";
+
+const DeliveredTaskAccordionSummary = lazy(() =>
+  import("./Accordion Summary/DeliveredTaskAccordionSummary")
+);
+
+const DeliveredTaskAccordionDetails = lazy(() =>
+  import("./Accordion Details/DeliveredTaskAccordionDetails")
+);
 
 const DeliveredTaskDetailsAccordion = ({ deliveredTaskStudent, index }) => {
   const theme = useTheme();

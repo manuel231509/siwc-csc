@@ -1,10 +1,23 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import { useTheme as theme } from "@mui/material/styles";
+import { lazy, useEffect } from "react";
 import { TasksAssignedProvider } from "../../../context/Tasks/TasksProvider";
-import TasksAssigned from "./Tasks Assigned/TasksAssigned";
+
+const FormGrades = lazy(() =>
+  import("./Tasks Assigned/tasks/Form Grades/FormGrades")
+);
+const TasksAssigned = lazy(() => import("./Tasks Assigned/TasksAssigned"));
 
 const Task = () => {
   const tGreen50 = theme().palette.tertiary.tGreen50;
+  useEffect(() => {
+    console.log("INICIO TASK ====================================");
+    console.log("TASK");
+    console.log("");
+    return () => {
+      console.log("==================================== FIN TASK");
+    };
+  }, []);
   return (
     <Grid container justifyContent="center" component={Box} bgcolor="inherit">
       <Grid
@@ -29,6 +42,7 @@ const Task = () => {
 
       <Grid container sx={{ flexGrow: 1 }}>
         <TasksAssignedProvider>
+          <FormGrades />
           <TasksAssigned />
         </TasksAssignedProvider>
       </Grid>

@@ -7,21 +7,21 @@ import {
   Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { lazy } from "react";
 import { useTasksAssignedContext } from "../../../../../../../context/Tasks/TasksProvider";
 import { useTeacherContext } from "../../../../../../../context/Teacher/TeacherProvider";
-import TasksCards from "../../TasksCards";
+import { SuspenseProgress } from "../../../../../../SuspenseProgress/SusProg";
+
+const TasksCards = lazy(() => import("../../TasksCards"));
 
 const Accordion = ({ subject }) => {
   const theme = useTheme();
   const sDeepOrange = theme.palette.secondary.sDeepOrange["300"];
 
-  const {
-    expandedAccordionSubjects,
-    handleChangeExpandedAccordionSubjects,
-    handleChangePeriodsPlans1,
-  } = useTasksAssignedContext();
+  const { expandedAccordionSubjects, handleChangeExpandedAccordionSubjects } =
+    useTasksAssignedContext();
 
-  const { handleChangeSelect, select } = useTeacherContext();
+  const { handleChangeSelect } = useTeacherContext();
 
   const onClickAccordionSubject = (idSubject, nameSubject) => () => {
     handleChangeSelect("subjects", { idSubject, nameSubject });
@@ -29,6 +29,7 @@ const Accordion = ({ subject }) => {
 
   return (
     <AccordionMui
+      key={`panel-${subject.idSubject}`}
       expanded={expandedAccordionSubjects === `panel-${subject.idSubject}`}
       onChange={handleChangeExpandedAccordionSubjects(
         `panel-${subject.idSubject}`
@@ -40,7 +41,6 @@ const Accordion = ({ subject }) => {
         textAlign: "center",
         justifyContent: "center",
         alignItems: "center",
-        mt: 1,
       }}
     >
       <AccordionSummary
@@ -48,7 +48,7 @@ const Accordion = ({ subject }) => {
         aria-controls={`panel-${subject.idSubject}-bh-content`}
         id={`panel-${subject.idSubject}-bh-header`}
         sx={{
-          mt: 1.1,
+          mt: 0.5,
           width: "100%",
           display: "flex",
           justifyContent: "center",
@@ -68,20 +68,25 @@ const Accordion = ({ subject }) => {
           {subject.nameSubject.toUpperCase()}
         </Typography>
       </AccordionSummary>
-      <AccordionDetails>
-        <Grid
-          container
-          sx={{
-            flexGrow: 1,
-          }}
-        >
-          <Grid item xs={12}>
-            <Grid container justifyContent="center">
-              <TasksCards />
+
+      {expandedAccordionSubjects === `panel-${subject.idSubject}` && (
+        <AccordionDetails>
+          <SuspenseProgress>
+            <Grid
+              container
+              sx={{
+                flexGrow: 1,
+              }}
+            >
+              <Grid item xs={12}>
+                <Grid container justifyContent="center">
+                  <TasksCards />
+                </Grid>
+              </Grid>
             </Grid>
-          </Grid>
-        </Grid>
-      </AccordionDetails>
+          </SuspenseProgress>
+        </AccordionDetails>
+      )}
     </AccordionMui>
   );
 };

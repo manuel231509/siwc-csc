@@ -5,6 +5,7 @@ import {
 import { AccordionSummary, Avatar, Box, Grid, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useTasksAssignedContext } from "../../../../../../../context/Tasks/TasksProvider";
+import { forwardRef } from "react";
 
 const options = {
   weekday: "long",
@@ -13,7 +14,7 @@ const options = {
   day: "numeric",
 };
 
-const TaskDetailsAccordionSummary = ({ windowSize, task }) => {
+const TaskDetailsAccordionSummary = forwardRef(({ windowSize, task }, ref) => {
   const { expandedAccordionTaskDetails } = useTasksAssignedContext();
 
   const theme = useTheme();
@@ -29,16 +30,18 @@ const TaskDetailsAccordionSummary = ({ windowSize, task }) => {
       expandIcon={<ExpandMoreIcon />}
       aria-controls={`panel-${task.idTask}-bh-content`}
       id={`panel-${task.idTask}-bh-header`}
+      ref={ref}
       sx={
         expandedAccordionTaskDetails === `panel-${task.idTask}`
           ? {
-              backgroundColor: theme.palette.tertiary.tGreen100["main"],
+              backgroundColor: theme.palette.tertiary.tGreenA100["dark"],
+              color: theme.palette.tertiary.tGreenA100["contrastTextDark"],
               boxShadow: theme.shadows[5],
             }
           : {
               "&:hover": {
                 // backgroundColor: theme.palette.tertiary.tGreen50["light"],
-                backgroundColor: theme.palette.tertiary.tGreen100["main"],
+                backgroundColor: theme.palette.tertiary.tGreenA100["main"],
                 boxShadow: theme.shadows[8],
               },
             }
@@ -48,7 +51,7 @@ const TaskDetailsAccordionSummary = ({ windowSize, task }) => {
         width={"100%"}
         container
         {...(windowSize.width <= 280 && { pl: 1.5 })}
-        rowGap={1}
+        rowGap={0.2}
       >
         <Grid container alignItems="center" columnGap={1.5} rowGap={1}>
           <Grid item width={{ xs: "100%", sm: "auto" }}>
@@ -68,7 +71,7 @@ const TaskDetailsAccordionSummary = ({ windowSize, task }) => {
           >
             <Typography
               variant="subtitle3"
-              color={theme.palette.tertiary.tGreen100["contrastTextLight"]}
+              color={theme.palette.tertiary.tGreenA100["contrastTextDark"]}
               fontWeight="600"
               fontSize={{ xs: 10, sm: 12 }}
               textAlign={{ sx: "center", sm: "left" }}
@@ -79,14 +82,18 @@ const TaskDetailsAccordionSummary = ({ windowSize, task }) => {
           </Grid>
         </Grid>
         {task.taskDeadLine && task.taskTimeLimit && (
-          <Grid mt={0.5} container wrap="nowrap">
+          <Grid container wrap="nowrap">
             <Grid item xs container zeroMinWidth justifyContent="center">
               <Typography
                 variant="subtitle3"
                 fontSize={7.5}
-                fontWeight={500}
+                fontWeight={openAccordionTaskDetails ? 500 : 500}
                 letterSpacing={".15rem"}
-                color="gray"
+                color={
+                  openAccordionTaskDetails
+                    ? theme.palette.tertiary.tGreenA100["contrastTextDark"]
+                    : "gray"
+                }
               >
                 DEADLINE : {deadline.toUpperCase()}, {date.getHours()}:
                 {date.getMinutes()}
@@ -97,5 +104,5 @@ const TaskDetailsAccordionSummary = ({ windowSize, task }) => {
       </Grid>
     </AccordionSummary>
   );
-};
+});
 export default TaskDetailsAccordionSummary;

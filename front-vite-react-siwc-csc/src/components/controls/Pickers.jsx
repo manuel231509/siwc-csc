@@ -4,15 +4,22 @@ import {
   DesktopTimePicker as DesktopTimePickerMui,
   LocalizationProvider as LocalizationProviderMui,
   MobileDatePicker as MobileDatePickerMui,
-  TimePicker as TimePickerMui
+  renderTimeViewClock,
+  TimePicker as TimePickerMui,
 } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import "dayjs/locale/es";
+import { forwardRef } from "react";
 import Controls from "./Controls";
-import { useStyles } from "./Styles/ControlStyles";
+import {
+  CustomStyledDatePicker,
+  CustomStyledTimerPicker,
+} from "./Styled/ControlStyled";
+import { TextField } from "@mui/material";
 
 const LoacalizationProvider = ({ children }) => {
   return (
-    <LocalizationProviderMui dateAdapter={AdapterDayjs}>
+    <LocalizationProviderMui dateAdapter={AdapterDayjs} adapterLocale={"es"}>
       {children}
     </LocalizationProviderMui>
   );
@@ -52,83 +59,58 @@ const DatePicker = ({ datePickerProps, error }) => {
   );
 };
 
+const TextFieldForwardRef = forwardRef((props, ref) => {
+  const { otherTextFieldProps, error, ...otherProps } = props;
+  return (
+    <Controls.Input
+      textFieldProps={{
+        variant: "filled",
+        id: "deadline",
+        name: "deadline",
+        autoComplete: "deadline",
+        fullWidth: true,
+        "aria-describedby": "component-error-text",
+        ...ref,
+        ...otherTextFieldProps,
+        ...otherProps,
+        error: Boolean(error),
+      }}
+      formHelperTextProps={{
+        id: "component-error-text",
+        sx: {
+          display: "flex",
+          alignItems: "center",
+          textAlign: "justify",
+        },
+      }}
+      error={error}
+    />
+  );
+});
+
 const DesktopDatePicker = ({
   desktopDatePickerProps,
   error,
   otherTextFieldProps,
 }) => {
-  const classes = useStyles();
-  const { InputProps } = otherTextFieldProps;
+  const { slotPropsTextField, ...propsTextField } = otherTextFieldProps;
   return (
     <LoacalizationProvider>
       <DesktopDatePickerMui
         {...desktopDatePickerProps}
-        InputProps={{
-          sx: {
-            fontSize: { xs: 12, sm: 14, md: 16 },
-          },
-        }}
-        PopperProps={{
-          className: classes.desktopDatePicker,
-          color: "blue",
-          sx: {},
-        }}
-        renderInput={(params) => {
-          const tempEndAdorment = {
-            ...params.InputProps.endAdornment,
-            ["props"]: {
-              ...params.InputProps.endAdornment.props,
-              ["position"]: "start",
-              ["children"]: {
-                ...params.InputProps.endAdornment.props.children,
-                ["props"]: {
-                  ...params.InputProps.endAdornment.props.children.props,
-                  ["edge"]: "start",
-                },
-              },
-            },
-          };
-
-          const tempInputProps = {
-            ...params.InputProps,
-            ["endAdornment"]: InputProps.endAdornment,
-            ["startAdornment"]: tempEndAdorment,
-          };
-          return (
-            <Controls.Input
-              textFieldProps={{
-                variant: "filled",
-                id: "deadline",
-                name: "deadline",
-                autoComplete: "deadline",
-                fullWidth: true,
-                "aria-describedby": "component-error-text",
-                ...otherTextFieldProps,
-                ...params,
-                error: Boolean(params.error || error),
-                InputLabelProps: {
-                  className: classes.inputLabelProps,
-                },
-                InputProps: tempInputProps,
-                sx: {
-                  "& .MuiInputAdornment-root.MuiInputAdornment-positionStart": {
-                    height: "3em",
-                    maxHeight: "5em",
-                    marginTop: "24px !important",
-                  },
-                },
-              }}
-              formHelperTextProps={{
-                id: "component-error-text",
-                sx: {
-                  display: "flex",
-                  alignItems: "center",
-                  textAlign: "justify",
-                },
-              }}
+        slots={{
+          popper: CustomStyledDatePicker,
+          textField: (params) => (
+            <TextFieldForwardRef
+              {...params}
+              otherTextFieldProps={propsTextField}
               error={error}
             />
-          );
+          ),
+        }}
+        slotProps={{
+          textField: { ...slotPropsTextField },
+          actionBar: { actions: ["today", "clear", "cancel"] },
         }}
       />
     </LoacalizationProvider>
@@ -172,62 +154,30 @@ const MobileDatePicker = ({ mobileDatePickerProps, error }) => {
 const DesktopTimePicker = ({
   desktopTimePickerProps,
   otherTextFieldProps,
-  formHelperTextProps,
   error,
 }) => {
-  const classes = useStyles();
-  const { InputProps } = otherTextFieldProps;
+  const { slotPropsTextField, ...propsTextField } = otherTextFieldProps;
   return (
     <LoacalizationProvider>
       <DesktopTimePickerMui
         {...desktopTimePickerProps}
-        renderInput={(params) => {
-          const tempEndAdorment = {
-            ...params.InputProps.endAdornment,
-            ["props"]: {
-              ...params.InputProps.endAdornment.props,
-              ["position"]: "start",
-              ["children"]: {
-                ...params.InputProps.endAdornment.props.children,
-                ["props"]: {
-                  ...params.InputProps.endAdornment.props.children.props,
-                  ["edge"]: "start",
-                },
-              },
-            },
-          };
-          const tempInputProps = {
-            ...params.InputProps,
-            ...InputProps,
-            ["endAdornment"]: InputProps.endAdornment,
-            ["startAdornment"]: tempEndAdorment,
-          };
-          return (
-            <Controls.Input
-              textFieldProps={{
-                variant: "filled",
-                id: "timeLimit",
-                name: "timeLimit",
-                autoComplete: "timeLimit",
-                fullWidth: true,
-                "aria-describedby": "component-error-text",
-                ...params,
-                ...otherTextFieldProps,
-                error: Boolean(params.error || error),
-                InputLabelProps: {
-                  className: classes.inputLabelProps,
-                },
-                InputProps: tempInputProps,
-                sx: {
-                  "& .MuiInputBase-input": {
-                    height: "40px",
-                  },
-                },
-              }}
-              formHelperTextProps={formHelperTextProps}
+        viewRenderers={{
+          hours: renderTimeViewClock,
+          minutes: renderTimeViewClock,
+          seconds: renderTimeViewClock,
+        }}
+        slots={{
+          popper: CustomStyledTimerPicker,
+          textField: (params) => (
+            <TextFieldForwardRef
+              {...params}
+              otherTextFieldProps={propsTextField}
               error={error}
             />
-          );
+          ),
+        }}
+        slotProps={{
+          textField: { ...slotPropsTextField },
         }}
       />
     </LoacalizationProvider>
@@ -271,8 +221,7 @@ const TimePicker = ({ timePickerProps, error }) => {
 export {
   DatePicker,
   DesktopDatePicker,
-  MobileDatePicker,
   DesktopTimePicker,
+  MobileDatePicker,
   TimePicker,
 };
-

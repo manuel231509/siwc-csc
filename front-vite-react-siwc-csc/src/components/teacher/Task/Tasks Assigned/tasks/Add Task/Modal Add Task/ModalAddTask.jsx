@@ -1,6 +1,9 @@
 import { Backdrop, Modal } from "@mui/material";
+import { lazy } from "react";
 import { useTasksAssignedContext } from "../../../../../../../context/Tasks/TasksProvider";
-import FadeAddTask from "./Fade Add Task/FadeAddTask";
+import { SuspenseProgressBackdrop } from "../../../../../../SuspenseProgress/SusProg";
+
+const FadeAddTask = lazy(() => import("./Fade Add Task/FadeAddTask"));
 
 const ModalAddTask = () => {
   const { openModalAddTask, handleChangeCloseModalAddTask } =
@@ -8,16 +11,20 @@ const ModalAddTask = () => {
   return (
     <Modal
       arial-labelledby="transition-modal-title"
-      arial-describedby="transition-modal-description"
+      arial-describedby="transition-modal-title"
       open={openModalAddTask}
       onClose={handleChangeCloseModalAddTask}
       closeAfterTransition
-      BackdropComponent={Backdrop}
-      BackdropProps={{
-        timeout: 400,
+      slots={{ backdrop: Backdrop }}
+      slotprops={{
+        backdrop: {
+          timeout: 500,
+        },
       }}
     >
-      <FadeAddTask />
+      <SuspenseProgressBackdrop>
+        <FadeAddTask />
+      </SuspenseProgressBackdrop>
     </Modal>
   );
 };

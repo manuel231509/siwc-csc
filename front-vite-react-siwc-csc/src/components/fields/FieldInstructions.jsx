@@ -1,10 +1,8 @@
 import { Close } from "@mui/icons-material";
 import { IconButton, InputAdornment } from "@mui/material";
 import Controls from "../controls/Controls";
-import useStyleField from "./Styles/FieldStyles";
 
 const FieldInstructions = (props) => {
-  const classes = useStyleField();
   const {
     fields,
     handleChangeFields,
@@ -17,7 +15,7 @@ const FieldInstructions = (props) => {
       textFieldProps={{
         id: "instructions",
         name: "instructions",
-        value: fields.instructions || "",
+        value: fields.instructions ?? "",
         onChange: handleChangeFields("instructions"),
         autoComplete: "instructions",
         fullWidth: true,

@@ -4,7 +4,6 @@ import { url } from "../Url";
 
 const getByIdDegree = (idDegree, jwt, bearer) => {
   const controller = loadAbort();
-  console.log("JSON WEB TOKEN: ", `${bearer} ${jwt}`);
   const config = {
     headers: {
       "Content-Type": "application/json",
@@ -20,4 +19,4 @@ const getByIdDegree = (idDegree, jwt, bearer) => {
   };
 };
 
-export {getByIdDegree}
+export { getByIdDegree };

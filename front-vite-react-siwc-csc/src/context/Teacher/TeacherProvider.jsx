@@ -99,6 +99,21 @@ const TeacherProvider = ({ children }) => {
     setSubjects((prev) => ({ ...prev, [nameField]: value }));
   };
 
+  const [openMainAchievements, setOpenMainAchievements] = useState(true);
+
+  const handleClickOpenMainAchievements = () => {
+    setOpenMainAchievements(!openMainAchievements);
+  };
+
+  const [openModalAddAchievements, setOpenModalAddAchievements] =
+    useState(true);
+
+  const handleChangeOpenModalAddAchievements = () =>
+    setOpenModalAddAchievements(true);
+
+  const handleChangeCloseModalAddAchievements = () =>
+    setOpenModalAddAchievements(false);
+
   const value = {
     open,
     expandedAccordion,
@@ -129,6 +144,11 @@ const TeacherProvider = ({ children }) => {
     handleChangePeriods,
     subjects,
     handleChangeSubjects,
+    openMainAchievements,
+    handleClickOpenMainAchievements,
+    openModalAddAchievements,
+    handleChangeOpenModalAddAchievements,
+    handleChangeCloseModalAddAchievements,
   };
 
   return (

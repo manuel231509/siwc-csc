@@ -1,7 +1,6 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { lazy } from "react";
-import { TeacherProvider } from "../../../context/Teacher/TeacherProvider";
 
 const AssignAchievements = lazy(() =>
   import("../Achievements/Assign Achievements/AssignAchievements")
@@ -34,9 +33,7 @@ const Achievements = () => {
         </Typography>
       </Grid>
       <Grid container sx={{ flexGrow: 1 }}>
-        {/* <TeacherProvider> */}
         <AssignAchievements />
-        {/* </TeacherProvider> */}
       </Grid>
     </Grid>
   );

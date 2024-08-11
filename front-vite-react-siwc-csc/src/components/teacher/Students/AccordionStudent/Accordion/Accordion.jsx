@@ -1,7 +1,7 @@
 import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
 import {
-  Accordion as AccordionMui,
   AccordionDetails,
+  Accordion as AccordionMui,
   AccordionSummary,
   Grid,
   Typography,
@@ -9,6 +9,7 @@ import {
 import { useTheme } from "@mui/material/styles";
 import { useTeacherContext } from "../../../../../context/Teacher/TeacherProvider";
 import Card from "../../Card/Card";
+import { lazy } from "react";
 
 const Accordion = ({ subject }) => {
   const theme = useTheme();
@@ -33,7 +34,9 @@ const Accordion = ({ subject }) => {
         alignItems: "center",
         mt: 1,
       }}
-      TransitionProps={{ unmountOnExit: true }}
+      slotProps={{
+        transition: { unmountOnExit: true },
+      }}
     >
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}

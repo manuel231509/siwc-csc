@@ -8,30 +8,19 @@ import App from "./App";
 import "./index.css";
 import StoreRedux from "./redux/store";
 import theme from "./themes/theme";
+import { SuspenseProgressBackdrop } from "./components/SuspenseProgress/SusProg";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider theme={theme}>
     <StyledEngineProvider injectFirst>
       <CssBaseline enableColorScheme />
-      <Suspense
-        fallback={
-          <Backdrop
-            sx={{
-              color: "primary",
-              zIndex: (theme) => theme.zIndex.drawer + 1,
-            }}
-            open={true}
-          >
-            <CircularProgress color="primary" />
-          </Backdrop>
-        }
-      >
+      <SuspenseProgressBackdrop>
         <Provider store={StoreRedux}>
           <BrowserRouter>
             <App />
           </BrowserRouter>
         </Provider>
-      </Suspense>
+      </SuspenseProgressBackdrop>
     </StyledEngineProvider>
   </ThemeProvider>
 );

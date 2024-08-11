@@ -1,4 +1,14 @@
-import { Grid, Paper } from "@mui/material";
+import {
+  CardContent,
+  CardHeader,
+  Card as CardMui,
+  Grid,
+  Paper,
+  Typography,
+} from "@mui/material";
+import { useState } from "react";
+import MainAchievements from "../List Achievements/Main Achievements/MainAchievements";
+import AddAchievements from "../Add Achievements/AddAchievements";
 
 const PaperAchievements = () => {
   return (
@@ -14,7 +24,28 @@ const PaperAchievements = () => {
         p: 1,
       }}
     >
-      <div>PaperAchievements</div>
+      <CardMui
+        elevation={9}
+        square
+        sx={{ width: "100%", backgroundColor: "whitesmoke" }}
+      >
+        <CardHeader
+          style={{ textAlign: "center" }}
+          title={
+            <Typography
+              variant="subtitle2"
+              fontWeight={700}
+              letterSpacing={".17rem"}
+            >
+              ASSIGNED ACHIEVEMENTS
+            </Typography>
+          }
+        />
+        <CardContent>
+          <AddAchievements />
+          <MainAchievements />
+        </CardContent>
+      </CardMui>
     </Grid>
   );
 };

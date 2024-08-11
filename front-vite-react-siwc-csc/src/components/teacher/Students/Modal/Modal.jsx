@@ -7,9 +7,9 @@ import {
   Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { lazy } from "react";
 import { useTeacherContext } from "../../../../context/Teacher/TeacherProvider";
 import useWindowSize from "../../../../hooks/useWindowSize";
-import EnhancedTable from "../EnhancedTableStudents/EnhancedTable";
 import { FadeStyled, IconButtonStyled } from "./ModalStyled/ModalStyled";
 
 const styleBox = {
@@ -21,6 +21,10 @@ const styleBox = {
   border: "2px solid #000",
   boxShadow: 25,
 };
+
+const EnhancedTable = lazy(() =>
+  import("../EnhancedTableStudents/EnhancedTable")
+);
 
 const Modal = () => {
   const theme = useTheme();
@@ -34,9 +38,13 @@ const Modal = () => {
       open={openModal}
       onClose={handleChangeCloseModal}
       closeAfterTransition
-      BackdropComponent={Backdrop}
-      BackdropProps={{
-        timeout: 400,
+      slots={{
+        backdrop: Backdrop,
+      }}
+      slotProps={{
+        backdrop: {
+          timeout: 400,
+        },
       }}
     >
       <FadeStyled in={openModal}>

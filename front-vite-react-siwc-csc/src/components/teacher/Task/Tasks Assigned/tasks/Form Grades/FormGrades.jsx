@@ -1,13 +1,20 @@
 import { CircularProgress, Grid, Skeleton } from "@mui/material";
 import { Box } from "@mui/system";
-import { useEffect, useState } from "react";
+import { lazy, useEffect } from "react";
 import { useSelector } from "react-redux";
+import {
+  descryptedText,
+  encryptedText,
+} from "../../../../../../CryptoJs/CryptoJs";
+import {
+  getObjectLocalStorage,
+  saveLocalStorage,
+} from "../../../../../../LocalStorage/LocalStorage";
 import { useTasksAssignedContext } from "../../../../../../context/Tasks/TasksProvider";
 import { useTeacherContext } from "../../../../../../context/Teacher/TeacherProvider";
-import useFetchAndLoad from "../../../../../../hooks/useFetchAndLoad1";
+import useFetchAndLoad from "../../../../../../hooks/useFetchAndLoad3";
 import { useForm } from "../../../../../../hooks/useForm";
 import {
-  getAllPeriods,
   getAllPeriodsSort,
   getPeriodByDateNowSystem,
 } from "../../../../../../services/period/PeriodService";
@@ -17,15 +24,14 @@ import {
 } from "../../../../../../services/teacher/TeacherService";
 import FieldsControl from "../../../../../fields/FieldsControl";
 import validate from "../../../../../fields/field validation/validate";
-import { FormStyled } from "../Styled/TasksCardsStyled";
-import {
-  getObjectLocalStorage,
-  saveLocalStorage,
-} from "../../../../../../LocalStorage/LocalStorage";
-import {
-  descryptedText,
-  encryptedText,
-} from "../../../../../../CryptoJs/CryptoJs";
+import { sweetAlert } from "../../../../../../sweetAlert2/SweetAlert";
+import Swal from "sweetalert2";
+
+const FormStyled = lazy(() =>
+  import("../Styled/TasksCardsStyled").then((module) => ({
+    default: module.FormStyled,
+  }))
+);
 
 const initialStateFields = {
   grades: "",
@@ -48,13 +54,19 @@ const CircularProgressWithLabel = (props) => {
 };
 
 const FormGrades = () => {
-  const { handleChangeSubjects, loading, periods, handleChangePeriods } =
-    useTasksAssignedContext();
+  const {
+    handleChangeSubjects,
+    periods,
+    handleChangePeriods,
+    degrees,
+    handleChangeDegrees,
+    handleChangeLoading,
+  } = useTasksAssignedContext();
 
   const { select, handleChangeSelect, handleChangeSelect1 } =
     useTeacherContext();
 
-  const { callEndPoint } = useFetchAndLoad();
+  const { loading, callEndPoint } = useFetchAndLoad(handleChangeLoading);
 
   const getApiDegreesAccordingToTeacher = async (
     idNumberTeacher,
@@ -63,6 +75,7 @@ const FormGrades = () => {
   ) =>
     await callEndPoint(
       getDegreesAccordingToTeacher(idNumberTeacher, jwt, bearer),
+      "gdegrees",
       "degrees"
     );
 
@@ -79,15 +92,21 @@ const FormGrades = () => {
         jwt,
         bearer
       ),
+      "gsubjects",
       "subjects"
     );
 
   const getApiAllPeriods = async (arrayOrdre, jwt, bearer) =>
-    await callEndPoint(getAllPeriodsSort(arrayOrdre, jwt, bearer), "periods");
+    await callEndPoint(
+      getAllPeriodsSort(arrayOrdre, jwt, bearer),
+      "gperiods",
+      "periods"
+    );
 
   const getApiPeriodByDateNowSystem = async (jwt, bearer) =>
     await callEndPoint(
       getPeriodByDateNowSystem(jwt, bearer),
+      "gperiodbydatenow",
       "periodbydatenow"
     );
 
@@ -109,14 +128,8 @@ const FormGrades = () => {
     }
   };
 
-  const {
-    fields,
-    handleChangeFields,
-    handleChangeFields1,
-    handleChangeFields2,
-    errors,
-    setErrors,
-  } = useForm(initialStateFields, true, validateFields);
+  const { fields, handleChangeFields, handleChangeFields2, errors, setErrors } =
+    useForm(initialStateFields, true, validateFields);
 
   const handleClickFields = (nameFields) => (e) => {
     e.preventDefault();
@@ -124,7 +137,6 @@ const FormGrades = () => {
       const value = e.target.dataset.value;
 
       if (nameFields === "grades") {
-        setProgress(0);
         getApiSubjectsByIdNumberTeacherAndIdDegree(
           teacher.idNumberTeacher,
           value,
@@ -146,17 +158,6 @@ const FormGrades = () => {
       });
     }
   };
-
-  const [degrees, setDegrees] = useState({
-    data: [],
-    error: {},
-  });
-
-  const handleChangeDegrees = (nameField, value) => {
-    setDegrees({ ...degrees, [nameField]: value });
-  };
-
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -222,6 +223,27 @@ const FormGrades = () => {
         handleChangeSubjects(subjectsAccordingTeacherAndDegree);
       } catch (error) {
         console.log("Error fetchData -> ", error);
+        sweetAlert({
+          position: "center",
+          icon: "error",
+          title: "",
+          text:
+            error.response?.data === undefined
+              ? error.message.toUpperCase()
+              : error.response?.data?.message?.includes("JWT expired")
+              ? "SESSION EXPIRED."
+              : error.response?.data?.message !== undefined
+              ? error.response?.data?.message?.toUpperCase()
+              : error.message.toUpperCase(),
+          showCancelButton: false,
+          showConfirmButton: false,
+          timer: 4000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+          },
+        });
       }
     };
     fetchData();
@@ -253,9 +275,10 @@ const FormGrades = () => {
         ) : (
           <Skeleton variant="rectangular" animation="wave" height={55} />
         )}
-        {loading.subjects && (
-          <CircularProgressWithLabel /* value={progress} */ disableShrink />
-        )}
+        {(loading.periods ||
+          loading["periodbydatenow"] ||
+          loading.degrees ||
+          loading.subjects) && <CircularProgressWithLabel disableShrink />}
       </FormStyled>
     </Grid>
   );

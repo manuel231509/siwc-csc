@@ -1,11 +1,11 @@
 import { lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import AuthGuard from "../Guards/AuthGuard";
+import RoutersPrivate from "./Private/RoutersPrivate";
 
 const Signup = lazy(() => import("../views/Sign Up/Signup"));
 const Login = lazy(() => import("../views/Log In/Login"));
 const NotFound = lazy(() => import("../components/not found/NotFound"));
-const RoutersPrivate = lazy(() => import("./Private/RoutersPrivate"));
 
 const RoutesWithNotFound = ({ children }) => {
   return (

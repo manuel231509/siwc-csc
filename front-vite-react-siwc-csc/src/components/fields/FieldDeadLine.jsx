@@ -1,5 +1,4 @@
-import { Close } from "@mui/icons-material";
-import { IconButton, InputAdornment } from "@mui/material";
+import dayjs from "dayjs";
 import Controls from "../controls/Controls";
 
 const FieldDeadLine = ({
@@ -15,24 +14,17 @@ const FieldDeadLine = ({
         disabled: fields.qualificationPoints === "0",
         label: "Deadline",
         inputFormat: "DD/MM/YYYY",
-        value: fields.deadline,
+        views: ["year", "month", "day"],
+        value: dayjs(fields.deadline),
         onChange: handleChangeFieldsDatePicker("deadline"),
       }}
       error={errors.deadline}
       otherTextFieldProps={{
-        InputProps: {
-          endAdornment: (
-            <InputAdornment
-              position="end"
-              onClick={handleClickClose("deadline")}
-            >
-              {fields.deadline ? (
-                <IconButton aria-label="toggle close field" edge="end">
-                  <Close fontSize={"small"} />
-                </IconButton>
-              ) : null}
-            </InputAdornment>
-          ),
+        slotPropsTextField: {
+          id: "deadline",
+          clearable: true,
+          onClear: handleClickClose("deadline"),
+          autoFocus: Boolean(errors.deadline) ? true : false,
         },
       }}
     />

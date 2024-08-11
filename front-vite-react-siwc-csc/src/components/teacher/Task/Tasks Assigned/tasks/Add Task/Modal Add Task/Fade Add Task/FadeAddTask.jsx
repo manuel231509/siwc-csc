@@ -1,7 +1,7 @@
 import { Close } from "@mui/icons-material";
 import { Box, Fade, Grid, Skeleton, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { forwardRef, useEffect } from "react";
+import { forwardRef, lazy, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useTasksAssignedContext } from "../../../../../../../../context/Tasks/TasksProvider";
 import { useTeacherContext } from "../../../../../../../../context/Teacher/TeacherProvider";
@@ -9,7 +9,9 @@ import useFetchAndLoad from "../../../../../../../../hooks/useFetchAndLoad1";
 import useWindowSize from "../../../../../../../../hooks/useWindowSize";
 import { getByIdDegree } from "../../../../../../../../services/degrees/DegreesService";
 import { IconButtonCloseStyled } from "../../../../task/Task Details/Accordion Details/Modal Delivered Task/Fade Delivered Task/Styled/CardHeaderStyled";
-import FormAddTask from "./Form Add Task/FormAddTask";
+import { GridContainerFadeAddTask } from "./Styled/FadeAddTaskStyled";
+
+const FormAddTask = lazy(() => import("./Form Add Task/FormAddTask"));
 
 const styleBox = {
   position: "absolute",
@@ -22,8 +24,6 @@ const styleBox = {
 
 const FadeAddTask = () => {
   const theme = useTheme();
-
-  const pTeal = theme.palette.primary;
 
   const { height, width } = useWindowSize();
 
@@ -64,13 +64,13 @@ const FadeAddTask = () => {
           sx={{
             flexGrow: 1,
             p: 0.9,
-            width: { xs: "89.4vw", sm: "89.6vw", md: "79.7vw", lg: "79.8vw" },
+            // width: { xs: "89.4vw", sm: "89.6vw", md: "79.7vw", lg: "79.8vw" },
             borderBottom: "2.9px solid #000000",
-            boxShadow: 10,
+            boxShadow: 15,
           }}
-          bgcolor={pTeal["main"]}
+          bgcolor={(theme) => theme.palette.primary["main"]}
         >
-          <Grid item xs={10.5} sx={{ flexGrow: 1 }}>
+          <Grid item xs sx={{ flexGrow: 1 }}>
             <Grid
               container
               justifyContent="center"
@@ -87,15 +87,14 @@ const FadeAddTask = () => {
                 textAlign="center"
                 fontWeight={700}
                 letterSpacing={".2rem"}
-                color={theme.palette.primary["contrastTextMain"]}
+                color={(theme) => theme.palette.primary["contrastTextMain"]}
                 fontSize={{
                   xs: ".7rem",
                   sm: ".9rem",
-                  md: "1.1rem",
                 }}
               >
                 {!loading["degree"] ? (
-                  <>ADD TASK ({select?.degree?.nameDegree})</>
+                  `ADD TASK (${select?.degree?.nameDegree})`
                 ) : (
                   <Skeleton width="200px" height="30px" animation="wave" />
                 )}
@@ -109,7 +108,6 @@ const FadeAddTask = () => {
                 fontSize={{
                   xs: ".7rem",
                   sm: ".9rem",
-                  md: "1.1rem",
                 }}
               >
                 {!loading["degree"] ? (
@@ -120,36 +118,15 @@ const FadeAddTask = () => {
               </Typography>
             </Grid>
           </Grid>
-          <Grid item xs={1.5} container justifyContent="end">
-            <IconButtonCloseStyled
-              onClick={handleChangeCloseModalAddTask}
-              sx={{ color: pTeal["contrastTextMain"] }}
-            >
+          <Grid item xs={0.7} container justifyContent="end">
+            <IconButtonCloseStyled onClick={handleChangeCloseModalAddTask}>
               {theme.direction !== "rtl" && <Close />}
             </IconButtonCloseStyled>
           </Grid>
         </Grid>
-        <Grid
-          container
-          direction={"row"}
-          justifyContent={"space-between"}
-          alignItems="center"
-          sx={{
-            flexGrow: 1,
-            p: 1.7,
-            width: { xs: "89.4vw", sm: "89.6vw", md: "79.7vw", lg: "79.8vw" },
-            ...(height > 0 && height < 400 && { height: "65vh" }),
-            ...(height > 400 && height <= 600 && { height: "75vh" }),
-            borderBottom: "2.9px solid #000000",
-            boxShadow: 10,
-            maxWidth: "98vw",
-            maxHeight: "83vh",
-            overflowY: "auto",
-          }}
-          bgcolor="background.paper"
-        >
+        <GridContainerFadeAddTask height={height}>
           <FormAddTask />
-        </Grid>
+        </GridContainerFadeAddTask>
       </Box>
     </Fade>
   );

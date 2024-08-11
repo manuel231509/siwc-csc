@@ -1,6 +1,6 @@
 import { Box, CircularProgress, Fade, Grid, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import React, { forwardRef, useEffect, useState } from "react";
+import React, { forwardRef, lazy, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useTasksAssignedContext } from "../../../../../../../../../context/Tasks/TasksProvider";
 import useFetchAndLoad from "../../../../../../../../../hooks/useFetchAndLoad3";
@@ -10,7 +10,10 @@ import {
   IconButtonCloseStyled,
   IconCloseStyled,
 } from "./Styled/CardHeaderStyled";
-import DeliveredTaskDetailsAccordion from "./Delivered Task Details/DeliveredTaskDetailsAccordion";
+
+const DeliveredTaskDetailsAccordion = lazy(() =>
+  import("./Delivered Task Details/DeliveredTaskDetailsAccordion")
+);
 
 const styleBox = {
   position: "absolute",

@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 import { Form } from "../../../../../../hooks/useForm";
 
-export const FormStyled = styled(Form)(({ theme }) => ({
+const FormStyled = styled(Form)(({ theme }) => ({
   padding: theme.spacing(2),
   backgroundColor: theme.palette.tertiary.contrastTextMain,
   boxShadow: theme.shadows[10],
@@ -16,3 +16,6 @@ export const FormStyled = styled(Form)(({ theme }) => ({
   },
   rowGap: theme.spacing(1),
 }));
+
+export default FormStyled;
+export { FormStyled };

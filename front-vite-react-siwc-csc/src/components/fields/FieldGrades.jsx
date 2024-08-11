@@ -26,7 +26,7 @@ const FieldGrades = (props) => {
         labelId: "select-grades-label",
         id: "select-grades",
         name: "grades",
-        value: fields.grades,
+        value: fields.grades ?? "",
         onChange: handleChangeFields("grades"),
         autoWidth: true,
         label: "Select a Grade",

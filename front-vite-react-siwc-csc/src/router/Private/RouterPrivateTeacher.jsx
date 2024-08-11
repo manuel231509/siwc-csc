@@ -16,7 +16,6 @@ const RouterPrivateTeacher = () => {
       <Route path="task" element={<Task />} />
       <Route path="ratings" element={<Ratings />} />
       <Route path="calendar" element={<Calendar />} />
-      
     </RoutesWithNotFound>
   );
 };

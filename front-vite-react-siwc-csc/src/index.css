@@ -1,0 +1,26 @@
+
+/* customScroll.css */
+
+/* Personaliza el scroll para navegadores basados en Webkit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 7px; /* Ancho del scroll */
+}
+
+::-webkit-scrollbar-track {
+    background: #eaf1ea; /* Color del fondo del track del scroll */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #39796b; /* Color de la barra de desplazamiento */
+    
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #006b5a; /* Color de la barra de desplazamiento al pasar el ratón */
+}
+
+/* Personaliza el scroll para Firefox */
+body {
+    scrollbar-width: thin; /* Grosor del scroll */
+    scrollbar-color: #39796b #eaf1ea; /* Color de la barra de desplazamiento y del track */
+}

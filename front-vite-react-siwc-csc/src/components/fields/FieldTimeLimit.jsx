@@ -1,5 +1,4 @@
-import { Close } from "@mui/icons-material";
-import { IconButton, InputAdornment } from "@mui/material";
+import dayjs from "dayjs";
 import Controls from "../controls/Controls";
 
 const FieldTimeLimit = ({
@@ -8,47 +7,27 @@ const FieldTimeLimit = ({
   errors,
   handleClickClose,
 }) => {
+  const disablePast =
+    dayjs(fields.deadline).format("DD/MM/YYYY") ===
+    dayjs(Date()).format("DD/MM/YYYY");
   return (
     <Controls.DesktopTimePicker
       desktopTimePickerProps={{
-        disablePast: true,
+        disablePast: disablePast,
         label: "Time Limit",
-        value: fields.timeLimit,
+        value: dayjs(fields.timeLimit),
         onChange: handleChangeFieldsDatePicker("timeLimit"),
-      }}
-      otherTextFieldProps={{
-        sx: {
-          fontSize: { xs: 12, sm: 14, md: 16 },
-        },
-        required: Boolean(fields.deadline),
-        InputProps: {
-          endAdornment: (
-            <InputAdornment position="end">
-              {fields.timeLimit ? (
-                <IconButton
-                  aria-label="toggle close field"
-                  edge="end"
-                  onClick={handleClickClose("timeLimit")}
-                >
-                  <Close fontSize={"small"} />
-                </IconButton>
-              ) : null}
-            </InputAdornment>
-          ),
-          sx: {
-            fontSize: { xs: 12, sm: 14, md: 16 },
-          },
-        },
-      }}
-      formHelperTextProps={{
-        id: "component-error-text",
-        sx: {
-          display: "flex",
-          alignItems: "center",
-          textAlign: "justify",
-        },
+        autoFocus: Boolean(errors.timeLimit) ? true : false,
       }}
       error={errors.timeLimit}
+      otherTextFieldProps={{
+        required: Boolean(fields.deadline),
+        slotPropsTextField: {
+          id: "timelimit",
+          clearable: true,
+          onClear: handleClickClose("timelimit"),
+        },
+      }}
     />
   );
 };

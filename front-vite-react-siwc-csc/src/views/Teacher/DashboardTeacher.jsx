@@ -1,9 +1,11 @@
 import { Box, Grid, Paper } from "@mui/material";
 import { useTheme as theme } from "@mui/material/styles";
+import { lazy } from "react";
 import { Outlet } from "react-router-dom";
-import CopyRight from "../../components/copy right/CopyRight";
-import AppBar from "../../components/teacher/AppBar/AppBar";
-import Drawer from "../../components/teacher/Drawer/Drawer";
+
+const CopyRight = lazy(() => import("../../components/copy right/CopyRight"));
+const AppBar = lazy(() => import("../../components/teacher/AppBar/AppBar"));
+const Drawer = lazy(() => import("../../components/teacher/Drawer/Drawer"));
 
 const DashboardTeacher = () => {
   const tGreen100 = theme().palette.tertiary.tGreen50["main"];

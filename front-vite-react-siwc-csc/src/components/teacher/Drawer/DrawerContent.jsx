@@ -1,6 +1,5 @@
 import {
   CalendarMonth as CalendarIcon,
-  Dashboard as DashBoardIcon,
   EmojiEvents as EmojiEventsIcon,
 } from "@mui/icons-material";
 import {
@@ -16,15 +15,30 @@ import { useTheme } from "@mui/material/styles";
 import Image from "mui-image";
 import { NavLink } from "react-router-dom";
 import add_jobs from "../../../assets/images/add_jobs.png";
+import reportCard from "../../../assets/images/boletin-informativo.png";
 import rating from "../../../assets/images/rating.png";
 import students2 from "../../../assets/images/students2.png";
-import reportCard from "../../../assets/images/boletin-informativo.png";
 import { useTeacherContext } from "../../../context/Teacher/TeacherProvider";
 
 const dataList = [
   // { icon: <DashBoardIcon />, label: "DASHBOARD", router: "dashboard" },
   {
-    icon: <Image src={students2} width={27} />,
+    icon: (
+      <Image
+        src={students2}
+        alt={"students"}
+        width={27}
+        height={"auto"}
+        fit={"cover"}
+        duration={1000}
+        easing={"ease-in-out"}
+        showLoading={true}
+        errorIcon={true}
+        shift={"bottom"}
+        distance={"100px"}
+        shiftDuration={500}
+      />
+    ),
     label: "STUDENTS",
     router: "list/students",
   },
@@ -34,12 +48,41 @@ const dataList = [
   //   router: "subjects",
   // },
   {
-    icon: <Image src={add_jobs} width={27} />,
+    icon: (
+      <Image
+        src={add_jobs}
+        alt={"add_jobs"}
+        width={27}
+        height={"auto"}
+        fit={"cover"}
+        duration={1000}
+        easing={"ease-in-out"}
+        showLoading={true}
+        errorIcon={true}
+        shift={"bottom"}
+        distance={"100px"}
+        shiftDuration={500}
+      />
+    ),
     label: "ADD TASK",
     router: "task",
   },
   {
-    icon: <Image src={rating} width={27.5} />,
+    icon: (
+      <Image
+        src={rating}
+        width={27.5}
+        height={"auto"}
+        fit={"cover"}
+        duration={1000}
+        easing={"ease-in-out"}
+        showLoading={true}
+        errorIcon={true}
+        shift={"bottom"}
+        distance={"100px"}
+        shiftDuration={500}
+      />
+    ),
     label: "RATINGS",
     router: "ratings",
   },
@@ -49,7 +92,21 @@ const dataList = [
     router: "achievements",
   },
   {
-    icon: <Image src={reportCard} width={23} />,
+    icon: (
+      <Image
+        src={reportCard}
+        width={23}
+        height={"auto"}
+        fit={"cover"}
+        duration={1000}
+        easing={"ease-in-out"}
+        showLoading={true}
+        errorIcon={true}
+        shift={"bottom"}
+        distance={"100px"}
+        shiftDuration={500}
+      />
+    ),
     label: "REPORT CARD",
     router: "report-card",
   },
@@ -63,7 +120,7 @@ const DrawerContent = () => {
     <Grid flex>
       <Divider
         sx={{
-          bgcolor: (theme) => theme.palette.primary.contrastTextLight,
+          bgcolor: (theme) => theme.palette.primary["contrastTextLight"],
         }}
       />
       <List
@@ -82,12 +139,14 @@ const DrawerContent = () => {
             onClick={handleDrawerClose}
           >
             <NavLink
-              style={({ isActive }) => {
+              style={({ isActive, isTransitioning }) => {
                 return {
                   display: "block",
                   margin: "0.5rem 0",
                   textDecoration: "none",
-                  backgroundColor: isActive && theme.palette.secondary.light,
+                  fontWeight: isActive ? "bold" : "",
+                  backgroundColor: isActive && theme.palette.secondary["light"],
+                  viewTransitionName: isTransitioning ? "slide" : "",
                 };
               }}
               to={data.router}

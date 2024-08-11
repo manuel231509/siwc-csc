@@ -5,18 +5,16 @@ import { useTasksAssignedContext } from "../../../../../../context/Tasks/TasksPr
 const AddTask = () => {
   const { handleChangeOpenModalAddTask } = useTasksAssignedContext();
   return (
-    <>
-      <Grid container justifyContent="center" mb={3.5}>
-        <Button
-          variant="contained"
-          onClick={handleChangeOpenModalAddTask}
-          color="secondary"
-          startIcon={<AddCircle />}
-        >
-          ADD TASK
-        </Button>
-      </Grid>
-    </>
+    <Grid container justifyContent="center" mb={3.5}>
+      <Button
+        variant="contained"
+        onClick={handleChangeOpenModalAddTask}
+        color="secondary"
+        startIcon={<AddCircle />}
+      >
+        ADD TASK
+      </Button>
+    </Grid>
   );
 };
 export default AddTask;

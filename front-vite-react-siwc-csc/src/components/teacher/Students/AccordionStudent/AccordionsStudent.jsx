@@ -1,10 +1,8 @@
 import { Grid } from "@mui/material";
-import { useEffect, useState } from "react";
-
-import { lazy } from "react";
+import { lazy, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import Accordion from "./Accordion/Accordion";
 
+const Accordion = lazy(() => import("./Accordion/Accordion"));
 const Modal = lazy(() => import("../Modal/Modal"));
 
 const AccordionsStudent = () => {

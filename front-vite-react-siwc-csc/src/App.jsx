@@ -14,6 +14,10 @@ import { Routers } from "./router/Routers";
 import { loginSession } from "./services/session/SessionService";
 import { sweetAlert } from "./sweetAlert2/SweetAlert";
 
+// const Routers = lazy(() =>
+//   import("./router/Routers").then((module) => ({ default: module.Routers }))
+// );
+
 const App = () => {
   const { callEndPoint } = useFetchAndLoad();
   const dispatch = useDispatch();
@@ -62,6 +66,7 @@ const App = () => {
           }
         } catch (error) {
           dispatch(modifyLoading(false));
+          alert("ERROR: ", error);
           sweetAlert({
             position: "center",
             icon: "error",
@@ -71,6 +76,8 @@ const App = () => {
                 ? error.message.toUpperCase()
                 : error.response?.data?.message?.includes("JWT expired")
                 ? "SESSION EXPIRED."
+                : error.response?.data?.message === undefined
+                ? error.message.toUpperCase()
                 : error.response?.data?.message?.toUpperCase(),
             showCancelButton: false,
             showConfirmButton: false,

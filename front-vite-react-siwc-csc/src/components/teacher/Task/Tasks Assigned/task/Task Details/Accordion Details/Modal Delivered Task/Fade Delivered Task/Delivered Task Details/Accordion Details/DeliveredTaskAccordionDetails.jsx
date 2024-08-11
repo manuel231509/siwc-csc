@@ -14,9 +14,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AccordionDetails, Grid, IconButton, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import React, { useState } from "react";
-import { StyledBadgeStyled } from "./Styled/DeliveredTaskAccordionDetailsStyled";
 import useWindowSize from "../../../../../../../../../../../hooks/useWindowSize";
-import FormQualificationNotes from "./Form Qualification Notes/FormQualificationNotes";
+import { StyledBadgeStyled } from "./Styled/DeliveredTaskAccordionDetailsStyled";
+import { lazy } from "react";
+
+const FormQualificationNotes = lazy(() =>
+  import("./Form Qualification Notes/FormQualificationNotes")
+);
 
 const DeliveredTaskAccordionDetails = ({ deliveredTaskStudent }) => {
   const { width } = useWindowSize();

@@ -14,7 +14,7 @@ import {
   Typography,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { Image } from "mui-image";
+import Image from "mui-image";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -132,7 +132,17 @@ const AppBar = () => {
             >
               <Image
                 src={shield_csc_image_without_background}
-                width={80}
+                alt={"shield_csc"}
+                width={60}
+                height={"auto"}
+                fit={"cover"}
+                duration={1000}
+                easing={"ease-in-out"}
+                showLoading={true}
+                errorIcon={true}
+                shift={"bottom"}
+                distance={"100px"}
+                shiftDuration={500}
                 sx={{
                   mt: 0.5,
                   mb: 0.9,
@@ -187,29 +197,31 @@ const AppBar = () => {
               open={openMenu}
               onClose={handleCloseMenu}
               onClick={handleCloseMenu}
-              PaperProps={{
-                elevation: 5,
-                sx: {
-                  overflow: "visible",
-                  filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-                  //mt: 1.5,
-                  "& .MuiAvatar-root": {
-                    width: 32,
-                    height: 32,
-                    ml: -0.5,
-                    mr: 1,
-                  },
-                  "&:before": {
-                    content: '""',
-                    display: "block",
-                    position: "absolute",
-                    top: 0,
-                    right: 14,
-                    width: 10,
-                    height: 10,
-                    backgroundColor: "background.paper",
-                    transform: "translateY(-50%) rotate(45deg)",
-                    zIndex: 0,
+              slotProps={{
+                paper: {
+                  elevation: 5,
+                  sx: {
+                    overflow: "visible",
+                    filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                    //mt: 1.5,
+                    "& .MuiAvatar-root": {
+                      width: 32,
+                      height: 32,
+                      ml: -0.5,
+                      mr: 1,
+                    },
+                    "&:before": {
+                      content: '""',
+                      display: "block",
+                      position: "absolute",
+                      top: 0,
+                      right: 14,
+                      width: 10,
+                      height: 10,
+                      backgroundColor: "background.paper",
+                      transform: "translateY(-50%) rotate(45deg)",
+                      zIndex: 0,
+                    },
                   },
                 },
               }}

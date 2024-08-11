@@ -18,7 +18,7 @@ const FieldStudents = (props) => {
     listStudents,
     handleClickFieldsAllStudents,
   } = props;
-
+  console.log("fields.students: ", fields.students);
   return (
     <Controls.SelectCheckMark
       formControlProps={{
@@ -38,13 +38,13 @@ const FieldStudents = (props) => {
         labelId: "select-students-label",
         id: "select-students",
         name: "students",
-        value: fields.students || [],
+        value: fields.students,
         onChange: handleChangeFields("students"),
         autoWidth: true,
         multiple: true,
-        MenuProps: MenuProps,
         renderValue: (selected) =>
           selected.length + ` STUDENT${selected.length >= 2 ? "S" : ""}`,
+        MenuProps: MenuProps,
         "aria-describedby": "component-error-text",
         sx: {
           textAlign: "center",

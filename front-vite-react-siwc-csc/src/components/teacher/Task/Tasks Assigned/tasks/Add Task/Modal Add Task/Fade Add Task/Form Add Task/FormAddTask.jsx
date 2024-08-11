@@ -5,7 +5,7 @@ import {
 import { LoadingButton } from "@mui/lab";
 import { Badge, Grid, Typography } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useTasksAssignedContext } from "../../../../../../../../../context/Tasks/TasksProvider";
 import { useTeacherContext } from "../../../../../../../../../context/Teacher/TeacherProvider";
@@ -25,7 +25,9 @@ import { sweetAlertButtonAddTask } from "../../../../../../../../../sweetAlert2/
 import FieldsControl from "../../../../../../../../fields/FieldsControl";
 import validate from "../../../../../../../../fields/field validation/validate";
 import useStyles from "../../../Styles/Styles";
-import MultipleFileUploadField from "./Upload Field/MultipleFileUploadField";
+const MultipleFileUploadField = lazy(() =>
+  import("./Upload Field/MultipleFileUploadField")
+);
 
 const initialStateFields = {
   title: "",
@@ -35,6 +37,10 @@ const initialStateFields = {
   deadline: null,
   timeLimit: null,
   plan: null,
+};
+
+const initialFieldsRef = {
+  deadline: null,
 };
 
 const listQualificationPoints = [
@@ -62,6 +68,10 @@ const FormAddTask = () => {
   const { callEndPoint } = useFetchAndLoad();
 
   const { select } = useTeacherContext();
+
+  const refField = useRef();
+
+  const [isFocused, setIsFocused] = useState(false);
 
   const {
     periodsPlans,
@@ -108,7 +118,9 @@ const FormAddTask = () => {
     errors,
     setErrors,
     resetFields,
-  } = useForm(initialStateFields, true, validateFields);
+    fieldsRef,
+    handleChangeFieldsRef,
+  } = useForm(initialStateFields, true, validateFields, initialFieldsRef);
 
   const [files, setFiles] = useState([]);
 
@@ -120,20 +132,27 @@ const FormAddTask = () => {
     setFiles([]);
   };
 
-  const handleClickFieldsAllStudents = () => {
-    setFields({
-      ...fields,
+  const handleClickFieldsAllStudents = (event) => {
+    event.preventDefault();
+    console.log(
+      "handleClickFieldsAllStudents: ",
+      fields.students.length,
+      listStudents.value.length
+    );
+    setFields((prev) => ({
+      ...prev,
       ["students"]:
-        fields.students.length === listStudents.value.length
+        prev.students.length === listStudents.value.length
           ? []
           : listStudents.value,
-    });
-    validateFields({
-      ["students"]:
-        fields.students.length === listStudents.value.length
-          ? []
-          : listStudents.value,
-    });
+    }));
+    // console.log(fields.students, listStudents.value);
+    // validateFields({
+    //   ["students"]:
+    //     fields.students.length === listStudents.value.length
+    //       ? []
+    //       : listStudents.value,
+    // });
   };
 
   const handleClickClose = (nameField) => (e) => {
@@ -289,8 +308,6 @@ const FormAddTask = () => {
   const { teacher } = session;
 
   useEffect(() => {
-    console.log("degree: ", select.degree);
-    console.log("select.subjects.idSubject: ", select.subjects.idSubject);
     getApiStudentsByIdDegreeAndIdSubjectAndIdNumberTeacher(
       select.grades,
       select.subjects.idSubject,
@@ -305,7 +322,7 @@ const FormAddTask = () => {
         handleChangeListStudents("error", error);
       });
   }, []);
-
+  console.log("FormAddTask");
   return (
     <Grid container justifyContent={"center"} alignItems="center">
       <Form
@@ -320,25 +337,17 @@ const FormAddTask = () => {
         <Grid
           container
           columnGap={{ xs: 2, sm: 2.5, md: 3.5 }}
-          rowGap={2}
+          rowGap={1}
           alignItems="center"
         >
           <Grid
             item
-            xs
+            {...(windowSize.width <= 550 ? { xs: 12 } : { xs: true })}
             container
             rowGap={1.5}
             boxShadow={5}
             sx={{
               padding: 1.5,
-              ...(windowSize.width > 400 && windowSize.width < 420
-                ? {
-                    maxWidth: "39vw",
-                  }
-                : windowSize.width >= 420 &&
-                  windowSize.width <= 450 && {
-                    maxWidth: "100vw",
-                  }),
             }}
           >
             <FieldsControl.FieldTitle
@@ -364,7 +373,6 @@ const FormAddTask = () => {
             />
             <Grid
               container
-              mt={1}
               p={1.5}
               sx={{
                 border: "1px solid gray",
@@ -403,12 +411,13 @@ const FormAddTask = () => {
 
           <Grid
             item
-            {...(windowSize.width <= 400 ? { xs: 12 } : { xs: true })}
+            {...(windowSize.width <= 550 ? { xs: 12 } : { xs: true })}
             p={2}
             container
             rowGap={1.5}
             boxShadow={5}
           >
+            {/* <pre>{JSON.stringify(fields.students, null, 2)}</pre> */}
             <FieldsControl.FieldStudents
               fields={fields}
               handleChangeFields={handleChangeFields}
@@ -445,7 +454,7 @@ const FormAddTask = () => {
           </Grid>
         </Grid>
 
-        <Grid container mt={3} mb={0} rowSpacing={5} justifyContent="center">
+        <Grid container mt={2.5} mb={0} justifyContent="center">
           <LoadingButton
             type="submit"
             aria-label="add a taks"

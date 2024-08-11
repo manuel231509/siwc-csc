@@ -19,7 +19,7 @@ import {
 } from "../../../../services/teacher/TeacherService";
 import FieldsControl from "../../../fields/FieldsControl";
 import validate from "../../../fields/field validation/validate";
-import { AchievementsSyled } from "../Styled/AchievementsSyled";
+import { FormStyled } from "../Styled/AchievementsSyled";
 
 const CircularProgressWithLabel = (props) => {
   return (
@@ -86,12 +86,45 @@ const FormAchievements = () => {
     e.preventDefault();
     if (validateFields()) {
       const value = e.target.dataset.value;
+      const subject = subjects.data
+        .filter((subject) => subject.idSubject === value)
+        .reduce(
+          (result, item) => ({
+            nameSubjects: encryptedText(item.nameSubject),
+          }),
+          {}
+        );
+      const degree = degrees.data
+        .filter((degree) => degree.idDegree === value)
+        .reduce(
+          (result, item) => ({
+            nameDegrees: encryptedText(item.nameDegree),
+          }),
+          {}
+        );
+
+      console.log("====================================");
+      console.log("nameDegree:", degree, "nameSubject: ", subject);
+      console.log("====================================");
+
       const selectFormAchievements = getObjectLocalStorage("formachievements");
-      saveLocalStorage("formachievements", {
+      const formAchievements = {
         ...selectFormAchievements,
         [nameField]: encryptedText(value),
-      });
+        ...degree,
+        ...subject,
+      };
+      saveLocalStorage("formachievements", formAchievements);
+
       handleChangeSelect(nameField, value);
+      handleChangeSelect(
+        "nameDegrees",
+        descryptedText(formAchievements?.nameDegrees)
+      );
+      handleChangeSelect(
+        "nameSubjects",
+        descryptedText(formAchievements?.nameSubjects)
+      );
     }
   };
 
@@ -171,19 +204,34 @@ const FormAchievements = () => {
       if (!selectFormAchievements?.grades) {
         if (degreesAccordingTeach[0]) {
           auxFields.grades = degreesAccordingTeach[0].idDegree;
-          auxSelect.grades = degreesAccordingTeach[0].idDegree;
+          auxSelect.degrees = degreesAccordingTeach[0].idDegree;
+          auxSelect.nameDegrees = degreesAccordingTeach[0].nameDegree;
         }
       } else {
-        auxFields.grades = descryptedText(selectFormAchievements["grades"]);
-        auxSelect.grades = descryptedText(selectFormAchievements["grades"]);
+        if (selectFormAchievements["degrees"]) {
+          auxFields.grades = descryptedText(selectFormAchievements["degrees"]);
+          auxSelect.degrees = descryptedText(selectFormAchievements["degrees"]);
+        } else {
+          auxFields.grades = degreesAccordingTeach[0].idDegree;
+          auxSelect.degrees = degreesAccordingTeach[0].idDegree;
+          auxSelect.nameDegrees = degreesAccordingTeach[0].nameDegree;
+        }
+        if (selectFormAchievements["nameDegrees"]) {
+          auxSelect.nameDegrees = descryptedText(
+            selectFormAchievements["nameDegrees"]
+          );
+        } else {
+          auxSelect.nameDegrees = degreesAccordingTeach[0].nameDegree;
+        }
       }
       handleChangeFields1("grades", auxFields.grades, false);
-      handleChangeSelect("grades", auxSelect.grades);
+      handleChangeSelect("degrees", auxSelect.degrees);
+      handleChangeSelect("nameDegrees", auxSelect.nameDegrees);
 
       const { data: subjectsAccordingToTeacherDegree } =
         await getApiSubjectsByTeacherAndDegree(
           tch.idNumberTeacher,
-          auxSelect.grades,
+          auxSelect.degrees,
           jwt,
           bearer
         );
@@ -192,19 +240,42 @@ const FormAchievements = () => {
         if (subjectsAccordingToTeacherDegree[0]) {
           auxFields.subjects = subjectsAccordingToTeacherDegree[0]?.idSubject;
           auxSelect.subjects = subjectsAccordingToTeacherDegree[0]?.idSubject;
+          auxSelect.nameSubjects =
+            subjectsAccordingToTeacherDegree[0]?.nameSubject;
         }
       } else {
-        auxFields.subjects = descryptedText(selectFormAchievements["subjects"]);
-        auxSelect.subjects = descryptedText(selectFormAchievements["subjects"]);
+        if (selectFormAchievements["subjects"]) {
+          auxFields.subjects = descryptedText(
+            selectFormAchievements["subjects"]
+          );
+          auxSelect.subjects = descryptedText(
+            selectFormAchievements["subjects"]
+          );
+        } else {
+          auxFields.subjects = subjectsAccordingToTeacherDegree[0]?.idSubject;
+          auxSelect.subjects = subjectsAccordingToTeacherDegree[0]?.idSubject;
+        }
+        if (selectFormAchievements["nameSubjects"]) {
+          console.log(descryptedText(selectFormAchievements["nameSubjects"]));
+          auxSelect.nameSubjects = descryptedText(
+            selectFormAchievements["nameSubjects"]
+          );
+        } else {
+          auxSelect.nameSubjects =
+            subjectsAccordingToTeacherDegree[0]?.nameSubject;
+        }
       }
       handleChangeFields1("subjects", auxFields.subjects, false);
       handleChangeSelect("subjects", auxSelect.subjects);
+      handleChangeSelect("nameSubjects", auxSelect.nameSubjects);
 
       saveLocalStorage("formachievements", {
         ...selectFormAchievements,
         ["periods"]: encryptedText(auxSelect.periods),
-        ["grades"]: encryptedText(auxSelect.grades),
+        ["degrees"]: encryptedText(auxSelect.degrees),
+        ["nameDegrees"]: encryptedText(auxSelect.nameDegrees),
         ["subjects"]: encryptedText(auxSelect.subjects),
+        ["nameSubjects"]: encryptedText(auxSelect.nameSubjects),
       });
     };
     fetchData();
@@ -212,7 +283,7 @@ const FormAchievements = () => {
 
   return (
     <Grid container mb={2} justifyContent={"center"} alignContent={"center"}>
-      <AchievementsSyled>
+      <FormStyled>
         {!loading["achievements_periods_g"] &&
         !loading["achievements_periodbydatenow_g"] ? (
           <FieldsControl.FieldPeriod
@@ -257,7 +328,7 @@ const FormAchievements = () => {
           loading["achievements_periodbydatenow_g"]) && (
           <CircularProgressWithLabel /* value={progress} */ disableShrink />
         )}
-      </AchievementsSyled>
+      </FormStyled>
     </Grid>
   );
 };

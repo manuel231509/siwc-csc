@@ -1,20 +1,21 @@
 import {
-  Card as CardMui,
   CardContent,
   CardHeader,
+  Card as CardMui,
   CircularProgress as CircularProgressMui,
   Grid,
   Typography,
 } from "@mui/material";
-import { useEffect } from "react";
+import { lazy, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useTasksAssignedContext } from "../../../../../context/Tasks/TasksProvider";
 import { useTeacherContext } from "../../../../../context/Teacher/TeacherProvider";
 import useFetchAndLoad from "../../../../../hooks/useFetchAndLoad1";
 import { getPeriodsPlansByIdPeriodAndSubectAndDegree } from "../../../../../services/period plan/PeriodPlanService";
-import TaskCard from "../task/TaskCard";
-import AddTask from "./Add Task/AddTask";
-import ModalDeliveredTask from "../task/Task Details/Accordion Details/Modal Delivered Task/ModalDeliveredTask";
+import { SuspenseProgress } from "../../../../SuspenseProgress/SusProg";
+
+const AddTask = lazy(() => import("./Add Task/AddTask"));
+const TaskCard = lazy(() => import("../task/TaskCard"));
 
 const TasksCards = () => {
   const { select } = useTeacherContext();
@@ -55,35 +56,43 @@ const TasksCards = () => {
     );
 
   useEffect(() => {
-    console.log(
-      select.periods,
-      select.subjects.idSubject,
-      select.grades,
-      teacher.idNumberTeacher
-    );
-    // expandedAccordionSubjects === `panel-${select.subjects.idSubject}` &&
-    getApiPeriodsPlansByIdPeriodAndSubectAndDegree(
-      select.periods,
-      select.subjects.idSubject,
-      select.grades,
-      teacher.idNumberTeacher,
-      jwt,
-      bearer
-    )
-      .then(({ data }) => {
-        handleChangePeriodsPlans1({ value: data, error: "" });
-      })
-      .catch((error) =>
+    const fetchData = async () => {
+      try {
+        const { data: PeriodsPlanByIdPeriodAndSubjectAndDegree } =
+          await getApiPeriodsPlansByIdPeriodAndSubectAndDegree(
+            select.periods,
+            select.subjects.idSubject,
+            select.grades,
+            teacher.idNumberTeacher,
+            jwt,
+            bearer
+          );
+        handleChangePeriodsPlans1({
+          value: PeriodsPlanByIdPeriodAndSubjectAndDegree,
+          error: "",
+        });
+
+        console.log(
+          PeriodsPlanByIdPeriodAndSubjectAndDegree,
+          select.periods,
+          select.subjects.idSubject,
+          select.grades
+        );
+      } catch (error) {
         handleChangePeriodsPlans1({
           value: [],
           error: error.response?.data?.message,
-        })
-      );
+        });
+      }
+    };
+    fetchData();
   }, [
     select.periods,
     select.subjects.idSubject,
     select.grades,
-    periodsPlans.value.length,
+    teacher.idNumberTeacher,
+    jwt,
+    bearer,
   ]);
 
   return (
@@ -110,17 +119,19 @@ const TasksCards = () => {
           {!loading["periods-plans"] ? (
             !periodsPlans.error ? (
               <Grid container sx={{ flexGrow: 1 }}>
-                <Grid item xs={12}>
-                  <Grid
-                    container
-                    justifyContent="center"
-                    spacing={{ xs: 1, sm: 2, md: 5, lg: 4 }}
-                  >
-                    {periodsPlans.value.map((periodPlan, index) => (
-                      <TaskCard key={index} periodPlan={periodPlan} />
-                    ))}
+                <SuspenseProgress>
+                  <Grid item xs={12}>
+                    <Grid
+                      container
+                      justifyContent="left"
+                      spacing={{ xs: 1, sm: 2, md: 5, lg: 4 }}
+                    >
+                      {periodsPlans.value.map((periodPlan, index) => (
+                        <TaskCard key={index} periodPlan={periodPlan} />
+                      ))}
+                    </Grid>
                   </Grid>
-                </Grid>
+                </SuspenseProgress>
               </Grid>
             ) : (
               <Grid container mt={3} justifyContent="center">
@@ -134,11 +145,10 @@ const TasksCards = () => {
               </Grid>
             )
           ) : (
-            <CircularProgress /* value={progress} */ disableShrink />
+            <CircularProgress disableShrink />
           )}
         </CardContent>
       </CardMui>
-      
     </>
   );
 };
