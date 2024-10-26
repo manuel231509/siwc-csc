@@ -23,6 +23,7 @@ const useStyles = makeStyles(() => ({
     [useTheme().breakpoints.down("md")]: {
       width: "90vw",
     },
+    padding: 11,
   },
 }));
 

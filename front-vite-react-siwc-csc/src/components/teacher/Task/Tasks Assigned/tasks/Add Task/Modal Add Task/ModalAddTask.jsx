@@ -21,6 +21,7 @@ const ModalAddTask = () => {
           timeout: 500,
         },
       }}
+      sx={{ opacity: 1 }}
     >
       <SuspenseProgressBackdrop>
         <FadeAddTask />

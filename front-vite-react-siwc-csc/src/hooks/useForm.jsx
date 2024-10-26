@@ -14,7 +14,7 @@ const useForm = (
   const ref = useRef(null);
 
   const handleChangeFields = (nameField) => (event) => {
-    const {
+    let {
       target: { value },
     } = event;
     console.log("namefield: ", nameField, value);
@@ -23,10 +23,14 @@ const useForm = (
       auxFields.role = "student";
       delete auxFields.teachersPassword;
       setFields(auxFields);
-    } else setFields({ ...fields, [nameField]: value });
+    } else if (value.indexOf("check_all_items") === -1) {
+      if (value.indexOf("uncheck_all_items") > 1) value = [];
+      setFields((prev) => ({ ...prev, [nameField]: value }));
+    }
 
     if (validateOnChange) validateFields({ [nameField]: value });
   };
+
   const handleChangeFields_1 = (nameField) => (event) => {
     const {
       target: { id, value },
@@ -45,6 +49,7 @@ const useForm = (
     setFields((prev) => ({ ...prev, [nameField]: value }));
     if (validateOnChange && validate) validateFields({ [nameField]: value });
   };
+
   const handleChangeFields2 = (value) => {
     setFields(value);
   };

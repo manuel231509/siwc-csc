@@ -98,6 +98,9 @@ const validate = (fieldsValues, tempErrors, fields, nameField) => {
           ? ""
           : "THE DATE YOU ARE ENTERING MUST BE GREATER THAN OR EQUAL TO THE CURRENT DATE.  THE YEAR MUST BE EQUAL TO THE CURRENT YEAR."
         : fieldsValues?.deadline?.toString().toUpperCase()
+      : fields.qualificationPoints !== "" &&
+        Number(fields.qualificationPoints) > 0
+      ? "THE 'DEADLINE' FIELD IS REQUIRED."
       : "";
 
   if ("timeLimit" in fieldsValues) {

@@ -3,9 +3,9 @@ import {
   AttachFile as AttachFileIcon,
 } from "@mui/icons-material";
 import { LoadingButton } from "@mui/lab";
-import { Badge, Grid, Typography } from "@mui/material";
+import { Badge, Grid, Skeleton, Typography } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
-import { lazy, useEffect, useRef, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useTasksAssignedContext } from "../../../../../../../../../context/Tasks/TasksProvider";
 import { useTeacherContext } from "../../../../../../../../../context/Teacher/TeacherProvider";
@@ -13,7 +13,7 @@ import {
   deleteFile,
   uploadFile,
 } from "../../../../../../../../../firebase/config-firebase";
-import useFetchAndLoad from "../../../../../../../../../hooks/useFetchAndLoad1";
+import useFetchAndLoad from "../../../../../../../../../hooks/useFetchAndLoad3";
 import { Form, useForm } from "../../../../../../../../../hooks/useForm";
 import useWindowSize from "../../../../../../../../../hooks/useWindowSize";
 import {
@@ -25,6 +25,7 @@ import { sweetAlertButtonAddTask } from "../../../../../../../../../sweetAlert2/
 import FieldsControl from "../../../../../../../../fields/FieldsControl";
 import validate from "../../../../../../../../fields/field validation/validate";
 import useStyles from "../../../Styles/Styles";
+import { SuspenseProgressSkeleton } from "../../../../../../../../SuspenseProgress/SusProg";
 const MultipleFileUploadField = lazy(() =>
   import("./Upload Field/MultipleFileUploadField")
 );
@@ -65,13 +66,7 @@ const FormAddTask = () => {
   const theme = useTheme();
   const classes = useStyles();
 
-  const { callEndPoint } = useFetchAndLoad();
-
   const { select } = useTeacherContext();
-
-  const refField = useRef();
-
-  const [isFocused, setIsFocused] = useState(false);
 
   const {
     periodsPlans,
@@ -79,6 +74,8 @@ const FormAddTask = () => {
     handleChangeLoading,
     handleChangePeriodsPlans1,
   } = useTasksAssignedContext();
+
+  const { callEndPoint } = useFetchAndLoad(handleChangeLoading);
 
   const [fieldValidate, setFieldValidate] = useState(false);
 
@@ -111,15 +108,12 @@ const FormAddTask = () => {
     fields,
     setFields,
     handleChangeFields,
-    handleChangeFields1,
     handleChangeFields2,
     handleChangeFieldsDatePicker,
     handleChangeFieldAutoComplete,
     errors,
     setErrors,
     resetFields,
-    fieldsRef,
-    handleChangeFieldsRef,
   } = useForm(initialStateFields, true, validateFields, initialFieldsRef);
 
   const [files, setFiles] = useState([]);
@@ -134,25 +128,13 @@ const FormAddTask = () => {
 
   const handleClickFieldsAllStudents = (event) => {
     event.preventDefault();
-    console.log(
-      "handleClickFieldsAllStudents: ",
-      fields.students.length,
-      listStudents.value.length
-    );
     setFields((prev) => ({
       ...prev,
       ["students"]:
         prev.students.length === listStudents.value.length
           ? []
-          : listStudents.value,
+          : [...listStudents.value],
     }));
-    // console.log(fields.students, listStudents.value);
-    // validateFields({
-    //   ["students"]:
-    //     fields.students.length === listStudents.value.length
-    //       ? []
-    //       : listStudents.value,
-    // });
   };
 
   const handleClickClose = (nameField) => (e) => {
@@ -235,13 +217,15 @@ const FormAddTask = () => {
         jwt,
         bearer
       ),
-      "students"
+      "students",
+      "lstudents"
     );
 
   const saveApiPeriodPlanTask = async (periodPlanTask, jwt, bearer) =>
     await callEndPoint(
       savePeriodPlanTask(periodPlanTask, jwt, bearer),
-      "periodPlanTask"
+      "periodPlanTask",
+      "lperiodPlanTask"
     );
 
   const getApiPeriodsPlansByIdPeriodAndSubectAndDegree = async (
@@ -261,7 +245,8 @@ const FormAddTask = () => {
         jwt,
         bearer
       ),
-      "periods-plans"
+      "periods-plans",
+      "lperiods-plans"
     );
 
   const updateDataPeriodPlans = () => {
@@ -324,7 +309,13 @@ const FormAddTask = () => {
   }, []);
   console.log("FormAddTask");
   return (
-    <Grid container justifyContent={"center"} alignItems="center">
+    <Grid
+      container
+      justifyContent={"center"}
+      alignItems="center"
+      sx={{ minHeight: "100%" }}
+      boxShadow={10}
+    >
       <Form
         className={classes.form}
         sx={{
@@ -334,140 +325,159 @@ const FormAddTask = () => {
         }}
         onSubmit={handleSubmitAddTask}
       >
-        <Grid
-          container
-          columnGap={{ xs: 2, sm: 2.5, md: 3.5 }}
-          rowGap={1}
-          alignItems="center"
-        >
+        <Grid container rowGap={3}>
           <Grid
-            item
-            {...(windowSize.width <= 550 ? { xs: 12 } : { xs: true })}
             container
-            rowGap={1.5}
-            boxShadow={5}
-            sx={{
-              padding: 1.5,
-            }}
+            columnGap={{ xs: 2, sm: 2.5, md: 3.5 }}
+            rowGap={1}
+            alignItems="center"
           >
-            <FieldsControl.FieldTitle
-              fields={fields}
-              handleChangeFields={handleChangeFields}
-              errors={errors}
-              otherTextFieldProps={{
-                variant: "filled",
-                autoFocus: true,
-              }}
-              handleClickClose={handleClickClose}
-            />
-            <FieldsControl.FieldInstructions
-              fields={fields}
-              handleChangeFields={handleChangeFields}
-              errors={errors}
-              otherTextFieldProps={{
-                variant: "filled",
-                multiline: true,
-                rows: 6,
-              }}
-              handleClickClose={handleClickClose}
-            />
             <Grid
+              item
+              {...(windowSize.width <= 550 ? { xs: 12 } : { xs: true })}
               container
-              p={1.5}
+              rowGap={1.5}
+              boxShadow={15}
               sx={{
-                border: "1px solid gray",
-                borderRadius: "12px",
+                padding: 1.5,
               }}
             >
+              <FieldsControl.FieldTitle
+                fields={fields}
+                handleChangeFields={handleChangeFields}
+                errors={errors}
+                otherTextFieldProps={{
+                  variant: "filled",
+                  autoFocus: true,
+                }}
+                handleClickClose={handleClickClose}
+              />
+              <FieldsControl.FieldInstructions
+                fields={fields}
+                handleChangeFields={handleChangeFields}
+                errors={errors}
+                otherTextFieldProps={{
+                  variant: "filled",
+                  multiline: true,
+                  rows: 6,
+                }}
+                handleClickClose={handleClickClose}
+              />
               <Grid
                 container
-                justifyContent={"center"}
-                pb={1}
-                borderBottom={"1px solid gray"}
+                p={1.5}
+                sx={{
+                  border: "1px solid gray",
+                  borderRadius: "12px",
+                }}
               >
-                <StyledBadge
-                  sx={{ mr: "1rem" }}
-                  badgeContent={files.length}
-                  color="secondary"
+                <Grid
+                  container
+                  justifyContent={"center"}
+                  pb={1}
+                  borderBottom={"1px solid gray"}
                 >
-                  <AttachFileIcon />
-                </StyledBadge>
-                <Typography
-                  variant="subtitle1"
-                  fontSize={12}
-                  fontWeight={600}
-                  letterSpacing=".17rem"
-                >
-                  ATTACH FILE
-                </Typography>
+                  <StyledBadge
+                    sx={{ mr: "1rem" }}
+                    badgeContent={files.length}
+                    color="secondary"
+                  >
+                    <AttachFileIcon />
+                  </StyledBadge>
+                  <Typography
+                    variant="subtitle1"
+                    fontSize={12}
+                    fontWeight={600}
+                    letterSpacing=".17rem"
+                  >
+                    ATTACH FILE
+                  </Typography>
+                </Grid>
+                <MultipleFileUploadField
+                  files={files}
+                  handleChangeFieldsFiles={handleChangeFieldsFiles}
+                  windowSize={windowSize}
+                />
               </Grid>
-              <MultipleFileUploadField
-                files={files}
-                handleChangeFieldsFiles={handleChangeFieldsFiles}
-                windowSize={windowSize}
-              />
             </Grid>
-          </Grid>
 
-          <Grid
-            item
-            {...(windowSize.width <= 550 ? { xs: 12 } : { xs: true })}
-            p={2}
-            container
-            rowGap={1.5}
-            boxShadow={5}
-          >
-            {/* <pre>{JSON.stringify(fields.students, null, 2)}</pre> */}
-            <FieldsControl.FieldStudents
-              fields={fields}
-              handleChangeFields={handleChangeFields}
-              errors={errors}
-              listStudents={listStudents.value}
-              handleClickFieldsAllStudents={handleClickFieldsAllStudents}
-            />
-            <FieldsControl.FieldQualificationPoints
-              fields={fields}
-              handleChangeFields={handleChangeFields}
-              listQualificationPoints={listQualificationPoints}
-              errors={errors}
-            />
-            <FieldsControl.FieldDeadLine
-              fields={fields}
-              handleChangeFieldsDatePicker={handleChangeFieldsDatePicker}
-              errors={errors}
-              handleClickClose={handleClickClose}
-            />
-            {fields.deadline && errors.deadline === "" && (
-              <FieldsControl.FieldTimeLimit
+            <Grid
+              item
+              {...(windowSize.width <= 550 ? { xs: 12 } : { xs: true })}
+              p={2}
+              container
+              rowGap={1.5}
+              boxShadow={15}
+            >
+              {!loading["students"] ? (
+                <FieldsControl.FieldStudents
+                  fields={fields}
+                  handleChangeFields={handleChangeFields}
+                  errors={errors}
+                  listStudents={listStudents.value}
+                  handleClickFieldsAllStudents={handleClickFieldsAllStudents}
+                />
+              ) : (
+                <Skeleton
+                  variant="rectangular"
+                  animation={"wave"}
+                  sx={{ minWidth: "100%" }}
+                  height={55}
+                />
+              )}
+              <FieldsControl.FieldQualificationPoints
+                fields={fields}
+                handleChangeFields={handleChangeFields}
+                listQualificationPoints={listQualificationPoints}
+                errors={errors}
+              />
+              <FieldsControl.FieldDeadLine
                 fields={fields}
                 handleChangeFieldsDatePicker={handleChangeFieldsDatePicker}
                 errors={errors}
                 handleClickClose={handleClickClose}
               />
-            )}
-            <FieldsControl.FieldPlan
-              fields={fields}
-              handleChangeFieldAutoComplete={handleChangeFieldAutoComplete}
-              errors={errors}
-              listPlan={periodsPlans.value}
-            />
+              {fields.deadline && errors.deadline === "" && (
+                <SuspenseProgressSkeleton
+                  skeletonProps={{
+                    variant: "rectangular",
+                    animation: "wave",
+                    sx: { minWidth: "100%" },
+                    height: 55,
+                  }}
+                >
+                  <FieldsControl.FieldTimeLimit
+                    fields={fields}
+                    handleChangeFieldsDatePicker={handleChangeFieldsDatePicker}
+                    errors={errors}
+                    handleClickClose={handleClickClose}
+                  />
+                </SuspenseProgressSkeleton>
+              )}
+              <FieldsControl.FieldPlan
+                fields={fields}
+                handleChangeFieldAutoComplete={handleChangeFieldAutoComplete}
+                errors={errors}
+                listPlan={periodsPlans.value}
+              />
+            </Grid>
           </Grid>
-        </Grid>
 
-        <Grid container mt={2.5} mb={0} justifyContent="center">
-          <LoadingButton
-            type="submit"
-            aria-label="add a taks"
-            color="secondary"
-            size="large"
-            loading={loading["periodPlanTask"]}
-            loadingPosition="start"
-            startIcon={<AddTaskIcon />}
-            disabled={fieldValidate}
-            variant="contained"
-          >
-            <span>Add</span>
-          </LoadingButton>
+          <Grid container mb={0} justifyContent="center">
+            <LoadingButton
+              type="submit"
+              aria-label="add a taks"
+              color="secondary"
+              size="large"
+              loading={loading["periodPlanTask"]}
+              loadingPosition="start"
+              startIcon={<AddTaskIcon />}
+              disabled={fieldValidate}
+              variant="contained"
+            >
+              <span>Add</span>
+            </LoadingButton>
+          </Grid>
         </Grid>
       </Form>
     </Grid>

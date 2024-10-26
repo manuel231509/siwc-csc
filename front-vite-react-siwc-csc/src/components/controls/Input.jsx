@@ -5,6 +5,10 @@ import {
   OutlinedInput as MuiOutlinedInput,
 } from "@mui/material";
 import { lazy } from "react";
+import {
+  SuspenseProgress,
+  SuspenseProgressSkeleton,
+} from "../SuspenseProgress/SusProg";
 
 const FormControlStyled = lazy(() =>
   import("./Styled/ControlStyled").then((module) => ({
@@ -39,19 +43,27 @@ const Input = (props) => {
         textFieldStyledAttributes={textFieldStyledAttributes}
       />
       {error && (
-        <FormHelperTextStyled
-          {...(error && { error: true })}
-          {...formHelperTextProps}
+        <SuspenseProgressSkeleton
+          skeletonProps={{
+            variant: "rectangular",
+            animation: "wave",
+            sx: { minWidth: "100%" },
+          }}
         >
-          <ErrorIcon
-            fontSize="small"
-            sx={{
-              marginLeft: "0.5rem",
-              marginRight: "0.5rem",
-            }}
-          />
-          {error}
-        </FormHelperTextStyled>
+          <FormHelperTextStyled
+            {...(error && { error: true })}
+            {...formHelperTextProps}
+          >
+            <ErrorIcon
+              fontSize="small"
+              sx={{
+                marginLeft: "0.5rem",
+                marginRight: "0.5rem",
+              }}
+            />
+            {error}
+          </FormHelperTextStyled>
+        </SuspenseProgressSkeleton>
       )}
     </>
   );
@@ -79,19 +91,27 @@ const OutlinedInput = (props) => {
         />
       </FormControlStyled>
       {error && (
-        <FormHelperTextStyled
-          {...(error && { error: true })}
-          {...formHelperTextProps}
+        <SuspenseProgressSkeleton
+          skeletonProps={{
+            variant: "rectangular",
+            animation: "wave",
+            sx: { minWidth: "100%" },
+          }}
         >
-          <ErrorIcon
-            fontSize="small"
-            sx={{
-              marginLeft: "0.5rem",
-              marginRight: "0.5rem",
-            }}
-          />
-          {error}
-        </FormHelperTextStyled>
+          <FormHelperTextStyled
+            {...(error && { error: true })}
+            {...formHelperTextProps}
+          >
+            <ErrorIcon
+              fontSize="small"
+              sx={{
+                marginLeft: "0.5rem",
+                marginRight: "0.5rem",
+              }}
+            />
+            {error}
+          </FormHelperTextStyled>
+        </SuspenseProgressSkeleton>
       )}
     </>
   );
@@ -116,19 +136,27 @@ const FilledInput = (props) => {
         <MuiFilledInput {...(error && { error: true })} {...filledInputProps} />
       </FormControlStyled>
       {error && (
-        <FormHelperTextStyled
-          {...(error && { error: true })}
-          {...formHelperTextProps}
+        <SuspenseProgressSkeleton
+          skeletonProps={{
+            variant: "rectangular",
+            animation: "wave",
+            sx: { minWidth: "100%" },
+          }}
         >
-          <ErrorIcon
-            fontSize="small"
-            sx={{
-              marginLeft: "0.5rem",
-              marginRight: "0.5rem",
-            }}
-          />
-          {error}
-        </FormHelperTextStyled>
+          <FormHelperTextStyled
+            {...(error && { error: true })}
+            {...formHelperTextProps}
+          >
+            <ErrorIcon
+              fontSize="small"
+              sx={{
+                marginLeft: "0.5rem",
+                marginRight: "0.5rem",
+              }}
+            />
+            {error}
+          </FormHelperTextStyled>
+        </SuspenseProgressSkeleton>
       )}
     </>
   );

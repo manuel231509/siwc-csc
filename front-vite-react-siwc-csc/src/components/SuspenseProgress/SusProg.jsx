@@ -1,5 +1,5 @@
-import { Backdrop, Box, CircularProgress, Grid } from "@mui/material";
-import React, { Suspense } from "react";
+import { Backdrop, Box, CircularProgress, Grid, Skeleton } from "@mui/material";
+import React, { forwardRef, Suspense } from "react";
 
 export const SuspenseProgress = ({ children }) => {
   return (
@@ -31,7 +31,7 @@ export const SuspenseProgress = ({ children }) => {
   );
 };
 
-export const SuspenseProgressBackdrop = ({ children }) => {
+export const SuspenseProgressBackdrop = forwardRef(({ children }, ref) => {
   return (
     <Suspense
       fallback={
@@ -48,5 +48,11 @@ export const SuspenseProgressBackdrop = ({ children }) => {
     >
       {children}
     </Suspense>
+  );
+});
+
+export const SuspenseProgressSkeleton = ({ children, skeletonProps }) => {
+  return (
+    <Suspense fallback={<Skeleton {...skeletonProps} />}>{children}</Suspense>
   );
 };

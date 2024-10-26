@@ -8,25 +8,13 @@ import { faFileText } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Delete as DeleteIcon } from "@mui/icons-material";
 import { Grid, IconButton, Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/system";
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import Swal from "sweetalert2";
 import { v4 as uuidv4 } from "uuid";
 import { sweetAlert } from "../../../../../../../../../../sweetAlert2/SweetAlert";
 import "./Styles/StyleSweetAlert.css";
-import { styled } from "@mui/system";
-
-const useStyles = makeStyles(() => ({
-  dropzone: {
-    border: `2px dashed ${useTheme().palette.primary.main}`,
-    borderRadius: useTheme().shape.borderRadius,
-    marginTop: useTheme().spacing(2),
-    width: "100%",
-    outline: "none",
-  },
-}));
 
 const GridStyled = styled(Grid)(({ theme }) => ({
   border: `2px dashed ${theme.palette.primary.main}`,
@@ -102,8 +90,6 @@ const MultipleFileUploadField = ({
       maxSize,
       maxFiles: 5,
     });
-
-  // const classes = useStyles();
 
   return (
     <>

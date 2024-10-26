@@ -10,7 +10,7 @@ import { lazy, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useTasksAssignedContext } from "../../../../../context/Tasks/TasksProvider";
 import { useTeacherContext } from "../../../../../context/Teacher/TeacherProvider";
-import useFetchAndLoad from "../../../../../hooks/useFetchAndLoad1";
+import useFetchAndLoad from "../../../../../hooks/useFetchAndLoad3";
 import { getPeriodsPlansByIdPeriodAndSubectAndDegree } from "../../../../../services/period plan/PeriodPlanService";
 import { SuspenseProgress } from "../../../../SuspenseProgress/SusProg";
 
@@ -23,11 +23,12 @@ const TasksCards = () => {
   const {
     expandedAccordionSubjects,
     loading,
+    handleChangeLoading,
     periodsPlans,
     handleChangePeriodsPlans1,
   } = useTasksAssignedContext();
 
-  const { callEndPoint } = useFetchAndLoad();
+  const { callEndPoint } = useFetchAndLoad(handleChangeLoading);
 
   const ssessionState = useSelector((store) => store.ssession);
 
@@ -52,7 +53,8 @@ const TasksCards = () => {
         jwt,
         bearer
       ),
-      "periods-plans"
+      "periods-plans",
+      "lperiods-plans"
     );
 
   useEffect(() => {
@@ -123,8 +125,8 @@ const TasksCards = () => {
                   <Grid item xs={12}>
                     <Grid
                       container
-                      justifyContent="left"
-                      spacing={{ xs: 1, sm: 2, md: 5, lg: 4 }}
+                      justifyContent="center"
+                      spacing={{ xs: 1, sm: 2, md: 2, lg: 3 }}
                     >
                       {periodsPlans.value.map((periodPlan, index) => (
                         <TaskCard key={index} periodPlan={periodPlan} />

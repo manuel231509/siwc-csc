@@ -1,4 +1,4 @@
-import { Fade, Grid, IconButton } from "@mui/material";
+import { Fade, Grid, IconButton, Skeleton } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { borderRadius } from "@mui/system";
 
@@ -32,9 +32,10 @@ export const GridContainerFadeAddTask = styled(
   // ...(height > 0 && height < 400 && { height: "65vh" }),
   // ...(height > 400 && height <= 600 && { height: "75vh" }),
   // borderBottom: "2.9px solid #000000",
-  // boxShadow: theme.shadows[10],
+  boxShadow: theme.shadows[20],
   // maxWidth: "98vw",
-  height: height - 78,
+  // height: height - 78,
+  height: height < 600 ? height - 82 : "85vh",
   maxHeight: "90%",
   overflowY: "auto",
   "&::-webkit-scrollbar": {

@@ -15,16 +15,28 @@ const FieldDeadLine = ({
         label: "Deadline",
         inputFormat: "DD/MM/YYYY",
         views: ["year", "month", "day"],
-        value: dayjs(fields.deadline),
+        value: fields.deadline ? dayjs(fields.deadline) : null,
         onChange: handleChangeFieldsDatePicker("deadline"),
       }}
       error={errors.deadline}
+      formHelperTextProps={{
+        id: "component-error-text",
+        sx: {
+          display: "flex",
+          alignItems: "center",
+          textAlign: "justify",
+        },
+      }}
       otherTextFieldProps={{
         slotPropsTextField: {
-          id: "deadline",
+          variant: "filled",
           clearable: true,
           onClear: handleClickClose("deadline"),
-          autoFocus: Boolean(errors.deadline) ? true : false,
+          fullWidth: true,
+          required:
+            fields.qualificationPoints !== "" &&
+            Number(fields.qualificationPoints) > 0,
+          ...(Boolean(errors.deadline) && { error: true }),
         },
       }}
     />

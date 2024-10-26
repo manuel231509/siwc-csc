@@ -14,7 +14,7 @@ const options = {
   day: "numeric",
 };
 
-const TaskDetailsAccordionSummary = forwardRef(({ windowSize, task }, ref) => {
+const TaskDetailsAccordionSummary = forwardRef( ({ windowSize, task }, ref) => {
   const { expandedAccordionTaskDetails } = useTasksAssignedContext();
 
   const theme = useTheme();
@@ -95,8 +95,9 @@ const TaskDetailsAccordionSummary = forwardRef(({ windowSize, task }, ref) => {
                     : "gray"
                 }
               >
-                DEADLINE : {deadline.toUpperCase()}, {date.getHours()}:
-                {date.getMinutes()}
+                DEADLINE : {deadline.toUpperCase()},{" "}
+                {date.getHours().toString().padStart(2, "0")}:
+                {date.getMinutes().toString().padStart(2, "0")}
               </Typography>
             </Grid>
           </Grid>

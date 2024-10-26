@@ -9,6 +9,9 @@ import {
   Select as MuiSelect,
 } from "@mui/material";
 import { lazy } from "react";
+import {
+  SuspenseProgressSkeleton
+} from "../SuspenseProgress/SusProg";
 
 const FormControlStyled = lazy(() =>
   import("./Styled/ControlStyled").then((module) => ({
@@ -54,19 +57,27 @@ const Select = (props) => {
         </MuiSelect>
       </FormControlStyled>
       {error && (
-        <FormHelperTextStyled
-          {...(error && { error: true })}
-          {...formHelperTextProps}
+        <SuspenseProgressSkeleton
+          skeletonProps={{
+            variant: "rectangular",
+            animation: "wave",
+            sx: { minWidth: "100%" },
+          }}
         >
-          <ErrorIcon
-            fontSize="small"
-            sx={{
-              marginLeft: "0.5rem",
-              marginRight: "0.5rem",
-            }}
-          />
-          {error}
-        </FormHelperTextStyled>
+          <FormHelperTextStyled
+            {...(error && { error: true })}
+            {...formHelperTextProps}
+          >
+            <ErrorIcon
+              fontSize="small"
+              sx={{
+                marginLeft: "0.5rem",
+                marginRight: "0.5rem",
+              }}
+            />
+            {error}
+          </FormHelperTextStyled>
+        </SuspenseProgressSkeleton>
       )}
     </>
   );
@@ -82,15 +93,7 @@ const SelectCheckMark = (props) => {
     formHelperTextProps,
     menuItemProps = null,
   } = props;
-  console.log(
-    "selectProps.value: ",
-    selectProps.value,
-    "selectProps.value.length === names.length: ",
-    selectProps.value.length === names.length,
-    "names: ",
-    names,
-    names.filter((name) => 5 === 5)
-  );
+
   return (
     <>
       <FormControlStyled {...(error && { error: true })} {...formControlProps}>
@@ -102,9 +105,10 @@ const SelectCheckMark = (props) => {
             key={"all_students"}
             value={
               selectProps.value.length === names.length
-                ? null
-                : { ...names.find(() => 5 === 5) }
+                ? "uncheck_all_items"
+                : "check_all_items"
             }
+            {...menuItemProps}
           >
             <Checkbox checked={selectProps.value.length === names.length} />
             <Grid container alignItems="center" columnGap={2}>
@@ -116,12 +120,11 @@ const SelectCheckMark = (props) => {
             </Grid>
           </MenuItem>
           {names.map((name, index) => {
-            console.log("name: ", name, selectProps.value.indexOf(name));
             return (
               <MenuItem key={index} value={name} /* {...menuItemProps} */>
                 <Checkbox
-                  checked={selectProps.value.some(
-                    (n) => name.idNumberStudent === n.idNumberStudent
+                  checked={selectProps?.value?.some(
+                    (n) => name.idNumberStudent === n?.idNumberStudent
                   )}
                 />
                 <Grid container alignItems="center" columnGap={2}>
@@ -140,22 +143,31 @@ const SelectCheckMark = (props) => {
         </MuiSelect>
       </FormControlStyled>
       {error && (
-        <FormHelperTextStyled
-          {...(error && { error: true })}
-          {...formHelperTextProps}
+        <SuspenseProgressSkeleton
+          skeletonProps={{
+            variant: "rectangular",
+            animation: "wave",
+            sx: { minWidth: "100%" },
+          }}
         >
-          <ErrorIcon
-            fontSize="small"
-            sx={{
-              marginLeft: "0.5rem",
-              marginRight: "0.5rem",
-            }}
-          />
-          {error}
-        </FormHelperTextStyled>
+          <FormHelperTextStyled
+            {...(error && { error: true })}
+            {...formHelperTextProps}
+          >
+            <ErrorIcon
+              fontSize="small"
+              sx={{
+                marginLeft: "0.5rem",
+                marginRight: "0.5rem",
+              }}
+            />
+            {error}
+          </FormHelperTextStyled>
+        </SuspenseProgressSkeleton>
       )}
     </>
   );
 };
 
 export { Select, SelectCheckMark };
+

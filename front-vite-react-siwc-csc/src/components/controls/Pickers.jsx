@@ -1,3 +1,4 @@
+import { Error as ErrorIcon } from "@mui/icons-material";
 import {
   DatePicker as DatePickerMui,
   DesktopDatePicker as DesktopDatePickerMui,
@@ -10,12 +11,13 @@ import {
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import "dayjs/locale/es";
 import { forwardRef } from "react";
+import { SuspenseProgressSkeleton } from "../SuspenseProgress/SusProg";
 import Controls from "./Controls";
 import {
   CustomStyledDatePicker,
   CustomStyledTimerPicker,
+  FormHelperTextStyled,
 } from "./Styled/ControlStyled";
-import { TextField } from "@mui/material";
 
 const LoacalizationProvider = ({ children }) => {
   return (
@@ -68,6 +70,7 @@ const TextFieldForwardRef = forwardRef((props, ref) => {
         id: "deadline",
         name: "deadline",
         autoComplete: "deadline",
+        autoFocus: false,
         fullWidth: true,
         "aria-describedby": "component-error-text",
         ...ref,
@@ -91,6 +94,7 @@ const TextFieldForwardRef = forwardRef((props, ref) => {
 const DesktopDatePicker = ({
   desktopDatePickerProps,
   error,
+  formHelperTextProps,
   otherTextFieldProps,
 }) => {
   const { slotPropsTextField, ...propsTextField } = otherTextFieldProps;
@@ -99,20 +103,36 @@ const DesktopDatePicker = ({
       <DesktopDatePickerMui
         {...desktopDatePickerProps}
         slots={{
-          popper: CustomStyledDatePicker,
-          textField: (params) => (
-            <TextFieldForwardRef
-              {...params}
-              otherTextFieldProps={propsTextField}
-              error={error}
-            />
-          ),
+          popper: { ...CustomStyledDatePicker },
         }}
         slotProps={{
           textField: { ...slotPropsTextField },
           actionBar: { actions: ["today", "clear", "cancel"] },
         }}
       />
+      {error && (
+        <SuspenseProgressSkeleton
+          skeletonProps={{
+            variant: "rectangular",
+            animation: "wave",
+            sx: { minWidth: "100%" },
+          }}
+        >
+          <FormHelperTextStyled
+            {...(error && { error: true })}
+            {...formHelperTextProps}
+          >
+            <ErrorIcon
+              fontSize="small"
+              sx={{
+                marginLeft: "0.5rem",
+                marginRight: "0.5rem",
+              }}
+            />
+            {error}
+          </FormHelperTextStyled>
+        </SuspenseProgressSkeleton>
+      )}
     </LoacalizationProvider>
   );
 };
@@ -155,6 +175,7 @@ const DesktopTimePicker = ({
   desktopTimePickerProps,
   otherTextFieldProps,
   error,
+  formHelperTextProps,
 }) => {
   const { slotPropsTextField, ...propsTextField } = otherTextFieldProps;
   return (
@@ -168,18 +189,34 @@ const DesktopTimePicker = ({
         }}
         slots={{
           popper: CustomStyledTimerPicker,
-          textField: (params) => (
-            <TextFieldForwardRef
-              {...params}
-              otherTextFieldProps={propsTextField}
-              error={error}
-            />
-          ),
         }}
         slotProps={{
           textField: { ...slotPropsTextField },
         }}
       />
+      {error && (
+        <SuspenseProgressSkeleton
+          skeletonProps={{
+            variant: "rectangular",
+            animation: "wave",
+            sx: { minWidth: "100%" },
+          }}
+        >
+          <FormHelperTextStyled
+            {...(error && { error: true })}
+            {...formHelperTextProps}
+          >
+            <ErrorIcon
+              fontSize="small"
+              sx={{
+                marginLeft: "0.5rem",
+                marginRight: "0.5rem",
+              }}
+            />
+            {error}
+          </FormHelperTextStyled>
+        </SuspenseProgressSkeleton>
+      )}
     </LoacalizationProvider>
   );
 };

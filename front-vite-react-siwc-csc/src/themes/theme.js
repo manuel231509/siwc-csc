@@ -7,7 +7,7 @@ import {
 
 const font = "'Montserrat', sans-serif";
 
-const theme = createTheme({
+let theme = createTheme({
   typography: {
     fontFamily: font,
     h7: {
@@ -228,6 +228,22 @@ const theme = createTheme({
     },
   },
   shadows: [...createTheme({}).shadows, `0px 0px 30px 5px rgba(0, 0, 0, 0.48)`],
+});
+
+theme = createTheme(theme, {
+  components: {
+    MuiSkeleton: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "rgba(0, 0, 0, 0.2)",
+          "::after": {
+            animation: "animation-wiooy9 2s linear 0.5s infinite",
+            background: `linear-gradient(90deg,transparent,${theme.palette.secondary["sDeepOrange"]["400"]["main"]["value"]}4D,transparent)`,
+          },
+        },
+      },
+    },
+  },
 });
 
 export default theme;

@@ -14,9 +14,12 @@ public class HiloCloseSpringApplication extends Thread {
 
     HiloClosingService hiloCloseService;
 
-    public HiloCloseSpringApplication(appSIWC_SJApplication application, HiloClosingService hcs) {
+    HiloServiceStopped hiloServiceStopped;
+
+    public HiloCloseSpringApplication(appSIWC_SJApplication application, HiloClosingService hcs, HiloServiceStopped hss1) {
         this.application = application;
         this.hiloCloseService = hcs;
+        this.hiloServiceStopped = hss1;
     }
 
     @Override
@@ -24,17 +27,25 @@ public class HiloCloseSpringApplication extends Thread {
         try {
             hiloCloseService.join();
         } catch (InterruptedException ex) {
-            ex.printStackTrace();
+            application.stopped(ex);
+            hiloServiceStopped.start();
         }
         System.out.println("");
         System.out.println("START THREAD 2");
         try {
             application.serviceClosed();
         } catch (Exception e) {
-            application.serviceStoped(e);
+            application.stopped(e);
+            hiloServiceStopped.start();
         }
         System.out.println("END THREAD 2");
         System.out.println("");
+        try {
+            join();
+        } catch (InterruptedException e1) {
+            application.stopped(e1);
+            hiloServiceStopped.start();
+        }
     }
 
 }

@@ -2,6 +2,7 @@ package com.colegiosantacecilia.siwcspringjava.Metodos.Hilos;
 
 import com.colegiosantacecilia.siwcspringjava.GUI.appSIWC_SJApplication;
 import com.colegiosantacecilia.siwcspringjava.SiwcSpringJavaApplication;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
@@ -12,13 +13,20 @@ import org.springframework.context.ConfigurableApplicationContext;
  */
 public class HiloSpringApplication extends Thread {
 
+    @Autowired
     appSIWC_SJApplication application;
+
+    ConfigurableApplicationContext cac = null;
 
     HiloStartingService hiloStartingService;
 
-    public HiloSpringApplication(appSIWC_SJApplication app, HiloStartingService hss) {
+    HiloServiceStopped hiloServiceStopped;
+
+    public HiloSpringApplication(appSIWC_SJApplication app, HiloStartingService hss, ConfigurableApplicationContext context, HiloServiceStopped hss1) {
         application = app;
         hiloStartingService = hss;
+        cac = context;
+        hiloServiceStopped = hss1;
     }
 
     @Override
@@ -26,15 +34,36 @@ public class HiloSpringApplication extends Thread {
         try {
             hiloStartingService.join();
         } catch (InterruptedException ex) {
-            ex.printStackTrace();
+            application.stopped(ex);
+            hiloServiceStopped.start();
         }
         System.out.println("START THREAD 2");
 
         try {
-            ConfigurableApplicationContext cac = SpringApplication.run(SiwcSpringJavaApplication.class);
+            application.getTextAreaScrollPane().setVisible(true);
+            application.getTextArea().setVisible(true);
+            application.pack();
+            application.setLocationRelativeTo(null);
+            application.pack();
+
+            cac = SpringApplication.run(SiwcSpringJavaApplication.class);
+            application.setLocationRelativeTo(null);
+            application.pack();
             application.serviceStarted(cac);
         } catch (Exception e) {
-            application.serviceStoped(e);
+            application.stopped(e);
+            hiloServiceStopped.setHiloSpringApplication(this);
+            hiloServiceStopped.start();
+        }
+
+        try {
+            if (!application.getStatusStartedStopped()) {
+                join();
+            }
+        } catch (InterruptedException e1) {
+            application.stopped(e1);
+            hiloServiceStopped.setHiloSpringApplication(this);
+            hiloServiceStopped.start();
         }
         System.out.println("END THREAD 2");
     }

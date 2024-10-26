@@ -28,7 +28,8 @@ public class HiloClosingService extends Thread {
             sleep(msegs);
             System.out.println("AFTER THE THREAD SLEEPS 1");
         } catch (InterruptedException ex) {
-            ex.printStackTrace();
+            application.stopped(ex);
+            application.serviceStopped();
         }
         System.out.println("END THREAD 1");
         System.out.println("");

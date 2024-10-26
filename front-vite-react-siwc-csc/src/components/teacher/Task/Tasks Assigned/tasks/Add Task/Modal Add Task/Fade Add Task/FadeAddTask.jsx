@@ -65,10 +65,9 @@ const FadeAddTask = () => {
             flexGrow: 1,
             p: 0.9,
             // width: { xs: "89.4vw", sm: "89.6vw", md: "79.7vw", lg: "79.8vw" },
-            borderBottom: "2.9px solid #000000",
-            boxShadow: 15,
           }}
           bgcolor={(theme) => theme.palette.primary["main"]}
+          boxShadow={20}
         >
           <Grid item xs sx={{ flexGrow: 1 }}>
             <Grid

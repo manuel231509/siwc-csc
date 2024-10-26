@@ -47,6 +47,7 @@ public class PeriodRestController {
     @PreAuthorize("hasRole('ADMIN') or hasRole('TEACHER') or hasRole('STUDENT')")
     public ResponseEntity<?> getAllPeriods() {
         List<?> listPeriods = periodService.getAll();
+        System.out.println("hola cambikos");
         if (!listPeriods.isEmpty()) {
             return new ResponseEntity(listPeriods, HttpStatus.OK);
         } else {
@@ -87,6 +88,7 @@ public class PeriodRestController {
     @PreAuthorize("hasRole('TEACHER') OR hasRole('ADMIN') or hasRole('STUDENT')")
     public ResponseEntity<?> getPeriodByDateNowSystem() {
         try {
+            System.out.println("rest period ***");
             return periodService.getPeriodByDateNowSystem().
                     map(period -> new ResponseEntity(period, HttpStatus.OK)).
                     orElse(new ResponseEntity("{\"message\":\"PERIOD BY DATE NOW SYSTEM WAS NOT FOUND.\"}",

@@ -244,6 +244,7 @@ const TaskDetailsAccordionDetails = ({ windowSize, task }) => {
                 cursor: "pointer",
               },
             }}
+            textAlign={"center"}
           >
             <Typography variant="subtitle1" fontWeight={600} fontSize={23}>
               {
@@ -275,6 +276,7 @@ const TaskDetailsAccordionDetails = ({ windowSize, task }) => {
                 cursor: "pointer",
               },
             }}
+            textAlign={"center"}
           >
             <Typography variant="subtitle1" fontWeight={600} fontSize={23}>
               {task.publishedTaskEntitys.length}
@@ -302,6 +304,7 @@ const TaskDetailsAccordionDetails = ({ windowSize, task }) => {
                 cursor: "pointer",
               },
             }}
+            textAlign={"center"}
           >
             <Typography variant="subtitle1" fontWeight={600} fontSize={23}>
               {

@@ -15,17 +15,26 @@ const FieldTimeLimit = ({
       desktopTimePickerProps={{
         disablePast: disablePast,
         label: "Time Limit",
-        value: dayjs(fields.timeLimit),
+        value: fields.timeLimit ? dayjs(fields.timeLimit) : null,
         onChange: handleChangeFieldsDatePicker("timeLimit"),
         autoFocus: Boolean(errors.timeLimit) ? true : false,
       }}
       error={errors.timeLimit}
+      formHelperTextProps={{
+        id: "component-error-text",
+        sx: {
+          display: "flex",
+          alignItems: "center",
+          textAlign: "justify",
+        },
+      }}
       otherTextFieldProps={{
-        required: Boolean(fields.deadline),
         slotPropsTextField: {
-          id: "timelimit",
+          variant: "filled",
+          required: Boolean(fields.deadline),
           clearable: true,
           onClear: handleClickClose("timelimit"),
+          fullWidth: true,
         },
       }}
     />
